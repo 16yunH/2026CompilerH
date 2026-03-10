@@ -1,0 +1,463 @@
+Terminals unused in grammar
+
+    '['
+    ']'
+    ','
+    '.'
+    EQ
+    NE
+    LT
+    LE
+    GT
+    GE
+    AND
+    OR
+
+
+Grammar
+
+    0 $accept: PROG $end
+
+    1 PROG: MAINMETHOD
+
+    2 MAINMETHOD: PUBLIC INT MAIN '(' ')' '{' STMLIST '}'
+
+    3 STMLIST: ε
+    4        | STM STMLIST
+
+    5 STM: ID '=' EXP ';'
+    6    | RETURN EXP ';'
+
+    7 EXP: '(' EXP ADD EXP ')'
+    8    | '(' EXP MINUS EXP ')'
+    9    | '(' EXP TIMES EXP ')'
+   10    | '(' EXP DIVIDE EXP ')'
+   11    | NONNEGATIVEINT
+   12    | '(' MINUS EXP ')'
+   13    | '(' EXP ')'
+   14    | ID
+
+   15 ID: IDENTIFIER
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    '(' (40) 2 7 8 9 10 12 13
+    ')' (41) 2 7 8 9 10 12 13
+    ',' (44)
+    '.' (46)
+    ';' (59) 5 6
+    '=' (61) 5
+    '[' (91)
+    ']' (93)
+    '{' (123) 2
+    '}' (125) 2
+    error (256)
+    PUBLIC (258) 2
+    INT (259) 2
+    MAIN (260) 2
+    RETURN (261) 6
+    NONNEGATIVEINT <i> (262) 11
+    IDENTIFIER <s> (263) 15
+    ADD (264) 7
+    MINUS (265) 8 12
+    TIMES (266) 9
+    DIVIDE (267) 10
+    EQ (268)
+    NE (269)
+    LT (270)
+    LE (271)
+    GT (272)
+    GE (273)
+    AND (274)
+    OR (275)
+
+
+Nonterminals, with rules where they appear
+
+    $accept (31)
+        on left: 0
+    PROG <program> (32)
+        on left: 1
+        on right: 0
+    MAINMETHOD <mainMethod> (33)
+        on left: 2
+        on right: 1
+    STMLIST <stmList> (34)
+        on left: 3 4
+        on right: 2 4
+    STM <stm> (35)
+        on left: 5 6
+        on right: 4
+    EXP <exp> (36)
+        on left: 7 8 9 10 11 12 13 14
+        on right: 5 6 7 8 9 10 12 13
+    ID <idExp> (37)
+        on left: 15
+        on right: 5 14
+
+
+State 0
+
+    0 $accept: • PROG $end
+
+    PUBLIC  shift, and go to state 1
+
+    PROG        go to state 2
+    MAINMETHOD  go to state 3
+
+
+State 1
+
+    2 MAINMETHOD: PUBLIC • INT MAIN '(' ')' '{' STMLIST '}'
+
+    INT  shift, and go to state 4
+
+
+State 2
+
+    0 $accept: PROG • $end
+
+    $end  shift, and go to state 5
+
+
+State 3
+
+    1 PROG: MAINMETHOD •
+
+    $default  reduce using rule 1 (PROG)
+
+
+State 4
+
+    2 MAINMETHOD: PUBLIC INT • MAIN '(' ')' '{' STMLIST '}'
+
+    MAIN  shift, and go to state 6
+
+
+State 5
+
+    0 $accept: PROG $end •
+
+    $default  accept
+
+
+State 6
+
+    2 MAINMETHOD: PUBLIC INT MAIN • '(' ')' '{' STMLIST '}'
+
+    '('  shift, and go to state 7
+
+
+State 7
+
+    2 MAINMETHOD: PUBLIC INT MAIN '(' • ')' '{' STMLIST '}'
+
+    ')'  shift, and go to state 8
+
+
+State 8
+
+    2 MAINMETHOD: PUBLIC INT MAIN '(' ')' • '{' STMLIST '}'
+
+    '{'  shift, and go to state 9
+
+
+State 9
+
+    2 MAINMETHOD: PUBLIC INT MAIN '(' ')' '{' • STMLIST '}'
+
+    RETURN      shift, and go to state 10
+    IDENTIFIER  shift, and go to state 11
+
+    $default  reduce using rule 3 (STMLIST)
+
+    STMLIST  go to state 12
+    STM      go to state 13
+    ID       go to state 14
+
+
+State 10
+
+    6 STM: RETURN • EXP ';'
+
+    NONNEGATIVEINT  shift, and go to state 15
+    IDENTIFIER      shift, and go to state 11
+    '('             shift, and go to state 16
+
+    EXP  go to state 17
+    ID   go to state 18
+
+
+State 11
+
+   15 ID: IDENTIFIER •
+
+    $default  reduce using rule 15 (ID)
+
+
+State 12
+
+    2 MAINMETHOD: PUBLIC INT MAIN '(' ')' '{' STMLIST • '}'
+
+    '}'  shift, and go to state 19
+
+
+State 13
+
+    4 STMLIST: STM • STMLIST
+
+    RETURN      shift, and go to state 10
+    IDENTIFIER  shift, and go to state 11
+
+    $default  reduce using rule 3 (STMLIST)
+
+    STMLIST  go to state 20
+    STM      go to state 13
+    ID       go to state 14
+
+
+State 14
+
+    5 STM: ID • '=' EXP ';'
+
+    '='  shift, and go to state 21
+
+
+State 15
+
+   11 EXP: NONNEGATIVEINT •
+
+    $default  reduce using rule 11 (EXP)
+
+
+State 16
+
+    7 EXP: '(' • EXP ADD EXP ')'
+    8    | '(' • EXP MINUS EXP ')'
+    9    | '(' • EXP TIMES EXP ')'
+   10    | '(' • EXP DIVIDE EXP ')'
+   12    | '(' • MINUS EXP ')'
+   13    | '(' • EXP ')'
+
+    NONNEGATIVEINT  shift, and go to state 15
+    IDENTIFIER      shift, and go to state 11
+    '('             shift, and go to state 16
+    MINUS           shift, and go to state 22
+
+    EXP  go to state 23
+    ID   go to state 18
+
+
+State 17
+
+    6 STM: RETURN EXP • ';'
+
+    ';'  shift, and go to state 24
+
+
+State 18
+
+   14 EXP: ID •
+
+    $default  reduce using rule 14 (EXP)
+
+
+State 19
+
+    2 MAINMETHOD: PUBLIC INT MAIN '(' ')' '{' STMLIST '}' •
+
+    $default  reduce using rule 2 (MAINMETHOD)
+
+
+State 20
+
+    4 STMLIST: STM STMLIST •
+
+    $default  reduce using rule 4 (STMLIST)
+
+
+State 21
+
+    5 STM: ID '=' • EXP ';'
+
+    NONNEGATIVEINT  shift, and go to state 15
+    IDENTIFIER      shift, and go to state 11
+    '('             shift, and go to state 16
+
+    EXP  go to state 25
+    ID   go to state 18
+
+
+State 22
+
+   12 EXP: '(' MINUS • EXP ')'
+
+    NONNEGATIVEINT  shift, and go to state 15
+    IDENTIFIER      shift, and go to state 11
+    '('             shift, and go to state 16
+
+    EXP  go to state 26
+    ID   go to state 18
+
+
+State 23
+
+    7 EXP: '(' EXP • ADD EXP ')'
+    8    | '(' EXP • MINUS EXP ')'
+    9    | '(' EXP • TIMES EXP ')'
+   10    | '(' EXP • DIVIDE EXP ')'
+   13    | '(' EXP • ')'
+
+    ')'     shift, and go to state 27
+    ADD     shift, and go to state 28
+    MINUS   shift, and go to state 29
+    TIMES   shift, and go to state 30
+    DIVIDE  shift, and go to state 31
+
+
+State 24
+
+    6 STM: RETURN EXP ';' •
+
+    $default  reduce using rule 6 (STM)
+
+
+State 25
+
+    5 STM: ID '=' EXP • ';'
+
+    ';'  shift, and go to state 32
+
+
+State 26
+
+   12 EXP: '(' MINUS EXP • ')'
+
+    ')'  shift, and go to state 33
+
+
+State 27
+
+   13 EXP: '(' EXP ')' •
+
+    $default  reduce using rule 13 (EXP)
+
+
+State 28
+
+    7 EXP: '(' EXP ADD • EXP ')'
+
+    NONNEGATIVEINT  shift, and go to state 15
+    IDENTIFIER      shift, and go to state 11
+    '('             shift, and go to state 16
+
+    EXP  go to state 34
+    ID   go to state 18
+
+
+State 29
+
+    8 EXP: '(' EXP MINUS • EXP ')'
+
+    NONNEGATIVEINT  shift, and go to state 15
+    IDENTIFIER      shift, and go to state 11
+    '('             shift, and go to state 16
+
+    EXP  go to state 35
+    ID   go to state 18
+
+
+State 30
+
+    9 EXP: '(' EXP TIMES • EXP ')'
+
+    NONNEGATIVEINT  shift, and go to state 15
+    IDENTIFIER      shift, and go to state 11
+    '('             shift, and go to state 16
+
+    EXP  go to state 36
+    ID   go to state 18
+
+
+State 31
+
+   10 EXP: '(' EXP DIVIDE • EXP ')'
+
+    NONNEGATIVEINT  shift, and go to state 15
+    IDENTIFIER      shift, and go to state 11
+    '('             shift, and go to state 16
+
+    EXP  go to state 37
+    ID   go to state 18
+
+
+State 32
+
+    5 STM: ID '=' EXP ';' •
+
+    $default  reduce using rule 5 (STM)
+
+
+State 33
+
+   12 EXP: '(' MINUS EXP ')' •
+
+    $default  reduce using rule 12 (EXP)
+
+
+State 34
+
+    7 EXP: '(' EXP ADD EXP • ')'
+
+    ')'  shift, and go to state 38
+
+
+State 35
+
+    8 EXP: '(' EXP MINUS EXP • ')'
+
+    ')'  shift, and go to state 39
+
+
+State 36
+
+    9 EXP: '(' EXP TIMES EXP • ')'
+
+    ')'  shift, and go to state 40
+
+
+State 37
+
+   10 EXP: '(' EXP DIVIDE EXP • ')'
+
+    ')'  shift, and go to state 41
+
+
+State 38
+
+    7 EXP: '(' EXP ADD EXP ')' •
+
+    $default  reduce using rule 7 (EXP)
+
+
+State 39
+
+    8 EXP: '(' EXP MINUS EXP ')' •
+
+    $default  reduce using rule 8 (EXP)
+
+
+State 40
+
+    9 EXP: '(' EXP TIMES EXP ')' •
+
+    $default  reduce using rule 9 (EXP)
+
+
+State 41
+
+   10 EXP: '(' EXP DIVIDE EXP ')' •
+
+    $default  reduce using rule 10 (EXP)
