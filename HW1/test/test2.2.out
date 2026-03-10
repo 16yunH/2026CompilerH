@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program>
+    <MainMethod>
+        <StmList>
+            <Assign>
+                <IdExp id="x"/>
+                <IntExp val="1"/>
+            </Assign>
+            <Assign>
+                <IdExp id="y"/>
+                <IntExp val="2"/>
+            </Assign>
+            <Assign>
+                <IdExp id="z"/>
+                <BinaryOp>
+                    <IdExp id="x"/>
+                    <OpExp op="+"/>
+                    <IdExp id="y"/>
+                </BinaryOp>
+            </Assign>
+            <Return>
+                <BinaryOp>
+                    <IdExp id="x"/>
+                    <OpExp op="*"/>
+                    <IdExp id="y"/>
+                </BinaryOp>
+            </Return>
+        </StmList>
+    </MainMethod>
+</Program>
