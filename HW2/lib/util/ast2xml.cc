@@ -58,12 +58,16 @@ static void set_position_and_semant(XMLElement *el, const Pos *pos, AST* node) {
       el->SetAttribute("lvalue", semant->is_lvalue() ? "true" : "false");
       switch (tk) {
         case TypeKind::CLASS:
-          el->SetAttribute("cid", get<string>(semant->get_type_par()).c_str());
+          if (holds_alternative<string>(semant->get_type_par())) {
+            el->SetAttribute("cid", get<string>(semant->get_type_par()).c_str());
+          }
           break;
         case TypeKind::INT:
           break;
         case TypeKind::ARRAY:
-          el->SetAttribute("arity", to_string(get<int>(semant->get_type_par())).c_str());
+          if (holds_alternative<int>(semant->get_type_par())) {
+            el->SetAttribute("arity", to_string(get<int>(semant->get_type_par())).c_str());
+          }
           break;
         default:
           cerr << "Error: Unknown type kind" << endl;

@@ -363,32 +363,19 @@ VarDecl* create_varDecl(XMLElement* element) {
         cerr << "Error: VarDecl: Type or Id can't be null" << endl;
         return nullptr;
     }
+    // In FDMJ2026, only array initialization is allowed
+    // Don't check type here - just look for IntInitList if it exists
     XMLElement *ce1 = element->FirstChildElement();
-    switch (type->typeKind) {
-        case TypeKind::INT: //look for int init
-            while (ce1) {
-                if (string(ce1->Name()) == "IntInit") {
-                    IntExp *ii = create_leafnode<IntExp>(ce1, "IntInit", "val", ATTR_TYPE::INT);
-                    init = ii;
-                }
-                ce1 = ce1->NextSiblingElement();
-            }
-            break;
-        case TypeKind::ARRAY: { //look for array init  
-                vector <IntExp*> *init_array = nullptr;
-                while (ce1) {
-                    if (string(ce1->Name()) == "IntInitList") {
-                        init_array = create_list<IntExp>(ce1, "IntExp");
-                        if (init_array == nullptr) init_array = new vector<IntExp*>();
-                        //else init = init_array;
-                    }
-                    ce1 = ce1->NextSiblingElement();
-            }
-            init = init_array;
-            }
-            break;
-        default:
-            break;
+    vector <IntExp*> *init_array = nullptr;
+    while (ce1) {
+        if (string(ce1->Name()) == "IntInitList") {
+            init_array = create_list<IntExp>(ce1, "IntExp");
+            if (init_array == nullptr) init_array = new vector<IntExp*>();
+        }
+        ce1 = ce1->NextSiblingElement();
+    }
+    if (init_array != nullptr) {
+        init = init_array;
     }
     return new VarDecl(get_position(element), type, id, init);
 }

@@ -1,0 +1,41 @@
+public int main() {
+    int[] a = {1,2,3};
+    class TestClass b;
+
+    b.a = new int[10];
+    
+    return a[1000000];
+}
+
+public class TestClass {
+    int[] a;
+
+    public int[] test(class TestClass a) {
+        int[] a; // or int a;
+	return a;
+    }
+
+    public class TestClass test1(class TestClass a) {
+        int[] a; // or int a;
+        a[0] = a[1];
+        if (a) {} else {}
+	return a;
+    }
+}
+
+/*
+--Making Name Maps...
+Classes: TestClass ; __$main__ ; 
+Class Hiearchy: 
+Methods: TestClass->test ; TestClass->test1 ; __$main__->main ; 
+Class Variables: TestClass->a with type=IntArray ; 
+Method Variables: TestClass->test->a with type=IntArray ; TestClass->test1->a with type=IntArray ; __$main__->main->a with type=IntArray ; __$main__->main->b with type=Class ; 
+Method Formals: TestClass->test->_^return^_test with type=IntArray ; TestClass->test->a with type=Class ; TestClass->test1->_^return^_test1 with type=Class ; TestClass->test1->a with type=Class ; __$main__->main->_^return^_main with type=Int ; 
+--Analyzing Semantics...
+Start Semantic Analysis
+Error: at position Position(sline: 21, scolumn: 9, eline: 21, ecolumn: 25)
+Error: If condition must be of integer type
+Error: at position Position(sline: 22, scolumn: 2, eline: 22, ecolumn: 10)
+Error: Return node has a different type between return and method
+Semantic Analysis failed due to errors
+*/

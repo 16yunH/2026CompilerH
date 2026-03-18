@@ -1,0 +1,28 @@
+public int main() {
+  int a;
+  int[] b;
+  
+  a = 0;
+  b = new int[100];
+
+  while (a<length(b)) {
+     b[a] = a*a;
+  }
+
+  if (length(b)>99) putint(b[99]);
+  putch(10);
+  return 1;
+}
+/*
+--Making Name Maps...
+Classes: __$main__ ; 
+Class Hiearchy: 
+Methods: __$main__->main ; 
+Class Variables: 
+Method Variables: __$main__->main->a with type=Int ; __$main__->main->b with type=IntArray ; 
+Method Formals: __$main__->main->_^return^_main with type=Int ; 
+--Analyzing Semantics...
+Start Semantic Analysis
+Semantic Analysis Done
+*/
+

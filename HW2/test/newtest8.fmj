@@ -1,0 +1,28 @@
+public int main() { }
+
+public class TestClass {
+    public class TestClass1 test1() {}
+}
+
+public class TestClass1 extends TestClass {
+    public class TestClass1 test1() {
+	return this;
+    }
+}
+
+public class TestClass2 extends TestClass1 { }
+
+/*
+--Making Name Maps...
+Classes: TestClass ; TestClass1 ; TestClass2 ; __$main__ ; 
+Class Hiearchy: TestClass1->TestClass ; TestClass2->TestClass1 ; 
+Methods: TestClass->test1 ; TestClass1->test1 ; __$main__->main ; 
+Class Variables: 
+Method Variables: 
+Method Formals: TestClass->test1->_^return^_test1 with type=Class ; TestClass1->test1->_^return^_test1 with type=Class ; __$main__->main->_^return^_main with type=Int ; 
+--Analyzing Semantics...
+Start Semantic Analysis
+Error: at position Position(sline: 13, scolumn: 1, eline: 13, ecolumn: 46)
+Error: Class TestClass2 extends TestClass1 which already extends TestClass. FDMJ2026 only allows single-level inheritance.
+Semantic Analysis failed due to errors
+*/

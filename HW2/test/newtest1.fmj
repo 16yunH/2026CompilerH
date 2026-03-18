@@ -1,0 +1,41 @@
+public int main() {
+    class TestClass a;
+    //int b = {1,2,3};
+
+    a = new int[10];
+    
+    return a[1];
+}
+
+public class TestClass {
+    int a;
+    int[] b;
+    class A c;
+
+    public class TestClass test1(class TestClass a) {
+        int[] a; // or int a;
+        //a = a[1].b;
+        //a = a.b;
+    }
+}
+
+/*
+--Making Name Maps...
+Classes: TestClass ; __$main__ ; 
+Class Hiearchy: 
+Methods: TestClass->test1 ; __$main__->main ; 
+Class Variables: TestClass->a with type=Int ; TestClass->b with type=IntArray ; TestClass->c with type=Class ; 
+Method Variables: TestClass->test1->a with type=IntArray ; __$main__->main->a with type=Class ; 
+Method Formals: TestClass->test1->_^return^_test1 with type=Class ; TestClass->test1->a with type=Class ; __$main__->main->_^return^_main with type=Int ; 
+--Analyzing Semantics...
+Start Semantic Analysis
+Error: at position Position(sline: 5, scolumn: 5, eline: 5, ecolumn: 20)
+Error: Assign node has a different type between left and right
+Error: at position Position(sline: 7, scolumn: 12, eline: 7, ecolumn: 15)
+Error: ArrayExp node has a non-array value expression
+Error: at position Position(sline: 7, scolumn: 5, eline: 7, ecolumn: 16)
+Error: Return node has no semantic information for its expression
+Error: at position Position(sline: 13, scolumn: 5, eline: 13, ecolumn: 14)
+Error: Variable c has undefined class type A
+Semantic Analysis failed due to errors
+*/
