@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program>
+    <FunctionDeclaration name="__$main__^main" return_type="INT" last_temp="101" last_label="99">
+        <Sequence>
+            <Move>
+                <Temp type="INT" temp="100"/>
+                <Const value="1"/>
+            </Move>
+            <ExpressionStatement>
+                <ExtCall extfun="putint">
+                    <Arguments>
+                        <Temp type="INT" temp="100"/>
+                    </Arguments>
+                </ExtCall>
+            </ExpressionStatement>
+            <ExpressionStatement>
+                <ExtCall extfun="putch">
+                    <Arguments>
+                        <Const value="10"/>
+                    </Arguments>
+                </ExtCall>
+            </ExpressionStatement>
+            <Return>
+                <Temp type="INT" temp="100"/>
+            </Return>
+        </Sequence>
+    </FunctionDeclaration>
+</Program>
