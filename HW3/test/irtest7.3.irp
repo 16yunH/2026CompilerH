@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program>
+    <FunctionDeclaration name="__$main__^main" return_type="INT" last_temp="103" last_label="107">
+        <Sequence>
+            <Move>
+                <Temp type="INT" temp="100"/>
+                <Const value="1"/>
+            </Move>
+            <Move>
+                <Temp type="INT" temp="101"/>
+                <Const value="2"/>
+            </Move>
+            <Return>
+                <BinOp type="INT" op="+">
+                    <ExtCall extfun="getint">
+                        <Arguments/>
+                    </ExtCall>
+                    <ESeq>
+                        <Sequence>
+                            <Move>
+                                <Temp type="INT" temp="103"/>
+                                <Const value="0"/>
+                            </Move>
+                            <Sequence>
+                                <CJump relop="&gt;" true="105" false="104">
+                                    <Temp type="INT" temp="100"/>
+                                    <Const value="1"/>
+                                </CJump>
+                                <Label label="104"/>
+                                <CJump relop="&lt;" true="105" false="106">
+                                    <Temp type="INT" temp="101"/>
+                                    <Const value="2"/>
+                                </CJump>
+                            </Sequence>
+                            <Label label="105"/>
+                            <Move>
+                                <Temp type="INT" temp="103"/>
+                                <Const value="1"/>
+                            </Move>
+                            <Label label="106"/>
+                        </Sequence>
+                        <Temp type="INT" temp="103"/>
+                    </ESeq>
+                </BinOp>
+            </Return>
+        </Sequence>
+    </FunctionDeclaration>
+</Program>

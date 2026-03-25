@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program>
+    <FunctionDeclaration name="__$main__^main" return_type="INT" last_temp="103" last_label="109">
+        <Sequence>
+            <Move>
+                <Temp type="INT" temp="100"/>
+                <Const value="1"/>
+            </Move>
+            <Move>
+                <Temp type="INT" temp="101"/>
+                <Const value="2"/>
+            </Move>
+            <Sequence>
+                <CJump relop="!=" true="107" false="108">
+                    <Temp type="INT" temp="100"/>
+                    <Const value="0"/>
+                </CJump>
+                <Label label="107"/>
+                <Sequence>
+                    <ExpressionStatement>
+                        <ExtCall extfun="putint">
+                            <Arguments>
+                                <BinOp type="INT" op="+">
+                                    <ESeq>
+                                        <Sequence>
+                                            <Move>
+                                                <Temp type="INT" temp="103"/>
+                                                <Const value="0"/>
+                                            </Move>
+                                            <CJump relop="&lt;" true="104" false="105">
+                                                <Temp type="INT" temp="100"/>
+                                                <Temp type="INT" temp="101"/>
+                                            </CJump>
+                                            <Label label="104"/>
+                                            <Move>
+                                                <Temp type="INT" temp="103"/>
+                                                <Const value="1"/>
+                                            </Move>
+                                            <Label label="105"/>
+                                        </Sequence>
+                                        <Temp type="INT" temp="103"/>
+                                    </ESeq>
+                                    <Temp type="INT" temp="100"/>
+                                </BinOp>
+                            </Arguments>
+                        </ExtCall>
+                    </ExpressionStatement>
+                </Sequence>
+                <Jump label="109"/>
+                <Label label="108"/>
+                <ExpressionStatement>
+                    <ExtCall extfun="putint">
+                        <Arguments>
+                            <Temp type="INT" temp="100"/>
+                        </Arguments>
+                    </ExtCall>
+                </ExpressionStatement>
+                <Label label="109"/>
+            </Sequence>
+        </Sequence>
+    </FunctionDeclaration>
+</Program>
