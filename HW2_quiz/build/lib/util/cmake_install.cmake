@@ -1,4 +1,4 @@
-# Install script for directory: /home/yunhong16/CompilerH/HW2/lib/util
+# Install script for directory: /home/yunhong16/CompilerH/HW2_quiz/lib/util
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

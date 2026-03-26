@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -51,7 +51,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -60,7 +60,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/yunhong16/CompilerH/HW2/CMakeLists.txt
+# /home/yunhong16/CompilerH/HW2_quiz/CMakeLists.txt
 # =============================================================================
 
 
@@ -68,7 +68,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build lib/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/lib && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/lib && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -80,7 +80,7 @@ build lib/rebuild_cache: phony lib/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build lib/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/lib && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/lib && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -89,7 +89,7 @@ build lib/edit_cache: phony lib/CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/yunhong16/CompilerH/HW2/lib/CMakeLists.txt
+# /home/yunhong16/CompilerH/HW2_quiz/lib/CMakeLists.txt
 # =============================================================================
 
 
@@ -97,7 +97,7 @@ build lib/edit_cache: phony lib/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build lib/ast/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/lib/ast && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/lib/ast && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -109,7 +109,7 @@ build lib/ast/rebuild_cache: phony lib/ast/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build lib/ast/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/lib/ast && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/lib/ast && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -162,7 +162,7 @@ build lib/ast/ast: phony lib/ast/CMakeFiles/ast.dir/FDMJAST.cc.o lib/ast/CMakeFi
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/yunhong16/CompilerH/HW2/lib/CMakeLists.txt
+# /home/yunhong16/CompilerH/HW2_quiz/lib/CMakeLists.txt
 # =============================================================================
 
 
@@ -170,7 +170,7 @@ build lib/ast/ast: phony lib/ast/CMakeFiles/ast.dir/FDMJAST.cc.o lib/ast/CMakeFi
 # Utility command for rebuild_cache
 
 build lib/util/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/lib/util && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/lib/util && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -182,7 +182,7 @@ build lib/util/rebuild_cache: phony lib/util/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build lib/util/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/lib/util && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/lib/util && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -221,7 +221,7 @@ build lib/util/util: phony lib/util/CMakeFiles/util.dir/ast2xml.cc.o lib/util/CM
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/yunhong16/CompilerH/HW2/CMakeLists.txt
+# /home/yunhong16/CompilerH/HW2_quiz/CMakeLists.txt
 # =============================================================================
 
 
@@ -229,7 +229,7 @@ build lib/util/util: phony lib/util/CMakeFiles/util.dir/ast2xml.cc.o lib/util/CM
 # Utility command for rebuild_cache
 
 build tools/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/tools && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/tools && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -241,7 +241,7 @@ build tools/rebuild_cache: phony tools/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build tools/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/tools && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/tools && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -250,7 +250,7 @@ build tools/edit_cache: phony tools/CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/yunhong16/CompilerH/HW2/tools/CMakeLists.txt
+# /home/yunhong16/CompilerH/HW2_quiz/tools/CMakeLists.txt
 # =============================================================================
 
 
@@ -258,7 +258,7 @@ build tools/edit_cache: phony tools/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build tools/main/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/tools/main && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/tools/main && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -270,7 +270,7 @@ build tools/main/rebuild_cache: phony tools/main/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build tools/main/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/tools/main && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/tools/main && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -311,7 +311,7 @@ build tools/main/main: CXX_EXECUTABLE_LINKER__main_Release lib/ast/CMakeFiles/as
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/yunhong16/CompilerH/HW2/CMakeLists.txt
+# /home/yunhong16/CompilerH/HW2_quiz/CMakeLists.txt
 # =============================================================================
 
 
@@ -319,7 +319,7 @@ build tools/main/main: CXX_EXECUTABLE_LINKER__main_Release lib/ast/CMakeFiles/as
 # Utility command for rebuild_cache
 
 build vendor/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/vendor && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/vendor && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -331,7 +331,7 @@ build vendor/rebuild_cache: phony vendor/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build vendor/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/vendor && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/vendor && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -340,7 +340,7 @@ build vendor/edit_cache: phony vendor/CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/yunhong16/CompilerH/HW2/vendor/CMakeLists.txt
+# /home/yunhong16/CompilerH/HW2_quiz/vendor/CMakeLists.txt
 # =============================================================================
 
 
@@ -348,7 +348,7 @@ build vendor/edit_cache: phony vendor/CMakeFiles/edit_cache.util
 # Utility command for edit_cache
 
 build vendor/tinyxml2/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/vendor/tinyxml2 && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/vendor/tinyxml2 && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake-gui -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -360,7 +360,7 @@ build vendor/tinyxml2/edit_cache: phony vendor/tinyxml2/CMakeFiles/edit_cache.ut
 # Utility command for rebuild_cache
 
 build vendor/tinyxml2/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/yunhong16/CompilerH/HW2/build/vendor/tinyxml2 && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2 -B/home/yunhong16/CompilerH/HW2/build
+  COMMAND = cd /home/yunhong16/CompilerH/HW2_quiz/build/vendor/tinyxml2 && /home/yunhong16/download/cmake-3.20.0-linux-x86_64/bin/cmake --regenerate-during-build -S/home/yunhong16/CompilerH/HW2_quiz -B/home/yunhong16/CompilerH/HW2_quiz/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -407,56 +407,56 @@ build vendor_xml: phony vendor/tinyxml2/vendor_xml
 # =============================================================================
 
 #############################################
-# Folder: /home/yunhong16/CompilerH/HW2/build
+# Folder: /home/yunhong16/CompilerH/HW2_quiz/build
 
 build all: phony lib/all tools/all vendor/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/yunhong16/CompilerH/HW2/build/lib
+# Folder: /home/yunhong16/CompilerH/HW2_quiz/build/lib
 
 build lib/all: phony lib/ast/all lib/util/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/yunhong16/CompilerH/HW2/build/lib/ast
+# Folder: /home/yunhong16/CompilerH/HW2_quiz/build/lib/ast
 
 build lib/ast/all: phony lib/ast/ast
 
 # =============================================================================
 
 #############################################
-# Folder: /home/yunhong16/CompilerH/HW2/build/lib/util
+# Folder: /home/yunhong16/CompilerH/HW2_quiz/build/lib/util
 
 build lib/util/all: phony lib/util/util
 
 # =============================================================================
 
 #############################################
-# Folder: /home/yunhong16/CompilerH/HW2/build/tools
+# Folder: /home/yunhong16/CompilerH/HW2_quiz/build/tools
 
 build tools/all: phony tools/main/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/yunhong16/CompilerH/HW2/build/tools/main
+# Folder: /home/yunhong16/CompilerH/HW2_quiz/build/tools/main
 
 build tools/main/all: phony tools/main/main
 
 # =============================================================================
 
 #############################################
-# Folder: /home/yunhong16/CompilerH/HW2/build/vendor
+# Folder: /home/yunhong16/CompilerH/HW2_quiz/build/vendor
 
 build vendor/all: phony vendor/tinyxml2/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/yunhong16/CompilerH/HW2/build/vendor/tinyxml2
+# Folder: /home/yunhong16/CompilerH/HW2_quiz/build/vendor/tinyxml2
 
 build vendor/tinyxml2/all: phony vendor/tinyxml2/vendor_xml
 

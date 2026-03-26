@@ -8,3 +8,13 @@
 3	1577	1773848535721366113	vendor/tinyxml2/CMakeFiles/vendor_xml.dir/tinyxml2.cc.o	ec587a989c748ef2
 2	1642	1773848535783480211	lib/util/CMakeFiles/util.dir/xml2ast.cc.o	d7900af2ea6567c7
 753	912	1773849238084808965	tools/main/main	4de428177ede3bbc
+0	23	1774485820893958544	build.ninja	9d1df5c9c931cd5b
+2	962	1774485821863958195	tools/main/CMakeFiles/main.dir/main.cc.o	6dbbeb50673af204
+0	1455	1774485822363958014	lib/ast/CMakeFiles/ast.dir/FDMJAST.cc.o	6ec0e7092cdc01cb
+1	1664	1774485822563957943	lib/ast/CMakeFiles/ast.dir/setnamemaps.cc.o	b08cc7f3af2330a5
+2	2014	1774485822913957816	lib/util/CMakeFiles/util.dir/ast2xml.cc.o	5801b5da3da3379a
+3	2800	1774485823703957530	vendor/tinyxml2/CMakeFiles/vendor_xml.dir/tinyxml2.cc.o	ec587a989c748ef2
+2	2894	1774485823793957500	lib/util/CMakeFiles/util.dir/xml2ast.cc.o	d7900af2ea6567c7
+1	2899	1774485823803957495	lib/ast/CMakeFiles/ast.dir/semantanlyzer.cc.o	724ba6a659543ea7
+1	3117	1774485824023957414	lib/ast/CMakeFiles/ast.dir/namemaps.cc.o	c0ae223a0c2788e9
+3117	3397	1774485824303957315	tools/main/main	4de428177ede3bbc

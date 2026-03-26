@@ -252,6 +252,7 @@ AST_Semant_Map *semant_analyze(Program *node) {
 void AST_Semant_Visitor::visit(Program *node) {
   if (node == nullptr)
     return;
+  check_immutable_hierarchy_rules(node, name_maps);
   if (node->main != nullptr) {
     node->main->accept(*this);
   }
@@ -508,6 +509,16 @@ void AST_Semant_Visitor::visit(Assign *node) {
   }
   if (!l->is_lvalue()) {
     semant_error(node->getPos(), "Left side of assignment must be an lvalue");
+  }
+  if (writes_class_var_of_immutable_object(semant_map, node)) {
+    ClassVar *lhs_class_var = dynamic_cast<ClassVar *>(node->left);
+    string field_name =
+        (lhs_class_var != nullptr && lhs_class_var->id != nullptr)
+            ? lhs_class_var->id->id
+            : "<unknown>";
+    semant_error(node->getPos(), "Cannot assign to class variable " +
+                                     field_name +
+                                     " of a shallow immutable class object");
   }
   if (!assign_compatible(name_maps, l, r)) {
     semant_error(node->getPos(),
