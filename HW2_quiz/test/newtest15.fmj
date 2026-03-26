@@ -1,0 +1,30 @@
+public int main() {
+    class TestClass x;
+    //class TestClass2 x;
+
+    //x.a[1] = 1;
+    x.a = 1;
+}
+
+public class TestClass {
+    int[] a;
+}
+
+public class TestClass2 extends TestClass {
+    int a;
+}
+
+/*
+--Making Name Maps...
+Classes: TestClass ; TestClass2 ; __$main__ ; 
+Class Hiearchy: TestClass2->TestClass ; 
+Methods: __$main__->main ; 
+Class Variables: TestClass->a with type=IntArray ; TestClass2->a with type=Int ; 
+Method Variables: __$main__->main->x with type=Class ; 
+Method Formals: __$main__->main->_^return^_main with type=Int ; 
+--Analyzing Semantics...
+Start Semantic Analysis
+Error: at position Position(sline: 6, scolumn: 5, eline: 6, ecolumn: 12)
+Error: Assign node has a different type between left and right
+Semantic Analysis failed due to errors
+*/

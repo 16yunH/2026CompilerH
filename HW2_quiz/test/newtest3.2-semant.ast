@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program bline="1" bpos="1" eline="18" epos="1">
+    <MainMethod bline="1" bpos="1" eline="8" epos="1">
+        <VarDeclList>
+            <VarDecl bline="2" bpos="5" eline="2" epos="22">
+                <Type typeKind="ARRAY" bline="2" bpos="5" eline="2" epos="9">
+                    <Arity val="0" bline="2" bpos="8" eline="2" epos="8"/>
+                </Type>
+                <IdExp id="a" bline="2" bpos="11" eline="2" epos="11"/>
+                <IntInitList>
+                    <IntExp val="1" bline="2" bpos="16" eline="2" epos="16"/>
+                    <IntExp val="2" bline="2" bpos="18" eline="2" epos="18"/>
+                    <IntExp val="3" bline="2" bpos="20" eline="2" epos="20"/>
+                </IntInitList>
+            </VarDecl>
+            <VarDecl bline="3" bpos="5" eline="3" epos="22">
+                <Type typeKind="CLASS" bline="3" bpos="5" eline="3" epos="19">
+                    <IdExp id="TestClass" bline="3" bpos="11" eline="3" epos="19"/>
+                </Type>
+                <IdExp id="b" bline="3" bpos="21" eline="3" epos="21"/>
+            </VarDecl>
+        </VarDeclList>
+        <StmList>
+            <Assign bline="5" bpos="5" eline="5" epos="22">
+                <ClassVar bline="5" bpos="5" eline="5" epos="7" s_kind="Value" typeKind="IntArray" lvalue="true" arity="0">
+                    <IdExp bline="5" bpos="5" eline="5" epos="5" s_kind="Value" typeKind="Class" lvalue="true" cid="TestClass" id="b"/>
+                    <IdExp id="a" bline="5" bpos="7" eline="5" epos="7" s_kind="Value" typeKind="IntArray" lvalue="true" arity="0"/>
+                </ClassVar>
+                <NewArray bline="5" bpos="11" eline="5" epos="21" s_kind="Value" typeKind="IntArray" lvalue="false" arity="0">
+                    <IntExp bline="5" bpos="19" eline="5" epos="20" s_kind="Value" typeKind="Int" lvalue="false" val="10"/>
+                </NewArray>
+            </Assign>
+            <Return bline="7" bpos="5" eline="7" epos="22" s_kind="Value" typeKind="Int" lvalue="false">
+                <ArrayExp bline="7" bpos="12" eline="7" epos="21" s_kind="Value" typeKind="Int" lvalue="true">
+                    <IdExp bline="7" bpos="12" eline="7" epos="12" s_kind="Value" typeKind="IntArray" lvalue="true" arity="0" id="a"/>
+                    <IntExp bline="7" bpos="14" eline="7" epos="20" s_kind="Value" typeKind="Int" lvalue="false" val="1000000"/>
+                </ArrayExp>
+            </Return>
+        </StmList>
+    </MainMethod>
+    <ClassDeclList>
+        <ClassDecl bline="10" bpos="1" eline="18" epos="1">
+            <IdExp id="TestClass" bline="10" bpos="14" eline="10" epos="22"/>
+            <VarDeclList>
+                <VarDecl bline="11" bpos="5" eline="11" epos="12">
+                    <Type typeKind="ARRAY" bline="11" bpos="5" eline="11" epos="9">
+                        <Arity val="0" bline="11" bpos="8" eline="11" epos="8"/>
+                    </Type>
+                    <IdExp id="a" bline="11" bpos="11" eline="11" epos="11"/>
+                </VarDecl>
+            </VarDeclList>
+            <MethodDeclList>
+                <MethodDecl bline="13" bpos="5" eline="17" epos="5">
+                    <Type typeKind="CLASS" bline="13" bpos="12" eline="13" epos="26">
+                        <IdExp id="TestClass" bline="13" bpos="18" eline="13" epos="26"/>
+                    </Type>
+                    <IdExp id="test1" bline="13" bpos="28" eline="13" epos="32"/>
+                    <FormalList>
+                        <Formal bline="13" bpos="34" eline="13" epos="50">
+                            <Type typeKind="CLASS" bline="13" bpos="34" eline="13" epos="48">
+                                <IdExp id="TestClass" bline="13" bpos="40" eline="13" epos="48"/>
+                            </Type>
+                            <IdExp bline="13" bpos="50" eline="13" epos="50" id="a"/>
+                        </Formal>
+                    </FormalList>
+                    <VarDeclList>
+                        <VarDecl bline="14" bpos="9" eline="14" epos="16">
+                            <Type typeKind="ARRAY" bline="14" bpos="9" eline="14" epos="13">
+                                <Arity val="0" bline="14" bpos="12" eline="14" epos="12"/>
+                            </Type>
+                            <IdExp id="a" bline="14" bpos="15" eline="14" epos="15"/>
+                        </VarDecl>
+                    </VarDeclList>
+                    <StmList/>
+                </MethodDecl>
+            </MethodDeclList>
+        </ClassDecl>
+    </ClassDeclList>
+</Program>

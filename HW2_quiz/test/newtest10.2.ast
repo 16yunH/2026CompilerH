@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program bline="1" bpos="1" eline="15" epos="1">
+    <MainMethod bline="1" bpos="1" eline="15" epos="1">
+        <VarDeclList>
+            <VarDecl bline="2" bpos="3" eline="2" epos="8">
+                <Type typeKind="INT" bline="2" bpos="3" eline="2" epos="5"/>
+                <IdExp id="a" bline="2" bpos="7" eline="2" epos="7"/>
+            </VarDecl>
+            <VarDecl bline="3" bpos="3" eline="3" epos="10">
+                <Type typeKind="ARRAY" bline="3" bpos="3" eline="3" epos="7">
+                    <Arity val="0" bline="3" bpos="6" eline="3" epos="6"/>
+                </Type>
+                <IdExp id="b" bline="3" bpos="9" eline="3" epos="9"/>
+            </VarDecl>
+        </VarDeclList>
+        <StmList>
+            <Assign bline="5" bpos="3" eline="5" epos="8">
+                <IdExp bline="5" bpos="3" eline="5" epos="3" id="a"/>
+                <IntExp bline="5" bpos="7" eline="5" epos="7" val="0"/>
+            </Assign>
+            <Assign bline="6" bpos="3" eline="6" epos="19">
+                <IdExp bline="6" bpos="3" eline="6" epos="3" id="b"/>
+                <NewArray bline="6" bpos="7" eline="6" epos="18">
+                    <IntExp bline="6" bpos="15" eline="6" epos="17" val="100"/>
+                </NewArray>
+            </Assign>
+            <While bline="8" bpos="3" eline="10" epos="3">
+                <BinaryOp bline="8" bpos="10" eline="8" epos="20">
+                    <IdExp bline="8" bpos="10" eline="8" epos="10" id="a"/>
+                    <OpExp op="&lt;" bline="8" bpos="11" eline="8" epos="11"/>
+                    <Length bline="8" bpos="12" eline="8" epos="20">
+                        <IdExp bline="8" bpos="19" eline="8" epos="19" id="b"/>
+                    </Length>
+                </BinaryOp>
+                <Nested bline="8" bpos="23" eline="10" epos="3">
+                    <StmList>
+                        <Assign bline="9" bpos="6" eline="9" epos="16">
+                            <ArrayExp bline="9" bpos="6" eline="9" epos="9">
+                                <IdExp bline="9" bpos="6" eline="9" epos="6" id="b"/>
+                                <IdExp bline="9" bpos="8" eline="9" epos="8" id="a"/>
+                            </ArrayExp>
+                            <BinaryOp bline="9" bpos="13" eline="9" epos="15">
+                                <IdExp bline="9" bpos="13" eline="9" epos="13" id="a"/>
+                                <OpExp op="*" bline="9" bpos="14" eline="9" epos="14"/>
+                                <IdExp bline="9" bpos="15" eline="9" epos="15" id="a"/>
+                            </BinaryOp>
+                        </Assign>
+                    </StmList>
+                </Nested>
+            </While>
+            <If bline="12" bpos="3" eline="12" epos="34">
+                <BinaryOp bline="12" bpos="7" eline="12" epos="18">
+                    <Length bline="12" bpos="7" eline="12" epos="15">
+                        <IdExp bline="12" bpos="14" eline="12" epos="14" id="b"/>
+                    </Length>
+                    <OpExp op="&gt;" bline="12" bpos="16" eline="12" epos="16"/>
+                    <IntExp bline="12" bpos="17" eline="12" epos="18" val="99"/>
+                </BinaryOp>
+                <PutInt bline="12" bpos="21" eline="12" epos="34">
+                    <ArrayExp bline="12" bpos="28" eline="12" epos="32">
+                        <IdExp bline="12" bpos="28" eline="12" epos="28" id="b"/>
+                        <IntExp bline="12" bpos="30" eline="12" epos="31" val="99"/>
+                    </ArrayExp>
+                </PutInt>
+            </If>
+            <PutCh bline="13" bpos="3" eline="13" epos="12">
+                <IntExp bline="13" bpos="9" eline="13" epos="10" val="10"/>
+            </PutCh>
+            <Return bline="14" bpos="3" eline="14" epos="11">
+                <IntExp bline="14" bpos="10" eline="14" epos="10" val="1"/>
+            </Return>
+        </StmList>
+    </MainMethod>
+    <ClassDeclList/>
+</Program>

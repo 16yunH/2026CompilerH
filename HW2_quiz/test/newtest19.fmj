@@ -1,0 +1,43 @@
+public int main() {
+    class TestClass x;
+    class TestClass2 y;
+
+    x=y;
+    x.a[0] = 0;
+    this.a[0] = 1;
+    
+}
+
+public class TestClass {
+    int[] a;
+}
+
+public class TestClass2 extends TestClass {
+    int a;
+    public int m(int a) {
+      int a;
+      a = this.a;
+      this.a = a;
+    }
+}
+
+/*
+--Making Name Maps...
+Classes: TestClass ; TestClass2 ; __$main__ ; 
+Class Hiearchy: TestClass2->TestClass ; 
+Methods: TestClass2->m ; __$main__->main ; 
+Class Variables: TestClass->a with type=IntArray ; TestClass2->a with type=Int ; 
+Method Variables: TestClass2->m->a with type=Int ; __$main__->main->x with type=Class ; __$main__->main->y with type=Class ; 
+Method Formals: TestClass2->m->_^return^_m with type=Int ; TestClass2->m->a with type=Int ; __$main__->main->_^return^_main with type=Int ; 
+--Analyzing Semantics...
+Start Semantic Analysis
+Error: at position Position(sline: 7, scolumn: 5, eline: 7, ecolumn: 8)
+Error: 'this' is not allowed in main method
+Error: at position Position(sline: 7, scolumn: 5, eline: 7, ecolumn: 10)
+Error: ClassVar node has no semantic information for its object
+Error: at position Position(sline: 7, scolumn: 5, eline: 7, ecolumn: 13)
+Error: ArrayExp node has no semantic information for its array expression
+Error: at position Position(sline: 7, scolumn: 5, eline: 7, ecolumn: 18)
+Error: Assign node has no semantic information for its left expression
+Semantic Analysis failed due to errors
+*/

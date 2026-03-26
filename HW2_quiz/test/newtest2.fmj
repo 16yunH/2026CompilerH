@@ -1,0 +1,27 @@
+public int main() {
+    int[] a = {1,2,3};
+    class TestClass a;
+
+    a = new int[10];
+    
+    return a;
+}
+
+public class TestClass {
+    int a;
+    int[] b;
+    class A c;
+
+    public class TestClass test1(class TestClass a) {
+        int[] a; // or int a;
+        //a = a[1].b;
+        //a = a.b;
+    }
+}
+
+/*
+--Making Name Maps...
+Error: at position Position(sline: 3, scolumn: 5, eline: 3, ecolumn: 22)
+Error: Variable a is already declared in method main of class __$main__
+Name mapping failed due to errors. Compilation aborted.
+*/

@@ -1,0 +1,12 @@
+public int main() {
+   int w;
+   int x;
+   int y;
+   int z;
+   x=1;
+   y=2;
+   z=x+y;
+   w=100;
+   w=0;
+   if (1 == 0) {}
+}

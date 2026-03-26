@@ -1,0 +1,26 @@
+public int main() {
+
+   while (1) { break;}
+
+   while (2) { continue; }   
+
+   continue;
+
+   while (1) 
+   if (1>1) break; else continue;
+}
+
+/*
+--Making Name Maps...
+Classes: __$main__ ; 
+Class Hiearchy: 
+Methods: __$main__->main ; 
+Class Variables: 
+Method Variables: 
+Method Formals: __$main__->main->_^return^_main with type=Int ; 
+--Analyzing Semantics...
+Start Semantic Analysis
+Error: Continue node is not in a loop
+Semantic Analysis failed due to errors
+*/
+

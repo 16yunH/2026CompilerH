@@ -1,0 +1,43 @@
+public int main() {
+    int[] a = {1,2,3};
+    class TestClass b;
+
+    b.a = new int[10];
+    
+    return a[1000000];
+}
+
+public class TestClass {
+    int[] a;
+
+    public int[] test0(class TestClass a) {
+        int[] a; 
+	this.a = new int[1];
+	return this.a;
+    }
+
+    public int test1(class TestClass a) {
+        int[] a;
+	this.a = new int[1];
+	return this.a[0];
+    }
+
+    public int[] test2(class TestClass a) {
+        int a; 
+	(new int[1])[0]=a;
+	return this.a;
+    }
+}
+
+/*
+--Making Name Maps...
+Classes: TestClass ; __$main__ ; 
+Class Hiearchy: 
+Methods: TestClass->test0 ; TestClass->test1 ; TestClass->test2 ; __$main__->main ; 
+Class Variables: TestClass->a with type=IntArray ; 
+Method Variables: TestClass->test0->a with type=IntArray ; TestClass->test1->a with type=IntArray ; TestClass->test2->a with type=Int ; __$main__->main->a with type=IntArray ; __$main__->main->b with type=Class ; 
+Method Formals: TestClass->test0->_^return^_test0 with type=IntArray ; TestClass->test0->a with type=Class ; TestClass->test1->_^return^_test1 with type=Int ; TestClass->test1->a with type=Class ; TestClass->test2->_^return^_test2 with type=IntArray ; TestClass->test2->a with type=Class ; __$main__->main->_^return^_main with type=Int ; 
+--Analyzing Semantics...
+Start Semantic Analysis
+Semantic Analysis Done
+*/

@@ -1,0 +1,32 @@
+public int main() {
+    int[] a = {1,2,3};
+    class TestClass b;
+
+    b.a = new int[10];
+    
+    return a[1000000];
+}
+
+public class TestClass {
+    int[] a;
+
+    public class TestClass test1(class TestClass a) {
+        int[] a; // or int a;
+        a[0] = a[1];
+        while (a) {}
+    }
+}
+
+/*
+Classes: TestClass ; __$main__ ; 
+Class Hiearchy: 
+Methods: TestClass->test1 ; __$main__->main ; 
+Class Variables: TestClass->a with type=IntArray ; 
+Method Variables: TestClass->test1->a with type=IntArray ; __$main__->main->a with type=IntArray ; __$main__->main->b with type=Class ; 
+Method Formals: TestClass->test1->_^return^_test1 with type=Class ; TestClass->test1->a with type=Class ; __$main__->main->_^return^_main with type=Int ; 
+--Analyzing Semantics...
+Start Semantic Analysis
+Error: at position Position(sline: 16, scolumn: 9, eline: 16, ecolumn: 20)
+Error: While condition must be of integer type
+Semantic Analysis failed due to errors
+*/

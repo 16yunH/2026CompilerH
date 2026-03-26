@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program bline="1" bpos="1" eline="12" epos="1">
+    <MainMethod bline="1" bpos="1" eline="12" epos="1">
+        <VarDeclList>
+            <VarDecl bline="2" bpos="4" eline="2" epos="9">
+                <Type typeKind="INT" bline="2" bpos="4" eline="2" epos="6"/>
+                <IdExp id="w" bline="2" bpos="8" eline="2" epos="8"/>
+            </VarDecl>
+            <VarDecl bline="3" bpos="4" eline="3" epos="9">
+                <Type typeKind="INT" bline="3" bpos="4" eline="3" epos="6"/>
+                <IdExp id="x" bline="3" bpos="8" eline="3" epos="8"/>
+            </VarDecl>
+            <VarDecl bline="4" bpos="4" eline="4" epos="9">
+                <Type typeKind="INT" bline="4" bpos="4" eline="4" epos="6"/>
+                <IdExp id="y" bline="4" bpos="8" eline="4" epos="8"/>
+            </VarDecl>
+            <VarDecl bline="5" bpos="4" eline="5" epos="9">
+                <Type typeKind="INT" bline="5" bpos="4" eline="5" epos="6"/>
+                <IdExp id="z" bline="5" bpos="8" eline="5" epos="8"/>
+            </VarDecl>
+        </VarDeclList>
+        <StmList>
+            <Assign bline="6" bpos="4" eline="6" epos="7">
+                <IdExp bline="6" bpos="4" eline="6" epos="4" id="x"/>
+                <IntExp bline="6" bpos="6" eline="6" epos="6" val="1"/>
+            </Assign>
+            <Assign bline="7" bpos="4" eline="7" epos="7">
+                <IdExp bline="7" bpos="4" eline="7" epos="4" id="y"/>
+                <IntExp bline="7" bpos="6" eline="7" epos="6" val="2"/>
+            </Assign>
+            <Assign bline="8" bpos="4" eline="8" epos="9">
+                <IdExp bline="8" bpos="4" eline="8" epos="4" id="z"/>
+                <BinaryOp bline="8" bpos="6" eline="8" epos="8">
+                    <IdExp bline="8" bpos="6" eline="8" epos="6" id="x"/>
+                    <OpExp op="+" bline="8" bpos="7" eline="8" epos="7"/>
+                    <IdExp bline="8" bpos="8" eline="8" epos="8" id="y"/>
+                </BinaryOp>
+            </Assign>
+            <Assign bline="9" bpos="4" eline="9" epos="9">
+                <IdExp bline="9" bpos="4" eline="9" epos="4" id="w"/>
+                <IntExp bline="9" bpos="6" eline="9" epos="8" val="100"/>
+            </Assign>
+            <Assign bline="10" bpos="4" eline="10" epos="7">
+                <IdExp bline="10" bpos="4" eline="10" epos="4" id="w"/>
+                <IntExp bline="10" bpos="6" eline="10" epos="6" val="0"/>
+            </Assign>
+            <If bline="11" bpos="4" eline="11" epos="17">
+                <BinaryOp bline="11" bpos="8" eline="11" epos="13">
+                    <IntExp bline="11" bpos="8" eline="11" epos="8" val="1"/>
+                    <OpExp op="==" bline="11" bpos="10" eline="11" epos="11"/>
+                    <IntExp bline="11" bpos="13" eline="11" epos="13" val="0"/>
+                </BinaryOp>
+                <Nested bline="11" bpos="16" eline="11" epos="17">
+                    <StmList/>
+                </Nested>
+            </If>
+        </StmList>
+    </MainMethod>
+    <ClassDeclList/>
+</Program>

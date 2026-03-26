@@ -1,0 +1,63 @@
+public int main() {
+    int[] a = {1,2,3};
+    class TestClass b;
+
+    b.a = new int[10];
+    
+    return a[1000000];
+}
+
+public class TestClass {
+    int[] a;
+
+    public class TestClass test0(class TestClass a) {
+        int[] a; 
+	class TestClass c1;
+	this.a = new int[1];
+	c1 = new TestClass();
+	return this;
+    }
+
+    public class TestClass1 test1() {}
+}
+
+public class TestClass1 extends TestClass {
+    int[] a;
+
+    public class TestClass2 test0(class TestClass a) {
+	return this;
+    }
+}
+
+public class TestClass2 extends TestClass {
+    int[] a;
+
+    public class TestClass1 test0(class TestClass a) {
+    }
+}
+
+public class TestClass3 extends TestClass {
+    int[] a;
+
+    public class TestClass test0(class TestClass a) {
+    }
+
+    public class TestClass2 test1() {}
+}
+
+/*
+--Making Name Maps...
+Classes: TestClass ; TestClass1 ; TestClass2 ; TestClass3 ; __$main__ ; 
+Class Hiearchy: TestClass1->TestClass ; TestClass2->TestClass ; TestClass3->TestClass ; 
+Methods: TestClass->test0 ; TestClass->test1 ; TestClass1->test0 ; TestClass2->test0 ; TestClass3->test0 ; TestClass3->test1 ; __$main__->main ; 
+Class Variables: TestClass->a with type=IntArray ; TestClass1->a with type=IntArray ; TestClass2->a with type=IntArray ; TestClass3->a with type=IntArray ; 
+Method Variables: TestClass->test0->a with type=IntArray ; TestClass->test0->c1 with type=Class ; __$main__->main->a with type=IntArray ; __$main__->main->b with type=Class ; 
+Method Formals: TestClass->test0->_^return^_test0 with type=Class ; TestClass->test0->a with type=Class ; TestClass->test1->_^return^_test1 with type=Class ; TestClass1->test0->_^return^_test0 with type=Class ; TestClass1->test0->a with type=Class ; TestClass2->test0->_^return^_test0 with type=Class ; TestClass2->test0->a with type=Class ; TestClass3->test0->_^return^_test0 with type=Class ; TestClass3->test0->a with type=Class ; TestClass3->test1->_^return^_test1 with type=Class ; __$main__->main->_^return^_main with type=Int ; 
+--Analyzing Semantics...
+Start Semantic Analysis
+Error: at position Position(sline: 28, scolumn: 2, eline: 28, ecolumn: 13)
+Error: Return node has incompatible classes between return and method
+Error: at position Position(sline: 45, scolumn: 5, eline: 45, ecolumn: 38)
+Error: Method test1 has incompatible class for a return type with the same method in class TestClass
+Semantic Analysis failed due to errors
+*/
