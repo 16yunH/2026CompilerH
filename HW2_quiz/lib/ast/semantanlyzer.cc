@@ -168,6 +168,70 @@ void ensure_int_expr(AST_Semant_Map *sm, Exp *e, Pos *err_pos,
 
 } // namespace
 
+constexpr const char *kImmutableSuffix = "_Immutable";
+
+bool is_shallow_immutable_class_name(const string &class_name) {
+  const size_t suffix_len = 10; // "_Immutable"
+  return class_name.length() >= suffix_len &&
+         class_name.substr(class_name.length() - suffix_len) ==
+             kImmutableSuffix;
+}
+
+void check_immutable_hierarchy_rules(Program *node, Name_Maps *nm) {
+  if (node == nullptr || node->cdl == nullptr || nm == nullptr) {
+    return;
+  }
+
+  for (auto cl : *(node->cdl)) {
+    if (cl == nullptr || cl->id == nullptr || cl->eid == nullptr) {
+      continue;
+    }
+
+    const string child = cl->id->id;
+    const string parent = cl->eid->id;
+
+    if (!nm->is_class(parent)) {
+      continue;
+    }
+
+    const bool child_imm = is_shallow_immutable_class_name(child);
+    const bool parent_imm = is_shallow_immutable_class_name(parent);
+    if (child_imm != parent_imm) {
+      if (child_imm) {
+        semant_error(
+            cl->getPos(),
+            "Immutable class " + child + " cannot extend mutable class " +
+                parent +
+                ". Parent of an _Immutable class must also be _Immutable.");
+      } else {
+        semant_error(cl->getPos(),
+                     "Class " + child + " extends immutable class " + parent +
+                         ", so it must also be named with suffix _Immutable.");
+      }
+    }
+  }
+}
+
+bool writes_class_var_of_immutable_object(AST_Semant_Map *sm, Assign *node) {
+  if (sm == nullptr || node == nullptr || node->left == nullptr) {
+    return false;
+  }
+
+  ClassVar *lhs_class_var = dynamic_cast<ClassVar *>(node->left);
+  if (lhs_class_var == nullptr || lhs_class_var->obj == nullptr) {
+    return false;
+  }
+
+  AST_Semant *obj_sem = sm->getSemant(lhs_class_var->obj);
+  if (obj_sem == nullptr || obj_sem->get_type() != TypeKind::CLASS) {
+    return false;
+  }
+
+  const string obj_class = get<string>(obj_sem->get_type_par());
+
+  return is_shallow_immutable_class_name(obj_class);
+}
+
 AST_Semant_Map *semant_analyze(Program *node) {
   std::cerr << "Start Semantic Analysis" << std::endl;
   if (node == nullptr) {
@@ -547,9 +611,9 @@ void AST_Semant_Visitor::visit(Return *node) {
     semant_error(node->getPos(),
                  "Return node has a different type between return and method");
   }
-    semant_map->setSemant(node,
-                          new AST_Semant(AST_Semant::Kind::Value, es->get_type(),
-                                         monostate{}, false));
+  semant_map->setSemant(node,
+                        new AST_Semant(AST_Semant::Kind::Value, es->get_type(),
+                                       monostate{}, false));
 }
 
 void AST_Semant_Visitor::visit(PutInt *node) {
