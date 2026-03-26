@@ -1,0 +1,29 @@
+public int main() {
+    class A_Immutable a;
+    a.b = new int[3];
+    a.o = new TestClass_Immutable();
+}
+
+public class TestClass_Immutable {
+    int a;
+    int[] b;
+
+    public class TestClass_Immutable test1(class TestClass_Immutable a) {
+        int[] a;
+    }
+}
+
+public class A_Immutable extends TestClass_Immutable {
+   int a;
+   class TestClass_Immutable o;
+}
+
+/*
+--Analyzing Semantics...
+Start Semantic Analysis
+Error: at position Position(sline: 3, scolumn: 5, eline: 3, ecolumn: 21)
+Error: Cannot assign to a member of an immutable object of type 'A_Immutable'.
+Error: at position Position(sline: 4, scolumn: 5, eline: 4, ecolumn: 36)
+Error: Cannot assign to a member of an immutable object of type 'A_Immutable'.
+Semantic Analysis failed due to errors
+*/

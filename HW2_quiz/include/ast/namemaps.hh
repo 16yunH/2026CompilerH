@@ -21,6 +21,7 @@ private:
     map<tuple<string, string, string>, Formal*> methodFormal; //map classname+methodname+varname to Formal*
     map<pair<string, string>, vector<string>> methodFormalList; //map classname+methodname to formallist of vars
                         //The last element in the vector is for the return type (pretending to be a Formal)
+    map<string, bool> classImmutability; // Map class name to its immutability status
 public:
 
     bool is_class(string class_name);
@@ -41,6 +42,9 @@ public:
     Formal* get_method_formal(string class_name, string method_name, string var_name);
     bool add_method_formal_list(string class_name, string method_name, vector<string> vl);
     vector<Formal*>* get_method_formal_list(string class_name, string method_name);
+
+    bool set_class_immutable(string class_name, bool immutable);
+    bool is_class_immutable(string class_name);
 
     void print();
     

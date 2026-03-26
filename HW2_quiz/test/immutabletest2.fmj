@@ -1,0 +1,24 @@
+public int main() {
+}
+
+public class TestClass_Immutable {
+    int a;
+    int[] b;
+}
+
+public class A_Immutable extends TestClass_Immutable {
+   int a;
+   class TestClass_Immutable o;
+}
+
+public class B extends TestClass_Immutable {
+    int i;
+}
+
+/*
+--Analyzing Semantics...
+Start Semantic Analysis
+Error: at position Position(sline: 14, scolumn: 1, eline: 16, ecolumn: 1)
+Error: Class B extends immutable class TestClass_Immutable but is not marked as immutable. Immutability is hereditary.
+Semantic Analysis failed due to errors
+*/

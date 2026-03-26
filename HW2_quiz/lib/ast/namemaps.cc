@@ -145,6 +145,27 @@ vector<Formal*>* Name_Maps::get_method_formal_list(string class_name, string met
     return fl;
 }
 
+bool Name_Maps::set_class_immutable(string class_name, bool immutable) {
+    if (!is_class(class_name)) {
+        return false; // Class not found
+    }
+    classImmutability[class_name] = immutable;
+    return true;
+}
+
+bool Name_Maps::is_class_immutable(string class_name) {
+    if (!is_class(class_name)) {
+        return false; // Class not found, or not explicitly marked immutable
+    }
+    // If a class is not in the map, it's implicitly mutable.
+    // If it's in the map, return its stored immutability.
+    auto it = classImmutability.find(class_name);
+    if (it != classImmutability.end()) {
+        return it->second;
+    }
+    return false; // Default to mutable if not explicitly set
+}
+
 void Name_Maps::print() {
     cout << "Classes: ";
     for (auto c : classes) {
