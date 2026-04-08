@@ -1,0 +1,3 @@
+public int main() {
+    new int[1][0]=0;
+}

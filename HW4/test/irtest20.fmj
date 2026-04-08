@@ -1,0 +1,18 @@
+public int main() {
+   class A a; class B b;
+   putint(a.i + a.x + b.i + b.j + b.x);
+   a = b;
+   putint(a.i + a.x + b.i + b.j + b.x);
+}
+
+public class A {
+   int i;
+   int x;
+}
+
+public class B extends A {
+   int j;
+   int x;
+   public int f() { return this.i + this.j + this.x ; }
+}
+

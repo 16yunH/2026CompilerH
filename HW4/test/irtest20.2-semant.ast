@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FDMJAST>
+    <NameMaps>
+        <Class name="A">
+            <Var id="i">
+                <VarDecl bline="9" bpos="4" eline="9" epos="9">
+                    <Type typeKind="INT" bline="9" bpos="4" eline="9" epos="6"/>
+                    <IdExp id="i" bline="9" bpos="8" eline="9" epos="8"/>
+                </VarDecl>
+            </Var>
+            <Var id="x">
+                <VarDecl bline="10" bpos="4" eline="10" epos="9">
+                    <Type typeKind="INT" bline="10" bpos="4" eline="10" epos="6"/>
+                    <IdExp id="x" bline="10" bpos="8" eline="10" epos="8"/>
+                </VarDecl>
+            </Var>
+        </Class>
+        <Class name="B" parent="A">
+            <Var id="j">
+                <VarDecl bline="14" bpos="4" eline="14" epos="9">
+                    <Type typeKind="INT" bline="14" bpos="4" eline="14" epos="6"/>
+                    <IdExp id="j" bline="14" bpos="8" eline="14" epos="8"/>
+                </VarDecl>
+            </Var>
+            <Var id="x">
+                <VarDecl bline="15" bpos="4" eline="15" epos="9">
+                    <Type typeKind="INT" bline="15" bpos="4" eline="15" epos="6"/>
+                    <IdExp id="x" bline="15" bpos="8" eline="15" epos="8"/>
+                </VarDecl>
+            </Var>
+            <Method name="f">
+                <Formal id="_^return^_f">
+                    <Formal bline="16" bpos="4" eline="16" epos="55">
+                        <Type typeKind="INT" bline="16" bpos="11" eline="16" epos="13"/>
+                        <IdExp bline="16" bpos="4" eline="16" epos="55" id="_^return^_f"/>
+                    </Formal>
+                </Formal>
+            </Method>
+        </Class>
+        <Class name="__$main__">
+            <Method name="main">
+                <Formal id="_^return^_main">
+                    <Formal bline="1" bpos="1" eline="6" epos="1">
+                        <Type typeKind="INT" bline="1" bpos="1" eline="6" epos="1"/>
+                        <IdExp bline="1" bpos="1" eline="6" epos="1" id="_^return^_main"/>
+                    </Formal>
+                </Formal>
+                <Var id="a">
+                    <VarDecl bline="2" bpos="4" eline="2" epos="13">
+                        <Type typeKind="CLASS" bline="2" bpos="4" eline="2" epos="10">
+                            <IdExp id="A" bline="2" bpos="10" eline="2" epos="10"/>
+                        </Type>
+                        <IdExp id="a" bline="2" bpos="12" eline="2" epos="12"/>
+                    </VarDecl>
+                </Var>
+                <Var id="b">
+                    <VarDecl bline="2" bpos="15" eline="2" epos="24">
+                        <Type typeKind="CLASS" bline="2" bpos="15" eline="2" epos="21">
+                            <IdExp id="B" bline="2" bpos="21" eline="2" epos="21"/>
+                        </Type>
+                        <IdExp id="b" bline="2" bpos="23" eline="2" epos="23"/>
+                    </VarDecl>
+                </Var>
+            </Method>
+        </Class>
+    </NameMaps>
+    <Program bline="1" bpos="1" eline="17" epos="1">
+        <MainMethod bline="1" bpos="1" eline="6" epos="1">
+            <VarDeclList>
+                <VarDecl bline="2" bpos="4" eline="2" epos="13">
+                    <Type typeKind="CLASS" bline="2" bpos="4" eline="2" epos="10">
+                        <IdExp id="A" bline="2" bpos="10" eline="2" epos="10"/>
+                    </Type>
+                    <IdExp id="a" bline="2" bpos="12" eline="2" epos="12"/>
+                </VarDecl>
+                <VarDecl bline="2" bpos="15" eline="2" epos="24">
+                    <Type typeKind="CLASS" bline="2" bpos="15" eline="2" epos="21">
+                        <IdExp id="B" bline="2" bpos="21" eline="2" epos="21"/>
+                    </Type>
+                    <IdExp id="b" bline="2" bpos="23" eline="2" epos="23"/>
+                </VarDecl>
+            </VarDeclList>
+            <StmList>
+                <PutInt bline="3" bpos="4" eline="3" epos="39">
+                    <BinaryOp bline="3" bpos="11" eline="3" epos="37" s_kind="Value" typeKind="INT" lvalue="false">
+                        <BinaryOp bline="3" bpos="11" eline="3" epos="31" s_kind="Value" typeKind="INT" lvalue="false">
+                            <BinaryOp bline="3" bpos="11" eline="3" epos="25" s_kind="Value" typeKind="INT" lvalue="false">
+                                <BinaryOp bline="3" bpos="11" eline="3" epos="19" s_kind="Value" typeKind="INT" lvalue="false">
+                                    <ClassVar bline="3" bpos="11" eline="3" epos="13" s_kind="Value" typeKind="INT" lvalue="true">
+                                        <IdExp bline="3" bpos="11" eline="3" epos="11" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="A" id="a"/>
+                                        <IdExp id="i" bline="3" bpos="13" eline="3" epos="13" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                    </ClassVar>
+                                    <OpExp op="+" bline="3" bpos="15" eline="3" epos="15"/>
+                                    <ClassVar bline="3" bpos="17" eline="3" epos="19" s_kind="Value" typeKind="INT" lvalue="true">
+                                        <IdExp bline="3" bpos="17" eline="3" epos="17" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="A" id="a"/>
+                                        <IdExp id="x" bline="3" bpos="19" eline="3" epos="19" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                    </ClassVar>
+                                </BinaryOp>
+                                <OpExp op="+" bline="3" bpos="21" eline="3" epos="21"/>
+                                <ClassVar bline="3" bpos="23" eline="3" epos="25" s_kind="Value" typeKind="INT" lvalue="true">
+                                    <IdExp bline="3" bpos="23" eline="3" epos="23" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="B" id="b"/>
+                                    <IdExp id="i" bline="3" bpos="25" eline="3" epos="25" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                </ClassVar>
+                            </BinaryOp>
+                            <OpExp op="+" bline="3" bpos="27" eline="3" epos="27"/>
+                            <ClassVar bline="3" bpos="29" eline="3" epos="31" s_kind="Value" typeKind="INT" lvalue="true">
+                                <IdExp bline="3" bpos="29" eline="3" epos="29" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="B" id="b"/>
+                                <IdExp id="j" bline="3" bpos="31" eline="3" epos="31" s_kind="Value" typeKind="INT" lvalue="true"/>
+                            </ClassVar>
+                        </BinaryOp>
+                        <OpExp op="+" bline="3" bpos="33" eline="3" epos="33"/>
+                        <ClassVar bline="3" bpos="35" eline="3" epos="37" s_kind="Value" typeKind="INT" lvalue="true">
+                            <IdExp bline="3" bpos="35" eline="3" epos="35" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="B" id="b"/>
+                            <IdExp id="x" bline="3" bpos="37" eline="3" epos="37" s_kind="Value" typeKind="INT" lvalue="true"/>
+                        </ClassVar>
+                    </BinaryOp>
+                </PutInt>
+                <Assign bline="4" bpos="4" eline="4" epos="9">
+                    <IdExp bline="4" bpos="4" eline="4" epos="4" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="A" id="a"/>
+                    <IdExp bline="4" bpos="8" eline="4" epos="8" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="B" id="b"/>
+                </Assign>
+                <PutInt bline="5" bpos="4" eline="5" epos="39">
+                    <BinaryOp bline="5" bpos="11" eline="5" epos="37" s_kind="Value" typeKind="INT" lvalue="false">
+                        <BinaryOp bline="5" bpos="11" eline="5" epos="31" s_kind="Value" typeKind="INT" lvalue="false">
+                            <BinaryOp bline="5" bpos="11" eline="5" epos="25" s_kind="Value" typeKind="INT" lvalue="false">
+                                <BinaryOp bline="5" bpos="11" eline="5" epos="19" s_kind="Value" typeKind="INT" lvalue="false">
+                                    <ClassVar bline="5" bpos="11" eline="5" epos="13" s_kind="Value" typeKind="INT" lvalue="true">
+                                        <IdExp bline="5" bpos="11" eline="5" epos="11" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="A" id="a"/>
+                                        <IdExp id="i" bline="5" bpos="13" eline="5" epos="13" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                    </ClassVar>
+                                    <OpExp op="+" bline="5" bpos="15" eline="5" epos="15"/>
+                                    <ClassVar bline="5" bpos="17" eline="5" epos="19" s_kind="Value" typeKind="INT" lvalue="true">
+                                        <IdExp bline="5" bpos="17" eline="5" epos="17" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="A" id="a"/>
+                                        <IdExp id="x" bline="5" bpos="19" eline="5" epos="19" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                    </ClassVar>
+                                </BinaryOp>
+                                <OpExp op="+" bline="5" bpos="21" eline="5" epos="21"/>
+                                <ClassVar bline="5" bpos="23" eline="5" epos="25" s_kind="Value" typeKind="INT" lvalue="true">
+                                    <IdExp bline="5" bpos="23" eline="5" epos="23" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="B" id="b"/>
+                                    <IdExp id="i" bline="5" bpos="25" eline="5" epos="25" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                </ClassVar>
+                            </BinaryOp>
+                            <OpExp op="+" bline="5" bpos="27" eline="5" epos="27"/>
+                            <ClassVar bline="5" bpos="29" eline="5" epos="31" s_kind="Value" typeKind="INT" lvalue="true">
+                                <IdExp bline="5" bpos="29" eline="5" epos="29" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="B" id="b"/>
+                                <IdExp id="j" bline="5" bpos="31" eline="5" epos="31" s_kind="Value" typeKind="INT" lvalue="true"/>
+                            </ClassVar>
+                        </BinaryOp>
+                        <OpExp op="+" bline="5" bpos="33" eline="5" epos="33"/>
+                        <ClassVar bline="5" bpos="35" eline="5" epos="37" s_kind="Value" typeKind="INT" lvalue="true">
+                            <IdExp bline="5" bpos="35" eline="5" epos="35" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="B" id="b"/>
+                            <IdExp id="x" bline="5" bpos="37" eline="5" epos="37" s_kind="Value" typeKind="INT" lvalue="true"/>
+                        </ClassVar>
+                    </BinaryOp>
+                </PutInt>
+            </StmList>
+        </MainMethod>
+        <ClassDeclList>
+            <ClassDecl bline="8" bpos="1" eline="11" epos="1">
+                <IdExp id="A" bline="8" bpos="14" eline="8" epos="14"/>
+                <VarDeclList>
+                    <VarDecl bline="9" bpos="4" eline="9" epos="9">
+                        <Type typeKind="INT" bline="9" bpos="4" eline="9" epos="6"/>
+                        <IdExp id="i" bline="9" bpos="8" eline="9" epos="8"/>
+                    </VarDecl>
+                    <VarDecl bline="10" bpos="4" eline="10" epos="9">
+                        <Type typeKind="INT" bline="10" bpos="4" eline="10" epos="6"/>
+                        <IdExp id="x" bline="10" bpos="8" eline="10" epos="8"/>
+                    </VarDecl>
+                </VarDeclList>
+                <MethodDeclList/>
+            </ClassDecl>
+            <ClassDecl bline="13" bpos="1" eline="17" epos="1">
+                <IdExp id="B" bline="13" bpos="14" eline="13" epos="14"/>
+                <ExtendsId eid="A" bline="13" bpos="24" eline="13" epos="24"/>
+                <VarDeclList>
+                    <VarDecl bline="14" bpos="4" eline="14" epos="9">
+                        <Type typeKind="INT" bline="14" bpos="4" eline="14" epos="6"/>
+                        <IdExp id="j" bline="14" bpos="8" eline="14" epos="8"/>
+                    </VarDecl>
+                    <VarDecl bline="15" bpos="4" eline="15" epos="9">
+                        <Type typeKind="INT" bline="15" bpos="4" eline="15" epos="6"/>
+                        <IdExp id="x" bline="15" bpos="8" eline="15" epos="8"/>
+                    </VarDecl>
+                </VarDeclList>
+                <MethodDeclList>
+                    <MethodDecl bline="16" bpos="4" eline="16" epos="55">
+                        <Type typeKind="INT" bline="16" bpos="11" eline="16" epos="13"/>
+                        <IdExp id="f" bline="16" bpos="15" eline="16" epos="15"/>
+                        <FormalList/>
+                        <VarDeclList/>
+                        <StmList>
+                            <Return bline="16" bpos="21" eline="16" epos="53" s_kind="Value" typeKind="INT" lvalue="false">
+                                <BinaryOp bline="16" bpos="28" eline="16" epos="51" s_kind="Value" typeKind="INT" lvalue="false">
+                                    <BinaryOp bline="16" bpos="28" eline="16" epos="42" s_kind="Value" typeKind="INT" lvalue="false">
+                                        <ClassVar bline="16" bpos="28" eline="16" epos="33" s_kind="Value" typeKind="INT" lvalue="true">
+                                            <This bline="16" bpos="28" eline="16" epos="31" s_kind="Value" typeKind="CLASS" lvalue="false" type_par="B"/>
+                                            <IdExp id="i" bline="16" bpos="33" eline="16" epos="33" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                        </ClassVar>
+                                        <OpExp op="+" bline="16" bpos="35" eline="16" epos="35"/>
+                                        <ClassVar bline="16" bpos="37" eline="16" epos="42" s_kind="Value" typeKind="INT" lvalue="true">
+                                            <This bline="16" bpos="37" eline="16" epos="40" s_kind="Value" typeKind="CLASS" lvalue="false" type_par="B"/>
+                                            <IdExp id="j" bline="16" bpos="42" eline="16" epos="42" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                        </ClassVar>
+                                    </BinaryOp>
+                                    <OpExp op="+" bline="16" bpos="44" eline="16" epos="44"/>
+                                    <ClassVar bline="16" bpos="46" eline="16" epos="51" s_kind="Value" typeKind="INT" lvalue="true">
+                                        <This bline="16" bpos="46" eline="16" epos="49" s_kind="Value" typeKind="CLASS" lvalue="false" type_par="B"/>
+                                        <IdExp id="x" bline="16" bpos="51" eline="16" epos="51" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                    </ClassVar>
+                                </BinaryOp>
+                            </Return>
+                        </StmList>
+                    </MethodDecl>
+                </MethodDeclList>
+            </ClassDecl>
+        </ClassDeclList>
+    </Program>
+</FDMJAST>

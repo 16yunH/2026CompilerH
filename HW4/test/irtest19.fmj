@@ -1,0 +1,28 @@
+public int main() {
+}
+
+public class A {
+   int i;
+   public int f() { }
+}
+
+public class B extends A {
+   int i;
+   int[] a;
+   public int f() { }
+   public int g() { }
+}
+
+public class C {
+   int i;
+   int j;
+   public int[] f() { }
+}
+
+public class D extends C {
+   int[] i;
+   int x;
+   class A a;
+   class C c;
+   public  int[] f() {putint(this.j + this.c.j); return this.i;}
+}

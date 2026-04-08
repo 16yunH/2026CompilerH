@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FDMJAST>
+    <NameMaps>
+        <Class name="__$main__">
+            <Method name="main">
+                <Formal id="_^return^_main">
+                    <Formal bline="1" bpos="1" eline="4" epos="1">
+                        <Type typeKind="INT" bline="1" bpos="1" eline="4" epos="1"/>
+                        <IdExp bline="1" bpos="1" eline="4" epos="1" id="_^return^_main"/>
+                    </Formal>
+                </Formal>
+                <Var id="a">
+                    <VarDecl bline="2" bpos="5" eline="2" epos="12">
+                        <Type typeKind="ARRAY" bline="2" bpos="5" eline="2" epos="9">
+                            <Arity val="0" bline="2" bpos="8" eline="2" epos="8"/>
+                        </Type>
+                        <IdExp id="a" bline="2" bpos="11" eline="2" epos="11"/>
+                    </VarDecl>
+                </Var>
+            </Method>
+        </Class>
+    </NameMaps>
+    <Program bline="1" bpos="1" eline="4" epos="1">
+        <MainMethod bline="1" bpos="1" eline="4" epos="1">
+            <VarDeclList>
+                <VarDecl bline="2" bpos="5" eline="2" epos="12">
+                    <Type typeKind="ARRAY" bline="2" bpos="5" eline="2" epos="9">
+                        <Arity val="0" bline="2" bpos="8" eline="2" epos="8"/>
+                    </Type>
+                    <IdExp id="a" bline="2" bpos="11" eline="2" epos="11"/>
+                </VarDecl>
+            </VarDeclList>
+            <StmList>
+                <Assign bline="3" bpos="5" eline="3" epos="19">
+                    <IdExp bline="3" bpos="5" eline="3" epos="5" s_kind="Value" typeKind="ARRAY" lvalue="true" type_par="0" id="a"/>
+                    <NewArray bline="3" bpos="9" eline="3" epos="18" s_kind="Value" typeKind="ARRAY" lvalue="false" type_par="0">
+                        <IntExp bline="3" bpos="17" eline="3" epos="17" s_kind="Value" typeKind="INT" lvalue="false" val="3"/>
+                    </NewArray>
+                </Assign>
+            </StmList>
+        </MainMethod>
+        <ClassDeclList/>
+    </Program>
+</FDMJAST>

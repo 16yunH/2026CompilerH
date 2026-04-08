@@ -1,0 +1,60 @@
+public int main() {
+  int i;
+  int[] a = {6, 3, 0, 5, 9, 1, 2};
+  class b1 bo;
+
+  i=0;
+  bo = new b1();
+  bo.bubbleSort(a, length(a));
+  while (i < length(a)) {
+    putint(a[i]);
+    putch(32);
+    i = i + 1;
+  }
+  putch(10);
+  return 0;
+}
+
+public class b1 {
+  int temp;
+  public int bubbleSort(int[] array, int size) {
+    int i;
+
+    i = 0;
+
+    if (size <= 1) {
+      return 0;
+    }
+
+    while (i < size - 1) {
+      if (array[i] > array[i + 1]) {
+        this.temp = array[i];
+        array[i] = array[i + 1];
+        array[i + 1] = this.temp;
+      }
+      i = i + 1;
+    }
+
+    return this.bubbleSort(array, size - 1);
+  }
+}
+
+/*
+======Class Table:
+var b1^temp has pos 0
+method bubbleSort has pos 4
+======End of Class Table
+======Method_var_table for class=__$main__ method=main
+var _^return^_main has temp 103, with type INT.
+var a has temp 100, with type PTR.
+var bo has temp 101, with type PTR.
+var i has temp 102, with type INT.
+======End of Method Var Table
+======Method_var_table for class=b1 method=bubbleSort
+var _^return^_bubbleSort has temp 104, with type INT.
+var _^this^_ has temp 101, with type PTR.
+var array has temp 102, with type PTR.
+var i has temp 100, with type INT.
+var size has temp 103, with type INT.
+======End of Method Var Table
+*/

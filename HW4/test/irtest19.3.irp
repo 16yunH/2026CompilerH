@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program>
+    <FunctionDeclaration name="__$main__^main" return_type="INT" last_temp="100" last_label="99"/>
+    <FunctionDeclaration name="A^f" return_type="INT" last_temp="101" last_label="99" arg_temp_0="100"/>
+    <FunctionDeclaration name="B^f" return_type="INT" last_temp="101" last_label="99" arg_temp_0="100"/>
+    <FunctionDeclaration name="B^g" return_type="INT" last_temp="101" last_label="99" arg_temp_0="100"/>
+    <FunctionDeclaration name="C^f" return_type="PTR" last_temp="101" last_label="99" arg_temp_0="100"/>
+    <FunctionDeclaration name="D^f" return_type="PTR" last_temp="101" last_label="99" arg_temp_0="100">
+        <Sequence>
+            <ExpressionStatement>
+                <ExtCall type="INT" extfun="putint">
+                    <Arguments>
+                        <BinOp type="INT" op="+">
+                            <Memory type="INT">
+                                <BinOp type="PTR" op="+">
+                                    <Temp type="PTR" temp="100"/>
+                                    <Const value="16"/>
+                                </BinOp>
+                            </Memory>
+                            <Memory type="INT">
+                                <BinOp type="PTR" op="+">
+                                    <Memory type="PTR">
+                                        <BinOp type="PTR" op="+">
+                                            <Temp type="PTR" temp="100"/>
+                                            <Const value="24"/>
+                                        </BinOp>
+                                    </Memory>
+                                    <Const value="16"/>
+                                </BinOp>
+                            </Memory>
+                        </BinOp>
+                    </Arguments>
+                </ExtCall>
+            </ExpressionStatement>
+            <Return>
+                <Memory type="PTR">
+                    <BinOp type="PTR" op="+">
+                        <Temp type="PTR" temp="100"/>
+                        <Const value="28"/>
+                    </BinOp>
+                </Memory>
+            </Return>
+        </Sequence>
+    </FunctionDeclaration>
+</Program>

@@ -1,0 +1,26 @@
+public int main() {
+   class A a;
+   class B b;
+   a = new A();
+   a.i = 1;
+   b = new B();
+   b.i = 1;
+}
+
+public class A {
+   int i;
+   public int f() {}
+}
+
+public class B {
+   int i;
+   public int f() {}
+}
+
+/*
+======Class Table:
+var A^i has pos 0
+var B^i has pos 4
+method f has pos 8
+======End of Class Table
+*/

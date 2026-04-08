@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FDMJAST>
+    <NameMaps>
+        <Class name="A">
+            <Var id="i">
+                <VarDecl bline="5" bpos="4" eline="5" epos="9">
+                    <Type typeKind="INT" bline="5" bpos="4" eline="5" epos="6"/>
+                    <IdExp id="i" bline="5" bpos="8" eline="5" epos="8"/>
+                </VarDecl>
+            </Var>
+            <Method name="f">
+                <Formal id="_^return^_f">
+                    <Formal bline="6" bpos="4" eline="6" epos="21">
+                        <Type typeKind="INT" bline="6" bpos="11" eline="6" epos="13"/>
+                        <IdExp bline="6" bpos="4" eline="6" epos="21" id="_^return^_f"/>
+                    </Formal>
+                </Formal>
+            </Method>
+        </Class>
+        <Class name="B" parent="A">
+            <Var id="a">
+                <VarDecl bline="11" bpos="4" eline="11" epos="11">
+                    <Type typeKind="ARRAY" bline="11" bpos="4" eline="11" epos="8">
+                        <Arity val="0" bline="11" bpos="7" eline="11" epos="7"/>
+                    </Type>
+                    <IdExp id="a" bline="11" bpos="10" eline="11" epos="10"/>
+                </VarDecl>
+            </Var>
+            <Var id="i">
+                <VarDecl bline="10" bpos="4" eline="10" epos="9">
+                    <Type typeKind="INT" bline="10" bpos="4" eline="10" epos="6"/>
+                    <IdExp id="i" bline="10" bpos="8" eline="10" epos="8"/>
+                </VarDecl>
+            </Var>
+            <Method name="f">
+                <Formal id="_^return^_f">
+                    <Formal bline="12" bpos="4" eline="12" epos="21">
+                        <Type typeKind="INT" bline="12" bpos="11" eline="12" epos="13"/>
+                        <IdExp bline="12" bpos="4" eline="12" epos="21" id="_^return^_f"/>
+                    </Formal>
+                </Formal>
+            </Method>
+            <Method name="g">
+                <Formal id="_^return^_g">
+                    <Formal bline="13" bpos="4" eline="13" epos="21">
+                        <Type typeKind="INT" bline="13" bpos="11" eline="13" epos="13"/>
+                        <IdExp bline="13" bpos="4" eline="13" epos="21" id="_^return^_g"/>
+                    </Formal>
+                </Formal>
+            </Method>
+        </Class>
+        <Class name="C">
+            <Var id="i">
+                <VarDecl bline="17" bpos="4" eline="17" epos="9">
+                    <Type typeKind="INT" bline="17" bpos="4" eline="17" epos="6"/>
+                    <IdExp id="i" bline="17" bpos="8" eline="17" epos="8"/>
+                </VarDecl>
+            </Var>
+            <Var id="j">
+                <VarDecl bline="18" bpos="4" eline="18" epos="9">
+                    <Type typeKind="INT" bline="18" bpos="4" eline="18" epos="6"/>
+                    <IdExp id="j" bline="18" bpos="8" eline="18" epos="8"/>
+                </VarDecl>
+            </Var>
+            <Method name="f">
+                <Formal id="_^return^_f">
+                    <Formal bline="19" bpos="4" eline="19" epos="23">
+                        <Type typeKind="ARRAY" bline="19" bpos="11" eline="19" epos="15">
+                            <Arity val="0" bline="19" bpos="14" eline="19" epos="14"/>
+                        </Type>
+                        <IdExp bline="19" bpos="4" eline="19" epos="23" id="_^return^_f"/>
+                    </Formal>
+                </Formal>
+            </Method>
+        </Class>
+        <Class name="D" parent="C">
+            <Var id="a">
+                <VarDecl bline="25" bpos="4" eline="25" epos="13">
+                    <Type typeKind="CLASS" bline="25" bpos="4" eline="25" epos="10">
+                        <IdExp id="A" bline="25" bpos="10" eline="25" epos="10"/>
+                    </Type>
+                    <IdExp id="a" bline="25" bpos="12" eline="25" epos="12"/>
+                </VarDecl>
+            </Var>
+            <Var id="c">
+                <VarDecl bline="26" bpos="4" eline="26" epos="13">
+                    <Type typeKind="CLASS" bline="26" bpos="4" eline="26" epos="10">
+                        <IdExp id="C" bline="26" bpos="10" eline="26" epos="10"/>
+                    </Type>
+                    <IdExp id="c" bline="26" bpos="12" eline="26" epos="12"/>
+                </VarDecl>
+            </Var>
+            <Var id="i">
+                <VarDecl bline="23" bpos="4" eline="23" epos="11">
+                    <Type typeKind="ARRAY" bline="23" bpos="4" eline="23" epos="8">
+                        <Arity val="0" bline="23" bpos="7" eline="23" epos="7"/>
+                    </Type>
+                    <IdExp id="i" bline="23" bpos="10" eline="23" epos="10"/>
+                </VarDecl>
+            </Var>
+            <Var id="x">
+                <VarDecl bline="24" bpos="4" eline="24" epos="9">
+                    <Type typeKind="INT" bline="24" bpos="4" eline="24" epos="6"/>
+                    <IdExp id="x" bline="24" bpos="8" eline="24" epos="8"/>
+                </VarDecl>
+            </Var>
+            <Method name="f">
+                <Formal id="_^return^_f">
+                    <Formal bline="27" bpos="4" eline="27" epos="64">
+                        <Type typeKind="ARRAY" bline="27" bpos="12" eline="27" epos="16">
+                            <Arity val="0" bline="27" bpos="15" eline="27" epos="15"/>
+                        </Type>
+                        <IdExp bline="27" bpos="4" eline="27" epos="64" id="_^return^_f"/>
+                    </Formal>
+                </Formal>
+            </Method>
+        </Class>
+        <Class name="__$main__">
+            <Method name="main">
+                <Formal id="_^return^_main">
+                    <Formal bline="1" bpos="1" eline="2" epos="1">
+                        <Type typeKind="INT" bline="1" bpos="1" eline="2" epos="1"/>
+                        <IdExp bline="1" bpos="1" eline="2" epos="1" id="_^return^_main"/>
+                    </Formal>
+                </Formal>
+            </Method>
+        </Class>
+    </NameMaps>
+    <Program bline="1" bpos="1" eline="28" epos="1">
+        <MainMethod bline="1" bpos="1" eline="2" epos="1">
+            <VarDeclList/>
+            <StmList/>
+        </MainMethod>
+        <ClassDeclList>
+            <ClassDecl bline="4" bpos="1" eline="7" epos="1">
+                <IdExp id="A" bline="4" bpos="14" eline="4" epos="14"/>
+                <VarDeclList>
+                    <VarDecl bline="5" bpos="4" eline="5" epos="9">
+                        <Type typeKind="INT" bline="5" bpos="4" eline="5" epos="6"/>
+                        <IdExp id="i" bline="5" bpos="8" eline="5" epos="8"/>
+                    </VarDecl>
+                </VarDeclList>
+                <MethodDeclList>
+                    <MethodDecl bline="6" bpos="4" eline="6" epos="21">
+                        <Type typeKind="INT" bline="6" bpos="11" eline="6" epos="13"/>
+                        <IdExp id="f" bline="6" bpos="15" eline="6" epos="15"/>
+                        <FormalList/>
+                        <VarDeclList/>
+                        <StmList/>
+                    </MethodDecl>
+                </MethodDeclList>
+            </ClassDecl>
+            <ClassDecl bline="9" bpos="1" eline="14" epos="1">
+                <IdExp id="B" bline="9" bpos="14" eline="9" epos="14"/>
+                <ExtendsId eid="A" bline="9" bpos="24" eline="9" epos="24"/>
+                <VarDeclList>
+                    <VarDecl bline="10" bpos="4" eline="10" epos="9">
+                        <Type typeKind="INT" bline="10" bpos="4" eline="10" epos="6"/>
+                        <IdExp id="i" bline="10" bpos="8" eline="10" epos="8"/>
+                    </VarDecl>
+                    <VarDecl bline="11" bpos="4" eline="11" epos="11">
+                        <Type typeKind="ARRAY" bline="11" bpos="4" eline="11" epos="8">
+                            <Arity val="0" bline="11" bpos="7" eline="11" epos="7"/>
+                        </Type>
+                        <IdExp id="a" bline="11" bpos="10" eline="11" epos="10"/>
+                    </VarDecl>
+                </VarDeclList>
+                <MethodDeclList>
+                    <MethodDecl bline="12" bpos="4" eline="12" epos="21">
+                        <Type typeKind="INT" bline="12" bpos="11" eline="12" epos="13"/>
+                        <IdExp id="f" bline="12" bpos="15" eline="12" epos="15"/>
+                        <FormalList/>
+                        <VarDeclList/>
+                        <StmList/>
+                    </MethodDecl>
+                    <MethodDecl bline="13" bpos="4" eline="13" epos="21">
+                        <Type typeKind="INT" bline="13" bpos="11" eline="13" epos="13"/>
+                        <IdExp id="g" bline="13" bpos="15" eline="13" epos="15"/>
+                        <FormalList/>
+                        <VarDeclList/>
+                        <StmList/>
+                    </MethodDecl>
+                </MethodDeclList>
+            </ClassDecl>
+            <ClassDecl bline="16" bpos="1" eline="20" epos="1">
+                <IdExp id="C" bline="16" bpos="14" eline="16" epos="14"/>
+                <VarDeclList>
+                    <VarDecl bline="17" bpos="4" eline="17" epos="9">
+                        <Type typeKind="INT" bline="17" bpos="4" eline="17" epos="6"/>
+                        <IdExp id="i" bline="17" bpos="8" eline="17" epos="8"/>
+                    </VarDecl>
+                    <VarDecl bline="18" bpos="4" eline="18" epos="9">
+                        <Type typeKind="INT" bline="18" bpos="4" eline="18" epos="6"/>
+                        <IdExp id="j" bline="18" bpos="8" eline="18" epos="8"/>
+                    </VarDecl>
+                </VarDeclList>
+                <MethodDeclList>
+                    <MethodDecl bline="19" bpos="4" eline="19" epos="23">
+                        <Type typeKind="ARRAY" bline="19" bpos="11" eline="19" epos="15">
+                            <Arity val="0" bline="19" bpos="14" eline="19" epos="14"/>
+                        </Type>
+                        <IdExp id="f" bline="19" bpos="17" eline="19" epos="17"/>
+                        <FormalList/>
+                        <VarDeclList/>
+                        <StmList/>
+                    </MethodDecl>
+                </MethodDeclList>
+            </ClassDecl>
+            <ClassDecl bline="22" bpos="1" eline="28" epos="1">
+                <IdExp id="D" bline="22" bpos="14" eline="22" epos="14"/>
+                <ExtendsId eid="C" bline="22" bpos="24" eline="22" epos="24"/>
+                <VarDeclList>
+                    <VarDecl bline="23" bpos="4" eline="23" epos="11">
+                        <Type typeKind="ARRAY" bline="23" bpos="4" eline="23" epos="8">
+                            <Arity val="0" bline="23" bpos="7" eline="23" epos="7"/>
+                        </Type>
+                        <IdExp id="i" bline="23" bpos="10" eline="23" epos="10"/>
+                    </VarDecl>
+                    <VarDecl bline="24" bpos="4" eline="24" epos="9">
+                        <Type typeKind="INT" bline="24" bpos="4" eline="24" epos="6"/>
+                        <IdExp id="x" bline="24" bpos="8" eline="24" epos="8"/>
+                    </VarDecl>
+                    <VarDecl bline="25" bpos="4" eline="25" epos="13">
+                        <Type typeKind="CLASS" bline="25" bpos="4" eline="25" epos="10">
+                            <IdExp id="A" bline="25" bpos="10" eline="25" epos="10"/>
+                        </Type>
+                        <IdExp id="a" bline="25" bpos="12" eline="25" epos="12"/>
+                    </VarDecl>
+                    <VarDecl bline="26" bpos="4" eline="26" epos="13">
+                        <Type typeKind="CLASS" bline="26" bpos="4" eline="26" epos="10">
+                            <IdExp id="C" bline="26" bpos="10" eline="26" epos="10"/>
+                        </Type>
+                        <IdExp id="c" bline="26" bpos="12" eline="26" epos="12"/>
+                    </VarDecl>
+                </VarDeclList>
+                <MethodDeclList>
+                    <MethodDecl bline="27" bpos="4" eline="27" epos="64">
+                        <Type typeKind="ARRAY" bline="27" bpos="12" eline="27" epos="16">
+                            <Arity val="0" bline="27" bpos="15" eline="27" epos="15"/>
+                        </Type>
+                        <IdExp id="f" bline="27" bpos="18" eline="27" epos="18"/>
+                        <FormalList/>
+                        <VarDeclList/>
+                        <StmList>
+                            <PutInt bline="27" bpos="23" eline="27" epos="48">
+                                <BinaryOp bline="27" bpos="30" eline="27" epos="46" s_kind="Value" typeKind="INT" lvalue="false">
+                                    <ClassVar bline="27" bpos="30" eline="27" epos="35" s_kind="Value" typeKind="INT" lvalue="true">
+                                        <This bline="27" bpos="30" eline="27" epos="33" s_kind="Value" typeKind="CLASS" lvalue="false" type_par="D"/>
+                                        <IdExp id="j" bline="27" bpos="35" eline="27" epos="35" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                    </ClassVar>
+                                    <OpExp op="+" bline="27" bpos="37" eline="27" epos="37"/>
+                                    <ClassVar bline="27" bpos="39" eline="27" epos="46" s_kind="Value" typeKind="INT" lvalue="true">
+                                        <ClassVar bline="27" bpos="39" eline="27" epos="44" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="C">
+                                            <This bline="27" bpos="39" eline="27" epos="42" s_kind="Value" typeKind="CLASS" lvalue="false" type_par="D"/>
+                                            <IdExp id="c" bline="27" bpos="44" eline="27" epos="44" s_kind="Value" typeKind="CLASS" lvalue="true" type_par="C"/>
+                                        </ClassVar>
+                                        <IdExp id="j" bline="27" bpos="46" eline="27" epos="46" s_kind="Value" typeKind="INT" lvalue="true"/>
+                                    </ClassVar>
+                                </BinaryOp>
+                            </PutInt>
+                            <Return bline="27" bpos="50" eline="27" epos="63" s_kind="Value" typeKind="ARRAY" lvalue="false">
+                                <ClassVar bline="27" bpos="57" eline="27" epos="62" s_kind="Value" typeKind="ARRAY" lvalue="true" type_par="0">
+                                    <This bline="27" bpos="57" eline="27" epos="60" s_kind="Value" typeKind="CLASS" lvalue="false" type_par="D"/>
+                                    <IdExp id="i" bline="27" bpos="62" eline="27" epos="62" s_kind="Value" typeKind="ARRAY" lvalue="true" type_par="0"/>
+                                </ClassVar>
+                            </Return>
+                        </StmList>
+                    </MethodDecl>
+                </MethodDeclList>
+            </ClassDecl>
+        </ClassDeclList>
+    </Program>
+</FDMJAST>

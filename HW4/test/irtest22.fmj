@@ -1,0 +1,73 @@
+public
+int main() {
+  int n;
+  int i;
+  class fib o;
+  i = 0;
+  o = new fib();
+
+    putch(69);  // E
+    putch(110); // n
+    putch(116); // t
+    putch(101); // e
+    putch(114); // r
+    putch(32);  // space
+    putch(116); // t
+    putch(104); // h
+    putch(101); // e
+    putch(32);  // space
+    putch(110); // n
+    putch(117); // u
+    putch(109); // m
+    putch(98);  // b
+    putch(101); // e
+    putch(114); // r
+    putch(32);  // space
+    putch(111); // o
+    putch(102); // f
+    putch(32);  // space
+    putch(116); // t
+    putch(101); // e
+    putch(114); // r
+    putch(109); // m
+    putch(58);  //:
+
+  n = getint();
+
+  if (n < 0 || n > 47)
+    return -1;
+
+  while (i < n) {
+      putint(o.f(i));
+      putch(32);
+      i = i + 1;
+  }
+  putch(10);
+  return 0;
+}
+
+public class fib {
+  public int f(int n) {
+    if (n == 0 || n == 1)
+      return n;
+    else
+      return this.f(n - 1) + this.f(n - 2);
+  }
+}
+
+/*
+======Class Table:
+method f has pos 0
+======End of Class Table
+======Method_var_table for class=__$main__ method=main
+var _^return^_main has temp 103, with type INT.
+var i has temp 100, with type INT.
+var n has temp 101, with type INT.
+var o has temp 102, with type PTR.
+======End of Method Var Table
+======Method_var_table for class=fib method=f
+var _^return^_f has temp 102, with type INT.
+var _^this^_ has temp 100, with type PTR.
+var n has temp 101, with type INT.
+======End of Method Var Table
+*/

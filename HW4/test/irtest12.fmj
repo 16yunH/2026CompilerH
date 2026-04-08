@@ -1,0 +1,7 @@
+public int main() {
+    int[] a = {1, 2, 3};
+    int i;
+    i=-1;
+    a[i]=4;
+    i=a[2];
+}

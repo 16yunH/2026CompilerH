@@ -1,0 +1,38 @@
+public int main() {
+   class A a;
+   class B b;
+   a = new A();
+   a.i = 1;
+   b = new B();
+   b.i = 1;
+   putint(a.f());
+   a = b;
+   putint(a.f());
+}
+
+public class A {
+   int i;
+   public int f() {return 0;}
+}
+
+public class B extends A {
+   int i;
+   int[] a = {1,2,3};
+   public int f() {
+      class A a;
+      return a.i + this.i + this.a[0]+ this.g();
+   }
+   public int g() {
+      return this.f();
+   }
+}
+
+/*
+======Class Table:
+var A^i has pos 0
+var B^a has pos 4
+var B^i has pos 8
+method f has pos 12
+method g has pos 16
+======End of Class Table
+*/
