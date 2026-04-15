@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program>
+    <FunctionDeclaration name="__$main__^main" return_type="INT" last_temp="102" last_label="99">
+        <Sequence>
+            <Move>
+                <Temp type="PTR" temp="100"/>
+                <Const value="0"/>
+            </Move>
+            <Move>
+                <Temp type="PTR" temp="100"/>
+                <ESeq>
+                    <Sequence>
+                        <Move>
+                            <Temp type="PTR" temp="102"/>
+                            <ExtCall type="PTR" extfun="malloc">
+                                <Arguments>
+                                    <Const value="4"/>
+                                </Arguments>
+                            </ExtCall>
+                        </Move>
+                        <Move>
+                            <Memory type="PTR">
+                                <BinOp type="PTR" op="+">
+                                    <Temp type="PTR" temp="102"/>
+                                    <Const value="0"/>
+                                </BinOp>
+                            </Memory>
+                            <Name type="PTR" sname="C^m"/>
+                        </Move>
+                    </Sequence>
+                    <Temp type="PTR" temp="102"/>
+                </ESeq>
+            </Move>
+            <ExpressionStatement>
+                <ExtCall type="INT" extfun="putint">
+                    <Arguments>
+                        <Call type="INT" id="m">
+                            <Memory type="PTR">
+                                <BinOp type="PTR" op="+">
+                                    <Temp type="PTR" temp="100"/>
+                                    <Const value="0"/>
+                                </BinOp>
+                            </Memory>
+                            <Arguments>
+                                <Temp type="PTR" temp="100"/>
+                            </Arguments>
+                        </Call>
+                    </Arguments>
+                </ExtCall>
+            </ExpressionStatement>
+            <ExpressionStatement>
+                <ExtCall type="INT" extfun="putch">
+                    <Arguments>
+                        <Const value="10"/>
+                    </Arguments>
+                </ExtCall>
+            </ExpressionStatement>
+        </Sequence>
+    </FunctionDeclaration>
+    <FunctionDeclaration name="C^m" return_type="INT" last_temp="101" last_label="99" arg_temp_0="100">
+        <Sequence>
+            <Return>
+                <Const value="100"/>
+            </Return>
+        </Sequence>
+    </FunctionDeclaration>
+</Program>

@@ -1,0 +1,12 @@
+public int main() {
+    class C c;
+    c = new C();
+    putint( c.m() );
+    putch( 10 );
+}
+
+public class C {
+    public int m() {
+       return 100;
+    }
+}

@@ -1,0 +1,13 @@
+public int main() {
+    int[] a = {1, 2, 3};
+    class C c;
+    c = new C();
+    putint( c.m(a) );
+    putch( 10 );
+}
+
+public class C {
+    public int m(int[] a) {
+       return a[1];
+    }
+}
