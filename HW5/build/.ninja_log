@@ -1,0 +1,14 @@
+# ninja log v5
+1	331	1776258195061504380	lib/ir/CMakeFiles/ir.dir/treep.cc.o	f55942fc39c87966
+706	852	1776259386945850605	tools/main/main	da87ceb43c65e3ee
+0	385	1776258195111416126	lib/util/CMakeFiles/util.dir/print_config.cc.o	6259800ffa63b41f
+1	404	1776258195131380824	lib/util/CMakeFiles/util.dir/tree2xml.cc.o	b71462e27d43577b
+3	418	1776258195141363174	tools/main/CMakeFiles/main.dir/main.cc.o	d653081e49d90112
+1	803	1776258195530674794	lib/util/CMakeFiles/util.dir/xml2tree.cc.o	508005b327e6ab6e
+1	552	1776258195271133713	lib/util/CMakeFiles/util.dir/quad2xml.cc.o	c8d7ebbad43fd379
+0	706	1776259386787487358	lib/quad/CMakeFiles/quad.dir/tree2quad.cc.o	550cf68f0463c723
+1	943	1776258195650462985	lib/ir/CMakeFiles/ir.dir/canon.cc.o	780e9ff2b2379acb
+3	1108	1776258195830145270	vendor/tinyxml2/CMakeFiles/vendor_xml.dir/tinyxml2.cc.o	16f4a8fc76b314a3
+2	1041	1776258195770251176	lib/quad/CMakeFiles/quad.dir/quad.cc.o	eb53521b84061082
+0	640	1776261535190729456	lib/quad/CMakeFiles/quad.dir/tree2quad.cc.o	550cf68f0463c723
+640	804	1776261535347603890	tools/main/main	da87ceb43c65e3ee
