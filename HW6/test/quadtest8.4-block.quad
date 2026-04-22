@@ -1,0 +1,45 @@
+Function __$main__^main() last_label=100 last_temp=124:
+  Block: Entry Label: L100
+    Exit labels: 
+    LABEL L100; def: use: 
+    MOVE t100:ptr <- Const:0; def: t100 use: 
+    MOVE t101:ptr <- Const:0; def: t101 use: 
+    MOVE_EXTCALL t103:ptr <- malloc(Const:16); def: t103 use: 
+    PTR_CALC t113:ptr <- t103:ptr + Const:8; def: t113 use: t103 
+    STORE Name:A^f -> Mem(t113:ptr); def: use: t113 
+    MOVE t100:ptr <- t103:ptr; def: t100 use: t103 
+    PTR_CALC t114:ptr <- t100:ptr + Const:0; def: t114 use: t100 
+    STORE Const:4 -> Mem(t114:ptr); def: use: t114 
+    MOVE_EXTCALL t104:ptr <- malloc(Const:16); def: t104 use: 
+    PTR_CALC t116:ptr <- t104:ptr + Const:8; def: t116 use: t104 
+    STORE Name:B^f -> Mem(t116:ptr); def: use: t116 
+    PTR_CALC t117:ptr <- t104:ptr + Const:12; def: t117 use: t104 
+    STORE Name:B^g -> Mem(t117:ptr); def: use: t117 
+    MOVE t101:ptr <- t104:ptr; def: t101 use: t104 
+    PTR_CALC t118:ptr <- t101:ptr + Const:4; def: t118 use: t101 
+    STORE Const:2 -> Mem(t118:ptr); def: use: t118 
+    MOVE t100:ptr <- t101:ptr; def: t100 use: t101 
+    PTR_CALC t119:ptr <- t100:ptr + Const:8; def: t119 use: t100 
+    LOAD t107:ptr <- Mem(t119:ptr); def: t107 use: t119 
+    MOVE_CALL t108:int <- f[t107:ptr] (t100:ptr); def: t108 use: t100 t107 
+    PTR_CALC t121:ptr <- t101:ptr + Const:4; def: t121 use: t101 
+    LOAD t122:int <- Mem(t121:ptr); def: t122 use: t121 
+    MOVE_BINOP t109:int <- (+, t108:int, t122:int); def: t109 use: t108 t122 
+    EXTCALL putint(t109:int); def: use: t109 
+    EXTCALL putch(Const:10); def: use: 
+    RETURN Const:0; def: use: 
+Function A^f(t100) last_label=100 last_temp=101:
+  Block: Entry Label: L100
+    Exit labels: 
+    LABEL L100; def: use: 
+    RETURN Const:100; def: use: 
+Function B^f(t100) last_label=100 last_temp=101:
+  Block: Entry Label: L100
+    Exit labels: 
+    LABEL L100; def: use: 
+    RETURN Const:200; def: use: 
+Function B^g(t100) last_label=100 last_temp=101:
+  Block: Entry Label: L100
+    Exit labels: 
+    LABEL L100; def: use: 
+    RETURN Const:300; def: use: 
