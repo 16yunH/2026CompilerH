@@ -1,0 +1,57 @@
+<Program kind="PROGRAM" last_label_num="105" last_temp_num="105">
+    <funcdecl kind="FUNCDECL" name="__$main__^main" last_label_num="105" last_temp_num="105">
+        <block kind="BLOCK" entry="105">
+            <label kind="LABEL" name="105"/>
+            <move kind="MOVE" dst="100" temp_type="int">
+                <src kind="CONST" value="10"/>
+                <def>
+                    <temp id="100"/>
+                </def>
+            </move>
+            <label kind="LABEL" name="102"/>
+            <cjump kind="CJUMP" relop="!=" true="103" false="104">
+                <left kind="TEMP" id="100" type="int"/>
+                <right kind="CONST" value="0"/>
+                <use>
+                    <temp id="100"/>
+                </use>
+            </cjump>
+            <label kind="LABEL" name="103"/>
+            <extcall kind="EXTCALL" name="putint">
+                <args>
+                    <arg index="0">
+                        <value kind="TEMP" id="100" type="int"/>
+                    </arg>
+                </args>
+                <use>
+                    <temp id="100"/>
+                </use>
+            </extcall>
+            <extcall kind="EXTCALL" name="putch">
+                <args>
+                    <arg index="0">
+                        <value kind="CONST" value="10"/>
+                    </arg>
+                </args>
+            </extcall>
+            <movebinop kind="MOVE_BINOP" dst="100" temp_type="int" op="-">
+                <left kind="TEMP" id="100" type="int"/>
+                <right kind="CONST" value="1"/>
+                <def>
+                    <temp id="100"/>
+                </def>
+                <use>
+                    <temp id="100"/>
+                </use>
+            </movebinop>
+            <jump kind="JUMP" target="102"/>
+            <label kind="LABEL" name="104"/>
+            <return kind="RETURN">
+                <value kind="TEMP" id="100" type="int"/>
+                <use>
+                    <temp id="100"/>
+                </use>
+            </return>
+        </block>
+    </funcdecl>
+</Program>

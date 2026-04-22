@@ -1,0 +1,275 @@
+<Program kind="PROGRAM" last_label_num="103" last_temp_num="119">
+    <funcdecl kind="FUNCDECL" name="__$main__^main" last_label_num="100" last_temp_num="119">
+        <block kind="BLOCK" entry="100">
+            <label kind="LABEL" name="100"/>
+            <moveextcall kind="MOVE_EXTCALL" dst="100" temp_type="ptr">
+                <extcall kind="EXTCALL" name="malloc">
+                    <args>
+                        <arg index="0">
+                            <value kind="CONST" value="16"/>
+                        </arg>
+                    </args>
+                </extcall>
+                <def>
+                    <temp id="100"/>
+                </def>
+            </moveextcall>
+            <store kind="STORE">
+                <src kind="CONST" value="3"/>
+                <dst kind="TEMP" id="100" type="ptr"/>
+                <use>
+                    <temp id="100"/>
+                </use>
+            </store>
+            <ptrcalc kind="PTR_CALC">
+                <dst kind="TEMP" id="111" type="ptr"/>
+                <ptr kind="TEMP" id="100" type="ptr"/>
+                <offset kind="CONST" value="4"/>
+                <def>
+                    <temp id="111"/>
+                </def>
+                <use>
+                    <temp id="100"/>
+                </use>
+            </ptrcalc>
+            <store kind="STORE">
+                <src kind="CONST" value="1"/>
+                <dst kind="TEMP" id="111" type="ptr"/>
+                <use>
+                    <temp id="111"/>
+                </use>
+            </store>
+            <ptrcalc kind="PTR_CALC">
+                <dst kind="TEMP" id="112" type="ptr"/>
+                <ptr kind="TEMP" id="100" type="ptr"/>
+                <offset kind="CONST" value="8"/>
+                <def>
+                    <temp id="112"/>
+                </def>
+                <use>
+                    <temp id="100"/>
+                </use>
+            </ptrcalc>
+            <store kind="STORE">
+                <src kind="CONST" value="2"/>
+                <dst kind="TEMP" id="112" type="ptr"/>
+                <use>
+                    <temp id="112"/>
+                </use>
+            </store>
+            <ptrcalc kind="PTR_CALC">
+                <dst kind="TEMP" id="113" type="ptr"/>
+                <ptr kind="TEMP" id="100" type="ptr"/>
+                <offset kind="CONST" value="12"/>
+                <def>
+                    <temp id="113"/>
+                </def>
+                <use>
+                    <temp id="100"/>
+                </use>
+            </ptrcalc>
+            <store kind="STORE">
+                <src kind="CONST" value="3"/>
+                <dst kind="TEMP" id="113" type="ptr"/>
+                <use>
+                    <temp id="113"/>
+                </use>
+            </store>
+            <move kind="MOVE" dst="101" temp_type="ptr">
+                <src kind="CONST" value="0"/>
+                <def>
+                    <temp id="101"/>
+                </def>
+            </move>
+            <moveextcall kind="MOVE_EXTCALL" dst="103" temp_type="ptr">
+                <extcall kind="EXTCALL" name="malloc">
+                    <args>
+                        <arg index="0">
+                            <value kind="CONST" value="4"/>
+                        </arg>
+                    </args>
+                </extcall>
+                <def>
+                    <temp id="103"/>
+                </def>
+            </moveextcall>
+            <ptrcalc kind="PTR_CALC">
+                <dst kind="TEMP" id="115" type="ptr"/>
+                <ptr kind="TEMP" id="103" type="ptr"/>
+                <offset kind="CONST" value="0"/>
+                <def>
+                    <temp id="115"/>
+                </def>
+                <use>
+                    <temp id="103"/>
+                </use>
+            </ptrcalc>
+            <store kind="STORE">
+                <src kind="NAME" name="C^m"/>
+                <dst kind="TEMP" id="115" type="ptr"/>
+                <use>
+                    <temp id="115"/>
+                </use>
+            </store>
+            <move kind="MOVE" dst="101" temp_type="ptr">
+                <src kind="TEMP" id="103" type="ptr"/>
+                <def>
+                    <temp id="101"/>
+                </def>
+                <use>
+                    <temp id="103"/>
+                </use>
+            </move>
+            <ptrcalc kind="PTR_CALC">
+                <dst kind="TEMP" id="116" type="ptr"/>
+                <ptr kind="TEMP" id="101" type="ptr"/>
+                <offset kind="CONST" value="0"/>
+                <def>
+                    <temp id="116"/>
+                </def>
+                <use>
+                    <temp id="101"/>
+                </use>
+            </ptrcalc>
+            <load kind="LOAD" dst="106" temp_type="ptr">
+                <src kind="TEMP" id="116" type="ptr"/>
+                <def>
+                    <temp id="106"/>
+                </def>
+                <use>
+                    <temp id="116"/>
+                </use>
+            </load>
+            <movecall kind="MOVE_CALL" dst="107" temp_type="int">
+                <call kind="CALL" name="m">
+                    <object kind="TEMP" id="106" type="ptr"/>
+                    <args>
+                        <arg index="0">
+                            <value kind="TEMP" id="101" type="ptr"/>
+                        </arg>
+                        <arg index="1">
+                            <value kind="TEMP" id="100" type="ptr"/>
+                        </arg>
+                    </args>
+                </call>
+                <def>
+                    <temp id="107"/>
+                </def>
+                <use>
+                    <temp id="106"/>
+                    <temp id="101"/>
+                    <temp id="100"/>
+                </use>
+            </movecall>
+            <extcall kind="EXTCALL" name="putint">
+                <args>
+                    <arg index="0">
+                        <value kind="TEMP" id="107" type="int"/>
+                    </arg>
+                </args>
+                <use>
+                    <temp id="107"/>
+                </use>
+            </extcall>
+            <extcall kind="EXTCALL" name="putch">
+                <args>
+                    <arg index="0">
+                        <value kind="CONST" value="10"/>
+                    </arg>
+                </args>
+            </extcall>
+        </block>
+    </funcdecl>
+    <funcdecl kind="FUNCDECL" name="C^m" last_label_num="103" last_temp_num="110">
+        <params>
+            <param temp="100"/>
+            <param temp="101"/>
+        </params>
+        <block kind="BLOCK" entry="103">
+            <label kind="LABEL" name="103"/>
+            <move kind="MOVE" dst="105" temp_type="ptr">
+                <src kind="TEMP" id="101" type="ptr"/>
+                <def>
+                    <temp id="105"/>
+                </def>
+                <use>
+                    <temp id="101"/>
+                </use>
+            </move>
+            <load kind="LOAD" dst="103" temp_type="int">
+                <src kind="TEMP" id="101" type="ptr"/>
+                <def>
+                    <temp id="103"/>
+                </def>
+                <use>
+                    <temp id="101"/>
+                </use>
+            </load>
+            <cjump kind="CJUMP" relop="&gt;=" true="101" false="100">
+                <left kind="CONST" value="1"/>
+                <right kind="CONST" value="0"/>
+            </cjump>
+            <label kind="LABEL" name="101"/>
+            <cjump kind="CJUMP" relop="&gt;=" true="100" false="102">
+                <left kind="CONST" value="1"/>
+                <right kind="TEMP" id="103" type="int"/>
+                <use>
+                    <temp id="103"/>
+                </use>
+            </cjump>
+            <label kind="LABEL" name="100"/>
+            <extcall kind="EXTCALL" name="exit">
+                <args>
+                    <arg index="0">
+                        <value kind="CONST" value="-1"/>
+                    </arg>
+                </args>
+            </extcall>
+            <label kind="LABEL" name="102"/>
+            <movebinop kind="MOVE_BINOP" dst="107" temp_type="int" op="+">
+                <left kind="CONST" value="1"/>
+                <right kind="CONST" value="1"/>
+                <def>
+                    <temp id="107"/>
+                </def>
+            </movebinop>
+            <movebinop kind="MOVE_BINOP" dst="108" temp_type="int" op="*">
+                <left kind="TEMP" id="107" type="int"/>
+                <right kind="CONST" value="4"/>
+                <def>
+                    <temp id="108"/>
+                </def>
+                <use>
+                    <temp id="107"/>
+                </use>
+            </movebinop>
+            <ptrcalc kind="PTR_CALC">
+                <dst kind="TEMP" id="109" type="ptr"/>
+                <ptr kind="TEMP" id="105" type="ptr"/>
+                <offset kind="TEMP" id="108" type="int"/>
+                <def>
+                    <temp id="109"/>
+                </def>
+                <use>
+                    <temp id="105"/>
+                    <temp id="108"/>
+                </use>
+            </ptrcalc>
+            <load kind="LOAD" dst="110" temp_type="int">
+                <src kind="TEMP" id="109" type="ptr"/>
+                <def>
+                    <temp id="110"/>
+                </def>
+                <use>
+                    <temp id="109"/>
+                </use>
+            </load>
+            <return kind="RETURN">
+                <value kind="TEMP" id="110" type="int"/>
+                <use>
+                    <temp id="110"/>
+                </use>
+            </return>
+        </block>
+    </funcdecl>
+</Program>

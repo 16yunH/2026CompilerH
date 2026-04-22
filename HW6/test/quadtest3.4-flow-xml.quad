@@ -1,0 +1,72 @@
+<QuadWithFlowProgram program_last_label_num="100" program_last_temp_num="105">
+    <Program kind="PROGRAM" last_label_num="100" last_temp_num="105">
+        <funcdecl kind="FUNCDECL" name="__$main__^main" last_label_num="100" last_temp_num="105">
+            <block kind="BLOCK" entry="100">
+                <label kind="LABEL" name="100"/>
+                <move kind="MOVE" dst="100" temp_type="int">
+                    <src kind="CONST" value="1"/>
+                    <def>
+                        <temp id="100"/>
+                    </def>
+                </move>
+                <extcall kind="EXTCALL" name="putint">
+                    <args>
+                        <arg index="0">
+                            <value kind="TEMP" id="100" type="int"/>
+                        </arg>
+                    </args>
+                    <use>
+                        <temp id="100"/>
+                    </use>
+                </extcall>
+                <extcall kind="EXTCALL" name="putch">
+                    <args>
+                        <arg index="0">
+                            <value kind="CONST" value="10"/>
+                        </arg>
+                    </args>
+                </extcall>
+                <return kind="RETURN">
+                    <value kind="TEMP" id="100" type="int"/>
+                    <use>
+                        <temp id="100"/>
+                    </use>
+                </return>
+            </block>
+        </funcdecl>
+    </Program>
+    <Function name="__$main__^main">
+        <ControlFlow>
+            <Predecessors/>
+            <Successors/>
+            <Dominators/>
+            <ImmediateDominators/>
+            <DominanceFrontier/>
+            <DominatorTree/>
+        </ControlFlow>
+        <Liveness>
+            <Block id="100">
+                <Statement kind="LABEL">
+                    <LiveIn/>
+                    <LiveOut/>
+                </Statement>
+                <Statement kind="MOVE">
+                    <LiveIn/>
+                    <LiveOut/>
+                </Statement>
+                <Statement kind="EXTCALL">
+                    <LiveIn/>
+                    <LiveOut/>
+                </Statement>
+                <Statement kind="EXTCALL">
+                    <LiveIn/>
+                    <LiveOut/>
+                </Statement>
+                <Statement kind="RETURN">
+                    <LiveIn/>
+                    <LiveOut/>
+                </Statement>
+            </Block>
+        </Liveness>
+    </Function>
+</QuadWithFlowProgram>

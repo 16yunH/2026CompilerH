@@ -1,0 +1,36 @@
+Function __$main__^main() last_label=110 last_temp=106:
+  Block: Entry Label: L110
+    Exit labels: L102 
+    LABEL L110; def: use: 
+    MOVE t100:int <- Const:1; def: t100 use: 
+    MOVE t101:int <- Const:2; def: t101 use: 
+    JUMP L102; def: use: 
+  Block: Entry Label: L102
+    Exit labels: L103 L104 
+    LABEL L102; def: use: 
+    CJUMP != t100:int Const:0? L103 : L104; def: use: t100 
+  Block: Entry Label: L103
+    Exit labels: L107 L108 
+    LABEL L103; def: use: 
+    CJUMP != t101:int Const:0? L107 : L108; def: use: t101 
+  Block: Entry Label: L107
+    Exit labels: L104 
+    LABEL L107; def: use: 
+    JUMP L104; def: use: 
+  Block: Entry Label: L111
+    Exit labels: L109 
+    JUMP L109; def: use: 
+  Block: Entry Label: L108
+    Exit labels: L102 
+    LABEL L108; def: use: 
+    JUMP L102; def: use: 
+  Block: Entry Label: L109
+    Exit labels: L102 
+    LABEL L109; def: use: 
+    JUMP L102; def: use: 
+  Block: Entry Label: L104
+    Exit labels: 
+    LABEL L104; def: use: 
+    EXTCALL putint(Const:100); def: use: 
+    EXTCALL putch(Const:10); def: use: 
+    RETURN Const:1; def: use: 
