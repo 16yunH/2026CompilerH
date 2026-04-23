@@ -1,4 +1,4 @@
-# Install script for directory: /home/yunhong16/CompilerH/HW3/tools
+# Install script for directory: /home/yunhong16/CompilerH/quiz2/tools
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,11 +44,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/yunhong16/CompilerH/HW3/build/tools/main/cmake_install.cmake")
+  include("/home/yunhong16/CompilerH/quiz2/build/tools/main/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/yunhong16/CompilerH/HW3/build/tools/patchdemo/cmake_install.cmake")
+  include("/home/yunhong16/CompilerH/quiz2/build/tools/patchdemo/cmake_install.cmake")
 endif()
 

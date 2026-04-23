@@ -1,4 +1,4 @@
-# Install script for directory: /home/yunhong16/CompilerH/HW3/vendor/tinyxml2
+# Install script for directory: /home/yunhong16/CompilerH/quiz2/vendor/tinyxml2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

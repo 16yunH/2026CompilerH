@@ -1,4 +1,4 @@
-# Install script for directory: /home/yunhong16/CompilerH/HW3/vendor
+# Install script for directory: /home/yunhong16/CompilerH/quiz2/vendor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/yunhong16/CompilerH/HW3/build/vendor/tinyxml2/cmake_install.cmake")
+  include("/home/yunhong16/CompilerH/quiz2/build/vendor/tinyxml2/cmake_install.cmake")
 endif()
 

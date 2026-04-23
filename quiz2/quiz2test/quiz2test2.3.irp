@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program>
+    <FunctionDeclaration name="__$main__^main" return_type="INT" last_temp="104" last_label="101">
+        <Sequence>
+            <Move>
+                <Temp type="INT" temp="103"/>
+                <Const value="0"/>
+            </Move>
+            <Move>
+                <Temp type="INT" temp="104"/>
+                <Const value="0"/>
+            </Move>
+            <Sequence>
+                <Move>
+                    <Temp type="INT" temp="100"/>
+                    <Const value="1"/>
+                </Move>
+                <Move>
+                    <Temp type="INT" temp="103"/>
+                    <Const value="1"/>
+                </Move>
+            </Sequence>
+            <Return>
+                <ESeq>
+                    <Sequence>
+                        <CJump relop="==" true="100" false="101">
+                            <Temp type="INT" temp="104"/>
+                            <Const value="1"/>
+                        </CJump>
+                        <Label label="101"/>
+                        <ExpressionStatement>
+                            <ExtCall type="INT" extfun="exit">
+                                <Arguments>
+                                    <Const value="-101"/>
+                                </Arguments>
+                            </ExtCall>
+                        </ExpressionStatement>
+                        <Label label="100"/>
+                    </Sequence>
+                    <Temp type="INT" temp="101"/>
+                </ESeq>
+            </Return>
+        </Sequence>
+    </FunctionDeclaration>
+    <FunctionDeclaration name="B^m" return_type="PTR" last_temp="103" last_label="99" arg_temp_0="101">
+        <Sequence>
+            <Move>
+                <Temp type="INT" temp="103"/>
+                <Const value="0"/>
+            </Move>
+            <Sequence>
+                <Move>
+                    <Temp type="INT" temp="100"/>
+                    <Memory type="INT">
+                        <BinOp type="PTR" op="+">
+                            <Temp type="PTR" temp="101"/>
+                            <Const value="0"/>
+                        </BinOp>
+                    </Memory>
+                </Move>
+                <Move>
+                    <Temp type="INT" temp="103"/>
+                    <Const value="1"/>
+                </Move>
+            </Sequence>
+        </Sequence>
+    </FunctionDeclaration>
+</Program>

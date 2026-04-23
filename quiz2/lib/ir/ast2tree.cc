@@ -192,6 +192,97 @@ static void append_stmt_flatten(vector<tree::Stm *> *body, tree::Stm *stm)
     body->push_back(stm);
 }
 
+static const string kInitShadowPrefix = "_^init_shadow^_";
+
+static string shadow_name_for(const string &var_name)
+{
+    return kInitShadowPrefix + var_name;
+}
+
+static bool is_local_int_var(ASTToTreeVisitor *vis, const string &var_name)
+{
+    if (vis == nullptr || vis->semant_map == nullptr || vis->semant_map->getNameMaps() == nullptr)
+    {
+        return false;
+    }
+    VarDecl *vd = vis->semant_map->getNameMaps()->get_method_var(
+        vis->current_class,
+        vis->current_method,
+        var_name);
+    return vd != nullptr && vd->type != nullptr && vd->type->typeKind == fdmj::TypeKind::INT;
+}
+
+static tree::Temp *get_shadow_temp(ASTToTreeVisitor *vis, const string &var_name)
+{
+    if (vis == nullptr || vis->method_var_table == nullptr)
+    {
+        return nullptr;
+    }
+    string key = shadow_name_for(var_name);
+    auto it = vis->method_var_table->var_temp_map->find(key);
+    if (it == vis->method_var_table->var_temp_map->end())
+    {
+        return nullptr;
+    }
+    return it->second;
+}
+
+static tree::Temp *ensure_shadow_temp(ASTToTreeVisitor *vis, const string &var_name)
+{
+    if (!is_local_int_var(vis, var_name))
+    {
+        return nullptr;
+    }
+
+    tree::Temp *existing = get_shadow_temp(vis, var_name);
+    if (existing != nullptr)
+    {
+        return existing;
+    }
+
+    if (vis == nullptr || vis->method_temp_map == nullptr || vis->method_var_table == nullptr)
+    {
+        return nullptr;
+    }
+
+    tree::Temp *shadow = vis->method_temp_map->newtemp();
+    string key = shadow_name_for(var_name);
+    (*vis->method_var_table->var_temp_map)[key] = shadow;
+    (*vis->method_var_table->var_type_map)[key] = tree::Type::INT;
+    return shadow;
+}
+
+static void append_shadow_inits_for_local_ints(
+    ASTToTreeVisitor *vis,
+    vector<fdmj::VarDecl *> *vdl,
+    vector<tree::Stm *> *body)
+{
+    if (vis == nullptr || vdl == nullptr || body == nullptr)
+    {
+        return;
+    }
+
+    for (auto *vd : *vdl)
+    {
+        if (vd == nullptr || vd->id == nullptr || vd->type == nullptr)
+        {
+            continue;
+        }
+        if (vd->type->typeKind != fdmj::TypeKind::INT)
+        {
+            continue;
+        }
+
+        tree::Temp *shadow = ensure_shadow_temp(vis, vd->id->id);
+        if (shadow != nullptr)
+        {
+            body->push_back(new tree::Move(
+                new tree::TempExp(tree::Type::INT, shadow),
+                new tree::Const(0)));
+        }
+    }
+}
+
 tree::Program *ast2tree(fdmj::Program *prog, AST_Semant_Map *semant_map)
 {
     ASTToTreeVisitor vis;
@@ -356,6 +447,9 @@ void ASTToTreeVisitor::visit(fdmj::MainMethod *node)
     method_var_table = generate_method_var_table(current_class, current_method, semant_map->getNameMaps(), method_temp_map);
 
     vector<tree::Stm *> *body = new vector<tree::Stm *>();
+
+    append_shadow_inits_for_local_ints(this, node == nullptr ? nullptr : node->vdl, body);
+
     if (node->vdl != nullptr)
     {
         for (auto *vd : *node->vdl)
@@ -434,7 +528,20 @@ void ASTToTreeVisitor::visit(fdmj::VarDecl *node)
         auto *ie = get<fdmj::IntExp *>(node->init);
         if (ie != nullptr)
         {
-            visit_tree_result = new tree::Move(new tree::TempExp(vt, t), new tree::Const(ie->val));
+            tree::Stm *init_stm = new tree::Move(new tree::TempExp(vt, t), new tree::Const(ie->val));
+
+            // declaration with int initializer counts as "initialized"
+            tree::Temp *shadow = ensure_shadow_temp(this, node->id->id);
+            if (shadow != nullptr)
+            {
+                vector<tree::Stm *> *sl = new vector<tree::Stm *>();
+                sl->push_back(init_stm);
+                sl->push_back(new tree::Move(new tree::TempExp(tree::Type::INT, shadow), new tree::Const(1)));
+                visit_tree_result = make_seq(sl);
+                return;
+            }
+
+            visit_tree_result = init_stm;
             return;
         }
     }
@@ -498,6 +605,9 @@ void ASTToTreeVisitor::visit(fdmj::MethodDecl *node)
     method_var_table = generate_method_var_table(current_class, current_method, semant_map->getNameMaps(), method_temp_map);
 
     vector<tree::Stm *> *body = new vector<tree::Stm *>();
+
+    append_shadow_inits_for_local_ints(this, node->vdl, body);
+
     if (node->vdl != nullptr)
     {
         for (auto *vd : *node->vdl)
@@ -686,6 +796,46 @@ void ASTToTreeVisitor::visit(fdmj::Assign *node)
         visit_tree_result = nullptr;
         return;
     }
+
+    fdmj::IdExp *lhs_id = dynamic_cast<fdmj::IdExp *>(node->left);
+    if (lhs_id != nullptr)
+    {
+        tree::Type dst_ty = tree::Type::INT;
+        if (method_var_table != nullptr &&
+            method_var_table->var_type_map->find(lhs_id->id) != method_var_table->var_type_map->end())
+        {
+            dst_ty = method_var_table->get_var_type(lhs_id->id);
+        }
+
+        tree::Temp *dst_t = method_var_table == nullptr ? nullptr : method_var_table->get_var_temp(lhs_id->id);
+        if (dst_t == nullptr)
+        {
+            dst_t = method_temp_map->newtemp();
+            if (method_var_table != nullptr)
+            {
+                (*method_var_table->var_temp_map)[lhs_id->id] = dst_t;
+                (*method_var_table->var_type_map)[lhs_id->id] = dst_ty;
+            }
+        }
+
+        node->exp->accept(*this);
+        tree::Exp *src = visit_exp_result->unEx(method_temp_map)->exp;
+
+        vector<tree::Stm *> *sl = new vector<tree::Stm *>();
+        sl->push_back(new tree::Move(new tree::TempExp(dst_ty, dst_t), src));
+
+        tree::Temp *shadow = ensure_shadow_temp(this, lhs_id->id);
+        if (shadow != nullptr)
+        {
+            sl->push_back(new tree::Move(new tree::TempExp(tree::Type::INT, shadow), new tree::Const(1)));
+        }
+
+        visit_tree_result = (sl->size() == 1)
+                                ? static_cast<tree::Stm *>(sl->at(0))
+                                : static_cast<tree::Stm *>(new tree::Seq(sl));
+        return;
+    }
+
     node->left->accept(*this);
     tree::Exp *dst = visit_exp_result->unEx(method_temp_map)->exp;
     node->exp->accept(*this);
@@ -1145,6 +1295,36 @@ void ASTToTreeVisitor::visit(fdmj::IdExp *node)
             (*method_var_table->var_type_map)[node->id] = ty;
         }
     }
+
+    tree::Temp *shadow = ensure_shadow_temp(this, node->id);
+    if (shadow != nullptr)
+    {
+        tree::Label *l_ok = method_temp_map->newlabel();
+        tree::Label *l_bad = method_temp_map->newlabel();
+
+        vector<tree::Stm *> *sl = new vector<tree::Stm *>();
+        sl->push_back(new tree::Cjump(
+            "==",
+            new tree::TempExp(tree::Type::INT, shadow),
+            new tree::Const(1),
+            l_ok,
+            l_bad));
+        sl->push_back(new tree::LabelStm(l_bad));
+
+        vector<tree::Exp *> *exit_args = new vector<tree::Exp *>();
+        exit_args->push_back(new tree::Const(-101));
+        sl->push_back(new tree::ExpStm(new tree::ExtCall(tree::Type::INT, "exit", exit_args)));
+
+        sl->push_back(new tree::LabelStm(l_ok));
+
+        visit_exp_result = new Tr_ex(
+            new tree::Eseq(
+                ty,
+                make_seq(sl),
+                new tree::TempExp(ty, t)));
+        return;
+    }
+
     visit_exp_result = new Tr_ex(new tree::TempExp(ty, t));
 }
 

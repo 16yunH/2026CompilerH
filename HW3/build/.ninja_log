@@ -1,15 +1,15 @@
 # ninja log v5
+0	1312	1775657082500765515	lib/ir/CMakeFiles/ir.dir/ast2tree.cc.o	2ca8cdafc8eda2c4
+1312	1418	1775657082598193982	tools/main/main	c46e297536f8d402
+2	391	1775642366623765635	lib/ir/CMakeFiles/ir.dir/treep.cc.o	63e543e3c7fa7034
+1312	1418	1775657082598193982	tools/patchdemo/patchdemo	4f94acf604e2d7a6
 0	501	1775642366733765630	lib/util/CMakeFiles/util.dir/print_config.cc.o	53521f51f3f90e5a
+2	606	1775642366833765627	lib/ir/CMakeFiles/ir.dir/tr_exp.cc.o	c4f95a2cc673fe24
 2	860	1775642367093765615	tools/patchdemo/CMakeFiles/patchdemo.dir/patchdemo.cc.o	d87e77f2154a039a
 1	907	1775642367143765615	lib/ast/CMakeFiles/ast.dir/FDMJAST.cc.o	b415ce258c1988cd
-2	606	1775642366833765627	lib/ir/CMakeFiles/ir.dir/tr_exp.cc.o	c4f95a2cc673fe24
 2	769	1775642367003765619	tools/main/CMakeFiles/main.dir/main.cc.o	542a84aea7e625c0
 0	1373	1775642367606008797	lib/util/CMakeFiles/util.dir/ast2xml.cc.o	287d2946038c2ee2
 2	1472	1775642367703724399	vendor/tinyxml2/CMakeFiles/vendor_xml.dir/tinyxml2.cc.o	2ba6c22cfbc9b84b
-1	1767	1775642368006642759	lib/util/CMakeFiles/util.dir/xml2ast.cc.o	4b6bdf4d1de85bc9
 0	380	1775657081555709397	lib/util/CMakeFiles/util.dir/tree2xml.cc.o	74244c3cf0869dae
+1	1767	1775642368006642759	lib/util/CMakeFiles/util.dir/xml2ast.cc.o	4b6bdf4d1de85bc9
 1	1703	1775642367938241838	lib/ast/CMakeFiles/ast.dir/namemaps.cc.o	105fb802696107e0
-0	1312	1775657082500765515	lib/ir/CMakeFiles/ir.dir/ast2tree.cc.o	2ca8cdafc8eda2c4
-1312	1418	1775657082598193982	tools/patchdemo/patchdemo	4f94acf604e2d7a6
-2	391	1775642366623765635	lib/ir/CMakeFiles/ir.dir/treep.cc.o	63e543e3c7fa7034
-1312	1418	1775657082598193982	tools/main/main	c46e297536f8d402
