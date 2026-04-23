@@ -1,0 +1,17 @@
+public int main() {
+	int x;
+	int y;
+	class B b;
+	b = new B();
+        b.c = 0;
+	return b.m(x);
+}
+
+public class B {
+	int c;
+	public int m(int x) {
+	  int c;
+	  c = x;
+	  return c;
+	}
+}
