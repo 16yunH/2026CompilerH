@@ -1,0 +1,10 @@
+public int main() {
+    int i;
+    int j;
+    i = 1;
+    j = 2; 
+    if ( i ) {
+      putint( ( i < j ) + i );
+    } else
+      putint(i);
+}

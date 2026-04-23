@@ -1,0 +1,10 @@
+public int main() {
+    int i;
+    int j;
+    i = 1;
+    j = 2; 
+    while (i) {
+      if (j) break;
+      else continue;
+    }
+}

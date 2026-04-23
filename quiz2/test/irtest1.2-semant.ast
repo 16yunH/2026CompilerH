@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FDMJAST>
+    <NameMaps>
+        <Class name="__$main__">
+            <Method name="main">
+                <Formal id="_^return^_main">
+                    <Formal bline="1" bpos="1" eline="7" epos="1">
+                        <Type typeKind="INT" bline="1" bpos="1" eline="7" epos="1"/>
+                        <IdExp bline="1" bpos="1" eline="7" epos="1" id="_^return^_main"/>
+                    </Formal>
+                </Formal>
+                <Var id="i">
+                    <VarDecl bline="2" bpos="5" eline="2" epos="10">
+                        <Type typeKind="INT" bline="2" bpos="5" eline="2" epos="7"/>
+                        <IdExp id="i" bline="2" bpos="9" eline="2" epos="9"/>
+                    </VarDecl>
+                </Var>
+            </Method>
+        </Class>
+    </NameMaps>
+    <Program bline="1" bpos="1" eline="7" epos="1">
+        <MainMethod bline="1" bpos="1" eline="7" epos="1">
+            <VarDeclList>
+                <VarDecl bline="2" bpos="5" eline="2" epos="10">
+                    <Type typeKind="INT" bline="2" bpos="5" eline="2" epos="7"/>
+                    <IdExp id="i" bline="2" bpos="9" eline="2" epos="9"/>
+                </VarDecl>
+            </VarDeclList>
+            <StmList>
+                <Assign bline="3" bpos="5" eline="3" epos="10">
+                    <IdExp bline="3" bpos="5" eline="3" epos="5" s_kind="Value" typeKind="INT" lvalue="true" id="i"/>
+                    <IntExp bline="3" bpos="9" eline="3" epos="9" s_kind="Value" typeKind="INT" lvalue="false" val="1"/>
+                </Assign>
+                <PutInt bline="4" bpos="5" eline="4" epos="14">
+                    <IdExp bline="4" bpos="12" eline="4" epos="12" s_kind="Value" typeKind="INT" lvalue="true" id="i"/>
+                </PutInt>
+                <PutCh bline="5" bpos="5" eline="5" epos="14">
+                    <IntExp bline="5" bpos="11" eline="5" epos="12" s_kind="Value" typeKind="INT" lvalue="false" val="10"/>
+                </PutCh>
+                <Return bline="6" bpos="5" eline="6" epos="13" s_kind="Value" typeKind="INT" lvalue="false">
+                    <IdExp bline="6" bpos="12" eline="6" epos="12" s_kind="Value" typeKind="INT" lvalue="true" id="i"/>
+                </Return>
+            </StmList>
+        </MainMethod>
+        <ClassDeclList/>
+    </Program>
+</FDMJAST>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program>
+    <FunctionDeclaration name="__$main__^main" return_type="INT" last_temp="101" last_label="107">
+        <Sequence>
+            <Move>
+                <Temp type="INT" temp="100"/>
+                <Const value="1"/>
+            </Move>
+            <Sequence>
+                <Label label="105"/>
+                <Sequence>
+                    <CJump relop="&gt;" true="104" false="107">
+                        <Temp type="INT" temp="100"/>
+                        <Const value="0"/>
+                    </CJump>
+                    <Label label="104"/>
+                    <CJump relop="&gt;" true="106" false="107">
+                        <Temp type="INT" temp="100"/>
+                        <BinOp type="INT" op="-">
+                            <Const value="0"/>
+                            <Const value="1"/>
+                        </BinOp>
+                    </CJump>
+                </Sequence>
+                <Label label="106"/>
+                <Sequence>
+                    <ExpressionStatement>
+                        <ExtCall extfun="putint">
+                            <Arguments>
+                                <Temp type="INT" temp="100"/>
+                            </Arguments>
+                        </ExtCall>
+                    </ExpressionStatement>
+                    <ExpressionStatement>
+                        <ExtCall extfun="putch">
+                            <Arguments>
+                                <Const value="10"/>
+                            </Arguments>
+                        </ExtCall>
+                    </ExpressionStatement>
+                    <Move>
+                        <Temp type="INT" temp="100"/>
+                        <BinOp type="INT" op="-">
+                            <Temp type="INT" temp="100"/>
+                            <Const value="1"/>
+                        </BinOp>
+                    </Move>
+                </Sequence>
+                <Jump label="105"/>
+                <Label label="107"/>
+            </Sequence>
+            <Return>
+                <Temp type="INT" temp="100"/>
+            </Return>
+        </Sequence>
+    </FunctionDeclaration>
+</Program>
