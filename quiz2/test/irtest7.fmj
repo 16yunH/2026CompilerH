@@ -1,0 +1,7 @@
+public int main() {
+    int i;
+    int j;
+    i = 1;
+    j = 2; 
+    return getint()+(i>1||j<2);
+}

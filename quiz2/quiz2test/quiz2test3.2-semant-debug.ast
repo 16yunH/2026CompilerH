@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FDMJAST>
+    <NameMaps>
+        <Class name="B">
+            <Var id="c">
+                <VarDecl>
+                    <Type typeKind="INT"/>
+                    <IdExp id="c"/>
+                </VarDecl>
+            </Var>
+            <Method name="m">
+                <Formal id="x">
+                    <Formal>
+                        <Type typeKind="INT"/>
+                        <IdExp id="x"/>
+                    </Formal>
+                </Formal>
+                <Formal id="_^return^_m">
+                    <Formal>
+                        <Type typeKind="INT"/>
+                        <IdExp id="_^return^_m"/>
+                    </Formal>
+                </Formal>
+                <Var id="c">
+                    <VarDecl>
+                        <Type typeKind="INT"/>
+                        <IdExp id="c"/>
+                    </VarDecl>
+                </Var>
+            </Method>
+        </Class>
+        <Class name="__$main__">
+            <Method name="main">
+                <Formal id="_^return^_main">
+                    <Formal>
+                        <Type typeKind="INT"/>
+                        <IdExp id="_^return^_main"/>
+                    </Formal>
+                </Formal>
+                <Var id="b">
+                    <VarDecl>
+                        <Type typeKind="CLASS">
+                            <IdExp id="B"/>
+                        </Type>
+                        <IdExp id="b"/>
+                    </VarDecl>
+                </Var>
+                <Var id="x">
+                    <VarDecl>
+                        <Type typeKind="INT"/>
+                        <IdExp id="x"/>
+                    </VarDecl>
+                </Var>
+                <Var id="y">
+                    <VarDecl>
+                        <Type typeKind="INT"/>
+                        <IdExp id="y"/>
+                    </VarDecl>
+                </Var>
+            </Method>
+        </Class>
+    </NameMaps>
+    <Program>
+        <MainMethod>
+            <VarDeclList>
+                <VarDecl>
+                    <Type typeKind="INT"/>
+                    <IdExp id="x"/>
+                </VarDecl>
+                <VarDecl>
+                    <Type typeKind="INT"/>
+                    <IdExp id="y"/>
+                </VarDecl>
+                <VarDecl>
+                    <Type typeKind="CLASS">
+                        <IdExp id="B"/>
+                    </Type>
+                    <IdExp id="b"/>
+                </VarDecl>
+            </VarDeclList>
+            <StmList>
+                <Assign>
+                    <IdExp s_kind="Value" typeKind="CLASS" lvalue="true" type_par="B" id="b"/>
+                    <NewObject s_kind="Value" typeKind="CLASS" lvalue="false" type_par="B">
+                        <Id id="B"/>
+                    </NewObject>
+                </Assign>
+                <Assign>
+                    <ClassVar s_kind="Value" typeKind="INT" lvalue="true">
+                        <IdExp s_kind="Value" typeKind="CLASS" lvalue="true" type_par="B" id="b"/>
+                        <IdExp id="c" s_kind="Value" typeKind="INT" lvalue="true"/>
+                    </ClassVar>
+                    <IntExp s_kind="Value" typeKind="INT" lvalue="false" val="0"/>
+                </Assign>
+                <Return s_kind="Value" typeKind="INT" lvalue="false">
+                    <CallExp s_kind="Value" typeKind="INT" lvalue="false">
+                        <IdExp s_kind="Value" typeKind="CLASS" lvalue="true" type_par="B" id="b"/>
+                        <IdExp id="m" s_kind="MethodName"/>
+                        <ParList>
+                            <IdExp s_kind="Value" typeKind="INT" lvalue="true" id="x"/>
+                        </ParList>
+                    </CallExp>
+                </Return>
+            </StmList>
+        </MainMethod>
+        <ClassDeclList>
+            <ClassDecl>
+                <IdExp id="B"/>
+                <VarDeclList>
+                    <VarDecl>
+                        <Type typeKind="INT"/>
+                        <IdExp id="c"/>
+                    </VarDecl>
+                </VarDeclList>
+                <MethodDeclList>
+                    <MethodDecl>
+                        <Type typeKind="INT"/>
+                        <IdExp id="m"/>
+                        <FormalList>
+                            <Formal>
+                                <Type typeKind="INT"/>
+                                <IdExp id="x"/>
+                            </Formal>
+                        </FormalList>
+                        <VarDeclList>
+                            <VarDecl>
+                                <Type typeKind="INT"/>
+                                <IdExp id="c"/>
+                            </VarDecl>
+                        </VarDeclList>
+                        <StmList>
+                            <Assign>
+                                <IdExp s_kind="Value" typeKind="INT" lvalue="true" id="c"/>
+                                <IdExp s_kind="Value" typeKind="INT" lvalue="true" id="x"/>
+                            </Assign>
+                            <Return s_kind="Value" typeKind="INT" lvalue="false">
+                                <IdExp s_kind="Value" typeKind="INT" lvalue="true" id="c"/>
+                            </Return>
+                        </StmList>
+                    </MethodDecl>
+                </MethodDeclList>
+            </ClassDecl>
+        </ClassDeclList>
+    </Program>
+</FDMJAST>

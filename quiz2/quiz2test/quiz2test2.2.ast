@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program>
+    <MainMethod>
+        <VarDeclList>
+            <VarDecl>
+                <Type typeKind="INT"/>
+                <IdExp id="x"/>
+            </VarDecl>
+            <VarDecl>
+                <Type typeKind="INT"/>
+                <IdExp id="y"/>
+            </VarDecl>
+        </VarDeclList>
+        <StmList>
+            <Assign>
+                <IdExp id="x"/>
+                <IntExp val="1"/>
+            </Assign>
+            <Return>
+                <IdExp id="y"/>
+            </Return>
+        </StmList>
+    </MainMethod>
+    <ClassDeclList>
+        <ClassDecl>
+            <IdExp id="B"/>
+            <VarDeclList>
+                <VarDecl>
+                    <Type typeKind="INT"/>
+                    <IdExp id="c"/>
+                </VarDecl>
+            </VarDeclList>
+            <MethodDeclList>
+                <MethodDecl>
+                    <Type typeKind="CLASS">
+                        <IdExp id="A"/>
+                    </Type>
+                    <IdExp id="m"/>
+                    <FormalList/>
+                    <VarDeclList>
+                        <VarDecl>
+                            <Type typeKind="INT"/>
+                            <IdExp id="c"/>
+                        </VarDecl>
+                    </VarDeclList>
+                    <StmList>
+                        <Assign>
+                            <IdExp id="c"/>
+                            <ClassVar>
+                                <This/>
+                                <IdExp id="c"/>
+                            </ClassVar>
+                        </Assign>
+                    </StmList>
+                </MethodDecl>
+            </MethodDeclList>
+        </ClassDecl>
+    </ClassDeclList>
+</Program>

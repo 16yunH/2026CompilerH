@@ -1,0 +1,7 @@
+public int main() {
+	int x;
+	int y;
+	x = 1;
+	y = y;
+	return y;
+}

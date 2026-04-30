@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FDMJAST>
+    <NameMaps>
+        <Class name="__$main__">
+            <Method name="main">
+                <Formal id="_^return^_main">
+                    <Formal bline="1" bpos="1" eline="10" epos="1">
+                        <Type typeKind="INT" bline="1" bpos="1" eline="10" epos="1"/>
+                        <IdExp bline="1" bpos="1" eline="10" epos="1" id="_^return^_main"/>
+                    </Formal>
+                </Formal>
+                <Var id="i">
+                    <VarDecl bline="2" bpos="5" eline="2" epos="10">
+                        <Type typeKind="INT" bline="2" bpos="5" eline="2" epos="7"/>
+                        <IdExp id="i" bline="2" bpos="9" eline="2" epos="9"/>
+                    </VarDecl>
+                </Var>
+                <Var id="j">
+                    <VarDecl bline="3" bpos="5" eline="3" epos="10">
+                        <Type typeKind="INT" bline="3" bpos="5" eline="3" epos="7"/>
+                        <IdExp id="j" bline="3" bpos="9" eline="3" epos="9"/>
+                    </VarDecl>
+                </Var>
+            </Method>
+        </Class>
+    </NameMaps>
+    <Program bline="1" bpos="1" eline="10" epos="1">
+        <MainMethod bline="1" bpos="1" eline="10" epos="1">
+            <VarDeclList>
+                <VarDecl bline="2" bpos="5" eline="2" epos="10">
+                    <Type typeKind="INT" bline="2" bpos="5" eline="2" epos="7"/>
+                    <IdExp id="i" bline="2" bpos="9" eline="2" epos="9"/>
+                </VarDecl>
+                <VarDecl bline="3" bpos="5" eline="3" epos="10">
+                    <Type typeKind="INT" bline="3" bpos="5" eline="3" epos="7"/>
+                    <IdExp id="j" bline="3" bpos="9" eline="3" epos="9"/>
+                </VarDecl>
+            </VarDeclList>
+            <StmList>
+                <Assign bline="4" bpos="5" eline="4" epos="10">
+                    <IdExp bline="4" bpos="5" eline="4" epos="5" s_kind="Value" typeKind="INT" lvalue="true" id="i"/>
+                    <IntExp bline="4" bpos="9" eline="4" epos="9" s_kind="Value" typeKind="INT" lvalue="false" val="1"/>
+                </Assign>
+                <Assign bline="5" bpos="5" eline="5" epos="10">
+                    <IdExp bline="5" bpos="5" eline="5" epos="5" s_kind="Value" typeKind="INT" lvalue="true" id="j"/>
+                    <IntExp bline="5" bpos="9" eline="5" epos="9" s_kind="Value" typeKind="INT" lvalue="false" val="2"/>
+                </Assign>
+                <While bline="6" bpos="5" eline="9" epos="5">
+                    <IdExp bline="6" bpos="12" eline="6" epos="12" s_kind="Value" typeKind="INT" lvalue="true" id="i"/>
+                    <Nested bline="6" bpos="15" eline="9" epos="5">
+                        <StmList>
+                            <If bline="7" bpos="7" eline="8" epos="20">
+                                <IdExp bline="7" bpos="11" eline="7" epos="11" s_kind="Value" typeKind="INT" lvalue="true" id="j"/>
+                                <Break bline="7" bpos="14" eline="7" epos="19"/>
+                                <Continue bline="8" bpos="12" eline="8" epos="20"/>
+                            </If>
+                        </StmList>
+                    </Nested>
+                </While>
+            </StmList>
+        </MainMethod>
+        <ClassDeclList/>
+    </Program>
+</FDMJAST>

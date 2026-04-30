@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Program>
+    <FunctionDeclaration name="__$main__^main" return_type="INT" last_temp="104" last_label="103">
+        <Sequence>
+            <Move>
+                <Temp type="INT" temp="103"/>
+                <Const value="0"/>
+            </Move>
+            <Move>
+                <Temp type="INT" temp="104"/>
+                <Const value="0"/>
+            </Move>
+            <Sequence>
+                <Move>
+                    <Temp type="INT" temp="100"/>
+                    <Const value="1"/>
+                </Move>
+                <Move>
+                    <Temp type="INT" temp="103"/>
+                    <Const value="1"/>
+                </Move>
+            </Sequence>
+            <Sequence>
+                <Move>
+                    <Temp type="INT" temp="101"/>
+                    <ESeq>
+                        <Sequence>
+                            <CJump relop="==" true="100" false="101">
+                                <Temp type="INT" temp="104"/>
+                                <Const value="1"/>
+                            </CJump>
+                            <Label label="101"/>
+                            <ExpressionStatement>
+                                <ExtCall type="INT" extfun="exit">
+                                    <Arguments>
+                                        <Const value="-101"/>
+                                    </Arguments>
+                                </ExtCall>
+                            </ExpressionStatement>
+                            <Label label="100"/>
+                        </Sequence>
+                        <Temp type="INT" temp="101"/>
+                    </ESeq>
+                </Move>
+                <Move>
+                    <Temp type="INT" temp="104"/>
+                    <Const value="1"/>
+                </Move>
+            </Sequence>
+            <Return>
+                <ESeq>
+                    <Sequence>
+                        <CJump relop="==" true="102" false="103">
+                            <Temp type="INT" temp="104"/>
+                            <Const value="1"/>
+                        </CJump>
+                        <Label label="103"/>
+                        <ExpressionStatement>
+                            <ExtCall type="INT" extfun="exit">
+                                <Arguments>
+                                    <Const value="-101"/>
+                                </Arguments>
+                            </ExtCall>
+                        </ExpressionStatement>
+                        <Label label="102"/>
+                    </Sequence>
+                    <Temp type="INT" temp="101"/>
+                </ESeq>
+            </Return>
+        </Sequence>
+    </FunctionDeclaration>
+</Program>
