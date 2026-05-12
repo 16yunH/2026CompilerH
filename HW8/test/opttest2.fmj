@@ -1,0 +1,9 @@
+public int main() {
+    int i;
+    int j;
+    i = 1;
+    j = i;
+    if (i) j=0;
+    else j=0;
+    return j;
+}

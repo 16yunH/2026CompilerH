@@ -1,0 +1,6 @@
+public int main() {
+    int i;
+    i = 1;
+    if (i) i=-i;
+    return 0;
+}

@@ -1,0 +1,15 @@
+public int main() {
+    int i;
+    int i_shadow;
+    i_shadow = 0;
+
+    if (0) {
+       i = 9;
+       i_shadow = 1;
+    }
+
+    if (i_shadow) 
+       return i;
+    else
+       return -i;
+}

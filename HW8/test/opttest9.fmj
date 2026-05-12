@@ -1,0 +1,12 @@
+public int main() {
+    int i;
+    int j;
+    int k;
+    i = getint();
+    k = 10;
+    while (k>0) {
+       j = i;
+       break;
+    }
+    return j;
+}

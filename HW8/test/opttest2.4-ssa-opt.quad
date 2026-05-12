@@ -1,0 +1,13 @@
+Function __$main__^main() last_label=105 last_temp=104:
+  Block: Entry Label: L105
+    Exit labels: L102 
+    LABEL L105; 
+    JUMP L102; 
+  Block: Entry Label: L102
+    Exit labels: L104 
+    LABEL L102; 
+    JUMP L104; 
+  Block: Entry Label: L104
+    Exit labels: 
+    LABEL L104; 
+    RETURN Const:0; 

@@ -1,0 +1,12 @@
+public int main() {
+    int i;
+    int j;
+    i = getint();
+
+    if (i>0) {
+       j = 9;
+    } else {
+       j = 9;
+    }
+    return j;
+}
