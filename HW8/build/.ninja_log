@@ -1,0 +1,8 @@
+# ninja log v5
+0	316	1778570710366519977	lib/util/CMakeFiles/util.dir/print_config.cc.o	dd3229aad9797327
+0	367	1778570710416525190	tools/main/CMakeFiles/main.dir/main.cc.o	bd678fa43060eeb4
+0	880	1778570710926578362	lib/util/CMakeFiles/util.dir/xml2quad.cc.o	30eb310c32c6ef70
+0	1043	1778570711086595192	vendor/tinyxml2/CMakeFiles/vendor_xml.dir/tinyxml2.cc.o	e30dcd950944d790
+0	1056	1778570711106597320	lib/quad/CMakeFiles/quad.dir/quad.cc.o	fd486c69b2426090
+0	1212	1778570711256613268	lib/opt/CMakeFiles/opt.dir/opt.cc.o	10e6f63517b707b0
+1212	1317	1778570711366624962	tools/main/main	1dacf39b6b296f7b
