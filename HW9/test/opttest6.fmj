@@ -1,0 +1,33 @@
+public int main() {
+    int i;
+    int j;
+    int k;
+    int a;
+    i = getint();
+    k = 10;
+    a = 0;
+    while (k>0) {
+      a = a + 1;
+      while (i>0) {
+       if (a>3)
+        j = 3 * a;
+       else 
+        j = new C().m(3);
+       i = i-1; 
+      }
+      k = k-1;
+    }
+    return j;
+}
+
+public class C {
+  public int m(int i) {
+    int a;
+    a = 0;
+    while (i) {
+      a = 3;
+      i = i - 1;
+    }
+    return a;
+  }
+}

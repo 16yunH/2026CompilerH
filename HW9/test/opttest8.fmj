@@ -1,0 +1,19 @@
+public int main() {
+    int i;
+    int x;
+    int result;
+    
+    i = 0;
+    x = 0;
+    result = 0;
+    
+    while (i < 10) {
+        if (i > 5) {
+            x = 100 + 200;    // loop-invariant: 100 and 200 never change
+            result = x;       // x is used only in this then-branch
+        }
+        i = i + 1;
+    }
+    
+    return result;
+}

@@ -1,0 +1,23 @@
+public int main() {
+    int i;
+    int j;
+    int k;
+    int a;
+    int b;
+    int c;
+    i = getint();
+    k = 10;
+    a = 0;
+    j = 100;
+    while (k>0) {
+      a = 10;
+      b = a + 1;
+      c = a + b;
+      while (i>0) {
+       j = 3 * c;
+       i = i-1; 
+      }
+      k = k-1;
+    }
+    return j;
+}

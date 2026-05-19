@@ -1,0 +1,44 @@
+Function __$main__^main() last_label=110 last_temp=108:
+  Block: Entry Label: L110
+    Exit labels: L102 
+    LABEL L110; def: use: 
+    MOVE_EXTCALL t10300:int <- getint(); def: t10300 use: 
+    MOVE t10500:int <- Const:10; def: t10500 use: 
+    MOVE t10000:int <- Const:0; def: t10000 use: 
+    MOVE t10400:int <- Const:100; def: t10400 use: 
+    JUMP L102; def: use: 
+  Block: Entry Label: L102
+    Exit labels: L103 L104 
+    LABEL L102; def: use: 
+    PHI t10501:int <- Phi([t10502, L109], [t10500, L110]); def: t10501 use: t10502 t10500 
+    PHI t10401:int <- Phi([t10402, L109], [t10400, L110]); def: t10401 use: t10402 t10400 
+    PHI t10301:int <- Phi([t10302, L109], [t10300, L110]); def: t10301 use: t10302 t10300 
+    CJUMP > t10501:int Const:0? L103 : L104; def: use: t10501 
+  Block: Entry Label: L103
+    Exit labels: L107 
+    LABEL L103; def: use: 
+    MOVE t10001:int <- Const:10; def: t10001 use: 
+    MOVE_BINOP t10100:int <- (+, t10001:int, Const:1); def: t10100 use: t10001 
+    MOVE_BINOP t10200:int <- (+, t10001:int, t10100:int); def: t10200 use: t10100 t10001 
+    JUMP L107; def: use: 
+  Block: Entry Label: L107
+    Exit labels: L108 L109 
+    LABEL L107; def: use: 
+    PHI t10402:int <- Phi([t10401, L103], [t10403, L108]); def: t10402 use: t10403 t10401 
+    PHI t10302:int <- Phi([t10301, L103], [t10303, L108]); def: t10302 use: t10303 t10301 
+    CJUMP > t10302:int Const:0? L108 : L109; def: use: t10302 
+  Block: Entry Label: L108
+    Exit labels: L107 
+    LABEL L108; def: use: 
+    MOVE_BINOP t10403:int <- (*, Const:3, t10200:int); def: t10403 use: t10200 
+    MOVE_BINOP t10303:int <- (-, t10302:int, Const:1); def: t10303 use: t10302 
+    JUMP L107; def: use: 
+  Block: Entry Label: L109
+    Exit labels: L102 
+    LABEL L109; def: use: 
+    MOVE_BINOP t10502:int <- (-, t10501:int, Const:1); def: t10502 use: t10501 
+    JUMP L102; def: use: 
+  Block: Entry Label: L104
+    Exit labels: 
+    LABEL L104; def: use: 
+    RETURN t10401:int; def: use: t10401 

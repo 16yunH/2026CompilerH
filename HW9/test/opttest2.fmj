@@ -1,0 +1,15 @@
+public int main() {
+    int i;
+    int j;
+    int k;
+    i = getint();
+    k = 10;
+    while (k>0) {
+      while (i>0) {
+       j = 3;
+       i = i-1; 
+      }
+      k=k-1;
+    }
+    return j;
+}
