@@ -9,6 +9,7 @@ venv/
 
 manual.md
 report.md
+CLAUDE.md
 *.pdf
 *.png
 *.zip
