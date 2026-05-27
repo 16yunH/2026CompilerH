@@ -1,0 +1,44 @@
+public int main() {
+    int k;
+    k = getint();
+    while (k>0) {
+       k = k-1;
+       putint(4*k+2);
+       putch(32);
+    }
+    putch(10);
+    return 2;
+}
+
+/*
+=== BASIC INDUCTION VARIABLES ===
+Loop at header L102:
+  t10001 (PHI at L102)
+    Initial value: t10000
+    Backedge: t10002
+    Update order: 7
+    Step: -1 (constant)
+    Related temps: t10000 t10001 t10002 
+    Useless (cyclic only): t10000 
+
+=== DERIVED INDUCTION VARIABLES ===
+Loop at header L102:
+  t10300 (derived IV)
+    Depends on: t10800
+    Source order: 9
+    Expression: 4*t10001 + 2
+    Definition: MOVE_BINOP t10300:int <- (+, t10800:int, Const:2); 
+
+
+=== STRENGTH REDUCTION PLAN ===
+Total replacements: 1
+Replacement 1:
+  Original IV: t10300
+  New PHI temp: t10301
+  New backedge temp: t10303
+  Loop header: L102
+  Source order: 9
+  Init adjusted for update order: yes
+  Init expr: 4*t10001 + 2
+  Step expr: -4
+*/
