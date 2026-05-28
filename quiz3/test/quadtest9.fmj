@@ -1,0 +1,35 @@
+public int main() {
+   class A a; class B b;
+   a = new A();
+   b = new B();
+   a.f();
+   b.f();
+   putint(a.i + a.x + b.i + b.j + b.x);
+   putch(10);
+   a = b;
+   putint(a.i + b.i + b.j + b.x);
+   putch(10);
+   return 1;
+}
+
+public class A {
+   int i;
+   int x;
+   public int f() {
+    this.i=1; 
+    this.x=2; 
+    return 0;
+   }
+}
+
+public class B extends A {
+   int j;
+   int x;
+   public int f() { 
+     this.i=4; 
+     this.j=30; 
+     this.x=100;
+     return this.i + this.j + this.x; 
+   }
+}
+

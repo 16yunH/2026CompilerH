@@ -1,0 +1,8 @@
+SSA_DIAG_BEGIN func=__$main__^main
+SSA_TEMP_DIAG temp=t100 candidate_phi=[L110] actual_phi=[L110] created=[v1@{L110},v2@{L111}]
+SSA_TEMP_DIAG temp=t132 candidate_phi=[L110]
+SSA_TEMP_DIAG temp=t133 candidate_phi=[L110]
+SSA_TEMP_DIAG temp=t166 candidate_phi=[L110]
+SSA_DIAG_END func=__$main__^main
+SSA_DIAG_BEGIN func=fib^f
+SSA_DIAG_END func=fib^f

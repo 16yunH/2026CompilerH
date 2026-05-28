@@ -1,0 +1,12 @@
+public int main() {
+    int[] a={1,2,3,4};
+    int k;
+    k = length(a);
+    while (k>0) {
+       k = k-1;
+       putint(a[k]);
+       putch(32);
+    }
+    putch(10);
+    return 2;
+}

@@ -1,0 +1,2 @@
+SSA_DIAG_BEGIN func=__$main__^main
+SSA_DIAG_END func=__$main__^main

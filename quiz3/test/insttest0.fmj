@@ -1,0 +1,11 @@
+public int main() {
+   putint(new C().max(100, 200));
+   return 1;
+}
+
+public class C {
+   public int max(int a, int b) {
+     if (a>b) return a;
+     else return b;
+   }
+}

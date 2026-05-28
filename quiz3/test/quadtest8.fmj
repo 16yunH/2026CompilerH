@@ -1,0 +1,23 @@
+public int main() {
+   class A a;
+   class B b;
+   a = new A();
+   a.i = 4;
+   b = new B();
+   b.i = 2;
+   a = b;
+   putint(a.f()+b.i);
+   putch(10);
+   return 0;
+}
+
+public class A {
+   int i;
+   public int f() {return 100;}
+}
+
+public class B extends A {
+   int i;
+   public int f() {return 200;}
+   public int g() {return 300;}
+}

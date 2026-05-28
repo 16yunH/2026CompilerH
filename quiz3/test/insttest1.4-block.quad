@@ -1,0 +1,51 @@
+Function __$main__^main() last_label=108 last_temp=123:
+  Block: Entry Label: L108
+    Exit labels: L102 
+    LABEL L108; def: use: 
+    MOVE_EXTCALL t100:ptr <- malloc(Const:20); def: t100 use: 
+    STORE Const:4 -> Mem(t100:ptr); def: use: t100 
+    PTR_CALC t113:ptr <- t100:ptr + Const:4; def: t113 use: t100 
+    STORE Const:1 -> Mem(t113:ptr); def: use: t113 
+    PTR_CALC t114:ptr <- t100:ptr + Const:8; def: t114 use: t100 
+    STORE Const:2 -> Mem(t114:ptr); def: use: t114 
+    PTR_CALC t115:ptr <- t100:ptr + Const:12; def: t115 use: t100 
+    STORE Const:3 -> Mem(t115:ptr); def: use: t115 
+    PTR_CALC t116:ptr <- t100:ptr + Const:16; def: t116 use: t100 
+    STORE Const:4 -> Mem(t116:ptr); def: use: t116 
+    LOAD t103:int <- Mem(t100:ptr); def: t103 use: t100 
+    MOVE t101:int <- t103:int; def: t101 use: t103 
+    JUMP L102; def: use: 
+  Block: Entry Label: L102
+    Exit labels: L103 L104 
+    LABEL L102; def: use: 
+    CJUMP > t101:int Const:0? L103 : L104; def: use: t101 
+  Block: Entry Label: L103
+    Exit labels: L106 L105 
+    LABEL L103; def: use: 
+    MOVE_BINOP t101:int <- (-, t101:int, Const:1); def: t101 use: t101 
+    MOVE t107:ptr <- t100:ptr; def: t107 use: t100 
+    LOAD t104:int <- Mem(t100:ptr); def: t104 use: t100 
+    CJUMP >= t101:int Const:0? L106 : L105; def: use: t101 
+  Block: Entry Label: L106
+    Exit labels: L105 L107 
+    LABEL L106; def: use: 
+    CJUMP >= t101:int t104:int? L105 : L107; def: use: t101 t104 
+  Block: Entry Label: L105
+    Exit labels: 
+    LABEL L105; def: use: 
+    EXTCALL exit(Const:-1); def: use: 
+  Block: Entry Label: L107
+    Exit labels: L102 
+    LABEL L107; def: use: 
+    MOVE_BINOP t118:int <- (+, t101:int, Const:1); def: t118 use: t101 
+    MOVE_BINOP t119:int <- (*, t118:int, Const:4); def: t119 use: t118 
+    PTR_CALC t120:ptr <- t107:ptr + t119:int; def: t120 use: t107 t119 
+    LOAD t108:int <- Mem(t120:ptr); def: t108 use: t120 
+    EXTCALL putint(t108:int); def: use: t108 
+    EXTCALL putch(Const:32); def: use: 
+    JUMP L102; def: use: 
+  Block: Entry Label: L104
+    Exit labels: 
+    LABEL L104; def: use: 
+    EXTCALL putch(Const:10); def: use: 
+    RETURN Const:2; def: use: 

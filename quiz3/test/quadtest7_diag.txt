@@ -1,0 +1,8 @@
+SSA_DIAG_BEGIN func=__$main__^main
+SSA_TEMP_DIAG temp=t100 created=[v1@{L100}]
+SSA_TEMP_DIAG temp=t101 created=[v1@{L100}]
+SSA_DIAG_END func=__$main__^main
+SSA_DIAG_BEGIN func=A^f
+SSA_DIAG_END func=A^f
+SSA_DIAG_BEGIN func=B^f
+SSA_DIAG_END func=B^f

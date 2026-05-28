@@ -1,0 +1,7 @@
+public int main() {
+    int i;
+    i = 1;
+    putint(i);
+    putch(10);
+    return i;
+}

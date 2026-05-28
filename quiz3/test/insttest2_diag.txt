@@ -1,0 +1,11 @@
+SSA_DIAG_BEGIN func=__$main__^main
+SSA_TEMP_DIAG temp=t101 candidate_phi=[L102] actual_phi=[L102] created=[v1@{L102},v2@{L103}]
+SSA_TEMP_DIAG temp=t105 candidate_phi=[L102]
+SSA_TEMP_DIAG temp=t106 candidate_phi=[L102]
+SSA_TEMP_DIAG temp=t110 candidate_phi=[L102]
+SSA_TEMP_DIAG temp=t111 candidate_phi=[L102]
+SSA_TEMP_DIAG temp=t122 candidate_phi=[L102]
+SSA_TEMP_DIAG temp=t124 candidate_phi=[L102]
+SSA_TEMP_DIAG temp=t125 candidate_phi=[L102]
+SSA_TEMP_DIAG temp=t126 candidate_phi=[L102]
+SSA_DIAG_END func=__$main__^main
