@@ -1,10 +1,3 @@
-Function C^m(t100) last_label=100 last_temp=103:
-  Block: Entry Label: L100
-    Exit labels: 
-    LABEL L100; def: use: 
-    PTR_CALC t10200:ptr <- t100:ptr + Const:0; def: t10200 use: t100 
-    LOAD t10300:ptr <- Mem(t10200:ptr); def: t10300 use: t10200 
-    RETURN t10300:ptr; def: use: t10300 
 Function __$main__^main() last_label=108 last_temp=134:
   Block: Entry Label: L108
     Exit labels: L102 
@@ -46,7 +39,7 @@ Function __$main__^main() last_label=108 last_temp=134:
   Block: Entry Label: L106
     Exit labels: L105 L107 
     LABEL L106; def: use: 
-    CJUMP >= t10202:int t10700:int? L105 : L107; def: use: t10700 t10202 
+    CJUMP >= t10202:int t10700:int? L105 : L107; def: use: t10202 t10700 
   Block: Entry Label: L105
     Exit labels: 
     LABEL L105; def: use: 
@@ -56,7 +49,7 @@ Function __$main__^main() last_label=108 last_temp=134:
     LABEL L107; def: use: 
     MOVE_BINOP t12900:int <- (+, t10202:int, Const:1); def: t12900 use: t10202 
     MOVE_BINOP t13000:int <- (*, t12900:int, Const:4); def: t13000 use: t12900 
-    PTR_CALC t13100:ptr <- t11300:ptr + t13000:int; def: t13100 use: t13000 t11300 
+    PTR_CALC t13100:ptr <- t11300:ptr + t13000:int; def: t13100 use: t11300 t13000 
     LOAD t11400:int <- Mem(t13100:ptr); def: t11400 use: t13100 
     EXTCALL putint(t11400:int); def: use: t11400 
     EXTCALL putch(Const:32); def: use: 
@@ -66,3 +59,10 @@ Function __$main__^main() last_label=108 last_temp=134:
     LABEL L104; def: use: 
     EXTCALL putch(Const:10); def: use: 
     RETURN Const:2; def: use: 
+Function C^m(t100) last_label=100 last_temp=103:
+  Block: Entry Label: L100
+    Exit labels: 
+    LABEL L100; def: use: 
+    PTR_CALC t10200:ptr <- t100:ptr + Const:0; def: t10200 use: t100 
+    LOAD t10300:ptr <- Mem(t10200:ptr); def: t10300 use: t10200 
+    RETURN t10300:ptr; def: use: t10300 

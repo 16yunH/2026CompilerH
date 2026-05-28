@@ -1,20 +1,3 @@
-Function C^m(t100, t101) last_label=105 last_temp=106:
-  Block: Entry Label: L105
-    Exit labels: L102 L103 
-    LABEL L105; def: use: 
-    CJUMP > t101:int Const:0? L102 : L103; def: use: t101 
-  Block: Entry Label: L102
-    Exit labels: 
-    LABEL L102; def: use: 
-    PTR_CALC t10300:ptr <- t100:ptr + Const:0; def: t10300 use: t100 
-    LOAD t10400:ptr <- Mem(t10300:ptr); def: t10400 use: t10300 
-    RETURN t10400:ptr; def: use: t10400 
-  Block: Entry Label: L103
-    Exit labels: 
-    LABEL L103; def: use: 
-    PTR_CALC t10500:ptr <- t100:ptr + Const:4; def: t10500 use: t100 
-    LOAD t10600:ptr <- Mem(t10500:ptr); def: t10600 use: t10500 
-    RETURN t10600:ptr; def: use: t10600 
 Function __$main__^main() last_label=108 last_temp=147:
   Block: Entry Label: L108
     Exit labels: L102 
@@ -74,7 +57,7 @@ Function __$main__^main() last_label=108 last_temp=147:
   Block: Entry Label: L106
     Exit labels: L105 L107 
     LABEL L106; def: use: 
-    CJUMP >= t10102:int t10800:int? L105 : L107; def: use: t10800 t10102 
+    CJUMP >= t10102:int t10800:int? L105 : L107; def: use: t10102 t10800 
   Block: Entry Label: L105
     Exit labels: 
     LABEL L105; def: use: 
@@ -84,7 +67,7 @@ Function __$main__^main() last_label=108 last_temp=147:
     LABEL L107; def: use: 
     MOVE_BINOP t14200:int <- (+, t10102:int, Const:1); def: t14200 use: t10102 
     MOVE_BINOP t14300:int <- (*, t14200:int, Const:4); def: t14300 use: t14200 
-    PTR_CALC t14400:ptr <- t11800:ptr + t14300:int; def: t14400 use: t14300 t11800 
+    PTR_CALC t14400:ptr <- t11800:ptr + t14300:int; def: t14400 use: t11800 t14300 
     LOAD t11900:int <- Mem(t14400:ptr); def: t11900 use: t14400 
     EXTCALL putint(t11900:int); def: use: t11900 
     EXTCALL putch(Const:32); def: use: 
@@ -94,3 +77,20 @@ Function __$main__^main() last_label=108 last_temp=147:
     LABEL L104; def: use: 
     EXTCALL putch(Const:10); def: use: 
     RETURN Const:2; def: use: 
+Function C^m(t100, t101) last_label=105 last_temp=106:
+  Block: Entry Label: L105
+    Exit labels: L102 L103 
+    LABEL L105; def: use: 
+    CJUMP > t101:int Const:0? L102 : L103; def: use: t101 
+  Block: Entry Label: L102
+    Exit labels: 
+    LABEL L102; def: use: 
+    PTR_CALC t10300:ptr <- t100:ptr + Const:0; def: t10300 use: t100 
+    LOAD t10400:ptr <- Mem(t10300:ptr); def: t10400 use: t10300 
+    RETURN t10400:ptr; def: use: t10400 
+  Block: Entry Label: L103
+    Exit labels: 
+    LABEL L103; def: use: 
+    PTR_CALC t10500:ptr <- t100:ptr + Const:4; def: t10500 use: t100 
+    LOAD t10600:ptr <- Mem(t10500:ptr); def: t10600 use: t10500 
+    RETURN t10600:ptr; def: use: t10600 

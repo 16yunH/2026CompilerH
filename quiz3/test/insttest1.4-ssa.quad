@@ -18,7 +18,7 @@ Function __$main__^main() last_label=108 last_temp=123:
   Block: Entry Label: L102
     Exit labels: L103 L104 
     LABEL L102; def: use: 
-    PHI t10101:int <- Phi([t10102, L107], [t10100, L108]); def: t10101 use: t10102 t10100 
+    PHI t10101:int <- Phi([t10102, L107], [t10100, L108]); def: t10101 use: t10100 t10102 
     CJUMP > t10101:int Const:0? L103 : L104; def: use: t10101 
   Block: Entry Label: L103
     Exit labels: L106 L105 
@@ -30,7 +30,7 @@ Function __$main__^main() last_label=108 last_temp=123:
   Block: Entry Label: L106
     Exit labels: L105 L107 
     LABEL L106; def: use: 
-    CJUMP >= t10102:int t10400:int? L105 : L107; def: use: t10400 t10102 
+    CJUMP >= t10102:int t10400:int? L105 : L107; def: use: t10102 t10400 
   Block: Entry Label: L105
     Exit labels: 
     LABEL L105; def: use: 

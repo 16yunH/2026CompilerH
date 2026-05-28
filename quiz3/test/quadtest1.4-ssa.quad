@@ -29,12 +29,12 @@ Function __$main__^main() last_label=108 last_temp=140:
     MOVE t11200:ptr <- t10100:ptr; def: t11200 use: t10100 
     MOVE t11100:ptr <- t10000:ptr; def: t11100 use: t10000 
     LOAD t10500:int <- Mem(t10000:ptr); def: t10500 use: t10000 
-    CALL bubbleSort[t11300:ptr] (t11200:ptr, t11100:ptr, t10500:int); def: use: t10500 t11200 t11300 t11100 
+    CALL bubbleSort[t11300:ptr] (t11200:ptr, t11100:ptr, t10500:int); def: use: t10500 t11100 t11200 t11300 
     JUMP L102; def: use: 
   Block: Entry Label: L102
     Exit labels: L103 L104 
     LABEL L102; def: use: 
-    PHI t10201:int <- Phi([t10202, L107], [t10200, L108]); def: t10201 use: t10202 t10200 
+    PHI t10201:int <- Phi([t10202, L107], [t10200, L108]); def: t10201 use: t10200 t10202 
     MOVE t11500:int <- t10201:int; def: t11500 use: t10201 
     LOAD t10600:int <- Mem(t10000:ptr); def: t10600 use: t10000 
     CJUMP < t11500:int t10600:int? L103 : L104; def: use: t10600 t11500 
@@ -47,7 +47,7 @@ Function __$main__^main() last_label=108 last_temp=140:
   Block: Entry Label: L106
     Exit labels: L105 L107 
     LABEL L106; def: use: 
-    CJUMP >= t10201:int t10700:int? L105 : L107; def: use: t10700 t10201 
+    CJUMP >= t10201:int t10700:int? L105 : L107; def: use: t10201 t10700 
   Block: Entry Label: L105
     Exit labels: 
     LABEL L105; def: use: 
@@ -57,7 +57,7 @@ Function __$main__^main() last_label=108 last_temp=140:
     LABEL L107; def: use: 
     MOVE_BINOP t13500:int <- (+, t10201:int, Const:1); def: t13500 use: t10201 
     MOVE_BINOP t13600:int <- (*, t13500:int, Const:4); def: t13600 use: t13500 
-    PTR_CALC t13700:ptr <- t11700:ptr + t13600:int; def: t13700 use: t11700 t13600 
+    PTR_CALC t13700:ptr <- t11700:ptr + t13600:int; def: t13700 use: t13600 t11700 
     LOAD t11800:int <- Mem(t13700:ptr); def: t11800 use: t13700 
     EXTCALL putint(t11800:int); def: use: t11800 
     EXTCALL putch(Const:32); def: use: 
@@ -89,9 +89,9 @@ Function b1^bubbleSort(t101, t102, t103) last_label=133 last_temp=165:
   Block: Entry Label: L107
     Exit labels: L108 L109 
     LABEL L107; def: use: 
-    PHI t10001:int <- Phi([t10000, L104], [t10002, L132]); def: t10001 use: t10002 t10000 
+    PHI t10001:int <- Phi([t10000, L104], [t10002, L132]); def: t10001 use: t10000 t10002 
     MOVE_BINOP t13300:int <- (-, t103:int, Const:1); def: t13300 use: t103 
-    CJUMP < t10001:int t13300:int? L108 : L109; def: use: t13300 t10001 
+    CJUMP < t10001:int t13300:int? L108 : L109; def: use: t10001 t13300 
   Block: Entry Label: L108
     Exit labels: L111 L110 
     LABEL L108; def: use: 
@@ -101,7 +101,7 @@ Function b1^bubbleSort(t101, t102, t103) last_label=133 last_temp=165:
   Block: Entry Label: L111
     Exit labels: L110 L112 
     LABEL L111; def: use: 
-    CJUMP >= t10001:int t10500:int? L110 : L112; def: use: t10500 t10001 
+    CJUMP >= t10001:int t10500:int? L110 : L112; def: use: t10001 t10500 
   Block: Entry Label: L110
     Exit labels: 
     LABEL L110; def: use: 
@@ -155,14 +155,14 @@ Function b1^bubbleSort(t101, t102, t103) last_label=133 last_temp=165:
     MOVE_BINOP t14600:int <- (*, t14500:int, Const:4); def: t14600 use: t14500 
     PTR_CALC t14700:ptr <- t12000:ptr + t14600:int; def: t14700 use: t12000 t14600 
     LOAD t14800:int <- Mem(t14700:ptr); def: t14800 use: t14700 
-    STORE t14800:int -> Mem(t14400:ptr); def: use: t14800 t14400 
+    STORE t14800:int -> Mem(t14400:ptr); def: use: t14400 t14800 
     MOVE t12200:ptr <- t102:ptr; def: t12200 use: t102 
     LOAD t10900:int <- Mem(t102:ptr); def: t10900 use: t102 
     CJUMP >= t10001:int Const:0? L122 : L121; def: use: t10001 
   Block: Entry Label: L122
     Exit labels: L121 L123 
     LABEL L122; def: use: 
-    CJUMP >= t10001:int t10900:int? L121 : L123; def: use: t10900 t10001 
+    CJUMP >= t10001:int t10900:int? L121 : L123; def: use: t10001 t10900 
   Block: Entry Label: L121
     Exit labels: 
     LABEL L121; def: use: 
@@ -177,7 +177,7 @@ Function b1^bubbleSort(t101, t102, t103) last_label=133 last_temp=165:
   Block: Entry Label: L125
     Exit labels: L124 L126 
     LABEL L125; def: use: 
-    CJUMP >= t11000:int t11100:int? L124 : L126; def: use: t11100 t11000 
+    CJUMP >= t11000:int t11100:int? L124 : L126; def: use: t11000 t11100 
   Block: Entry Label: L124
     Exit labels: 
     LABEL L124; def: use: 
@@ -187,7 +187,7 @@ Function b1^bubbleSort(t101, t102, t103) last_label=133 last_temp=165:
     LABEL L126; def: use: 
     MOVE_BINOP t15100:int <- (+, t10001:int, Const:1); def: t15100 use: t10001 
     MOVE_BINOP t15200:int <- (*, t15100:int, Const:4); def: t15200 use: t15100 
-    PTR_CALC t15300:ptr <- t12200:ptr + t15200:int; def: t15300 use: t15200 t12200 
+    PTR_CALC t15300:ptr <- t12200:ptr + t15200:int; def: t15300 use: t12200 t15200 
     MOVE_BINOP t15400:int <- (+, t11000:int, Const:1); def: t15400 use: t11000 
     MOVE_BINOP t15500:int <- (*, t15400:int, Const:4); def: t15500 use: t15400 
     PTR_CALC t15600:ptr <- t12400:ptr + t15500:int; def: t15600 use: t12400 t15500 
@@ -200,7 +200,7 @@ Function b1^bubbleSort(t101, t102, t103) last_label=133 last_temp=165:
   Block: Entry Label: L128
     Exit labels: L127 L129 
     LABEL L128; def: use: 
-    CJUMP >= t11200:int t11300:int? L127 : L129; def: use: t11300 t11200 
+    CJUMP >= t11200:int t11300:int? L127 : L129; def: use: t11200 t11300 
   Block: Entry Label: L127
     Exit labels: 
     LABEL L127; def: use: 
@@ -233,5 +233,5 @@ Function b1^bubbleSort(t101, t102, t103) last_label=133 last_temp=165:
     MOVE t13000:ptr <- t101:ptr; def: t13000 use: t101 
     MOVE t12900:ptr <- t102:ptr; def: t12900 use: t102 
     MOVE_BINOP t12800:int <- (-, t103:int, Const:1); def: t12800 use: t103 
-    MOVE_CALL t13200:int <- bubbleSort[t13100:ptr] (t13000:ptr, t12900:ptr, t12800:int); def: t13200 use: t12800 t13100 t12900 t13000 
+    MOVE_CALL t13200:int <- bubbleSort[t13100:ptr] (t13000:ptr, t12900:ptr, t12800:int); def: t13200 use: t12800 t12900 t13000 t13100 
     RETURN t13200:int; def: use: t13200 

@@ -32,7 +32,7 @@ Function __$main__^main() last_label=108 last_temp=123:
   Block: Entry Label: L106
     Exit labels: L105 L107 
     LABEL L106; def: use: 
-    CJUMP >= t10101:int t10400:int? L105 : L107; def: use: t10400 t10101 
+    CJUMP >= t10101:int t10400:int? L105 : L107; def: use: t10101 t10400 
   Block: Entry Label: L105
     Exit labels: 
     LABEL L105; def: use: 
@@ -42,7 +42,7 @@ Function __$main__^main() last_label=108 last_temp=123:
     LABEL L107; def: use: 
     MOVE_BINOP t11900:int <- (+, t10101:int, Const:1); def: t11900 use: t10101 
     MOVE_BINOP t12000:int <- (*, t11900:int, Const:4); def: t12000 use: t11900 
-    PTR_CALC t12100:ptr <- t10800:ptr + t12000:int; def: t12100 use: t12000 t10800 
+    PTR_CALC t12100:ptr <- t10800:ptr + t12000:int; def: t12100 use: t10800 t12000 
     LOAD t10900:int <- Mem(t12100:ptr); def: t10900 use: t12100 
     EXTCALL putint(t10900:int); def: use: t10900 
     EXTCALL putch(Const:10); def: use: 

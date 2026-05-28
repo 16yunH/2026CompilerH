@@ -33,13 +33,13 @@ Function A^f(t100) last_label=100 last_temp=101:
     Exit labels: 
     LABEL L100; def: use: 
     RETURN Const:100; def: use: 
-Function B^g(t100) last_label=100 last_temp=101:
-  Block: Entry Label: L100
-    Exit labels: 
-    LABEL L100; def: use: 
-    RETURN Const:300; def: use: 
 Function B^f(t100) last_label=100 last_temp=101:
   Block: Entry Label: L100
     Exit labels: 
     LABEL L100; def: use: 
     RETURN Const:200; def: use: 
+Function B^g(t100) last_label=100 last_temp=101:
+  Block: Entry Label: L100
+    Exit labels: 
+    LABEL L100; def: use: 
+    RETURN Const:300; def: use: 
