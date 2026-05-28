@@ -14,6 +14,7 @@
 #include "flowinfo.hh"
 #include "quadssa.hh"
 #include "temp.hh"
+#include "quadssa_diag.hh"
 
 using namespace std;
 using namespace quad;
@@ -572,13 +573,13 @@ static void rebuildDefUseForFunc(QuadFuncDecl *func)
 }
 
 // Forward declarations for internal functions
-static void placePhi(QuadFuncDecl *func, ControlFlowInfo *domInfo, DataFlowInfo *liveness);
-static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo);
-static void cleanupUnusedPhi(QuadFuncDecl *func);
+static void placePhi(QuadFuncDecl *func, ControlFlowInfo *domInfo, DataFlowInfo *liveness, SsaDiagState &diag);
+static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo, SsaDiagState &diag);
+static void cleanupUnusedPhi(QuadFuncDecl *func, SsaDiagState &diag);
 
 // Place Phi functions at appropriate locations
 // HW7: You need to write this part!!
-static void placePhi(QuadFuncDecl *func, ControlFlowInfo *domInfo, DataFlowInfo *liveness)
+static void placePhi(QuadFuncDecl *func, ControlFlowInfo *domInfo, DataFlowInfo *liveness, SsaDiagState &diag)
 {
 #ifdef DEBUG
     cout << "Placing phi functions for function: " << func->funcname << endl;
@@ -640,6 +641,7 @@ static void placePhi(QuadFuncDecl *func, ControlFlowInfo *domInfo, DataFlowInfo 
 
             for (int y : dfBlocksSorted)
             {
+                diag.candidatePhiBlocksByVar[var].insert(y);
                 if (phiPlaced[y].count(var))
                 {
                     continue;
@@ -734,7 +736,7 @@ static void placePhi(QuadFuncDecl *func, ControlFlowInfo *domInfo, DataFlowInfo 
 
 // Rename variables to ensure SSA property
 // HW7: You need to write this part!!
-static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo)
+static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo, SsaDiagState &diag)
 {
 #ifdef DEBUG
     cout << "Entering renaming variables for function: " << func->funcname << endl;
@@ -764,11 +766,12 @@ static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo)
         return it != versionStack.end() && !it->second.empty();
     };
 
-    auto newVersionTemp = [&](int tempNum)
+    auto newVersionTemp = [&](int tempNum, int blk)
     {
         int version = nextVersion[tempNum]++;
         versionStack[tempNum].push_back(version);
         int newNum = VersionedTemp::versionedTempNum(tempNum, version);
+        diag.createdVersionBlocksByVar[tempNum][version].insert(blk);
         return getOrCreateTemp(tempPool, newNum);
     };
 
@@ -845,7 +848,7 @@ static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo)
                 {
                     continue;
                 }
-                Temp *newTemp = newVersionTemp(orig);
+                Temp *newTemp = newVersionTemp(orig, blockId);
                 phi->temp_exp->temp = newTemp;
                 definedHere.push_back(orig);
             }
@@ -868,7 +871,7 @@ static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo)
                         int orig = q->dst->temp->num;
                         if (ssaTemps.count(orig))
                         {
-                            Temp *newTemp = newVersionTemp(orig);
+                            Temp *newTemp = newVersionTemp(orig, blockId);
                             q->dst->temp = newTemp;
                             definedHere.push_back(orig);
                         }
@@ -884,7 +887,7 @@ static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo)
                         int orig = q->dst->temp->num;
                         if (ssaTemps.count(orig))
                         {
-                            Temp *newTemp = newVersionTemp(orig);
+                            Temp *newTemp = newVersionTemp(orig, blockId);
                             q->dst->temp = newTemp;
                             definedHere.push_back(orig);
                         }
@@ -908,7 +911,7 @@ static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo)
                         int orig = q->dst->temp->num;
                         if (ssaTemps.count(orig))
                         {
-                            Temp *newTemp = newVersionTemp(orig);
+                            Temp *newTemp = newVersionTemp(orig, blockId);
                             q->dst->temp = newTemp;
                             definedHere.push_back(orig);
                         }
@@ -947,7 +950,7 @@ static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo)
                         int orig = q->dst->temp->num;
                         if (ssaTemps.count(orig))
                         {
-                            Temp *newTemp = newVersionTemp(orig);
+                            Temp *newTemp = newVersionTemp(orig, blockId);
                             q->dst->temp = newTemp;
                             definedHere.push_back(orig);
                         }
@@ -981,7 +984,7 @@ static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo)
                         int orig = q->dst->temp->num;
                         if (ssaTemps.count(orig))
                         {
-                            Temp *newTemp = newVersionTemp(orig);
+                            Temp *newTemp = newVersionTemp(orig, blockId);
                             q->dst->temp = newTemp;
                             definedHere.push_back(orig);
                         }
@@ -1014,7 +1017,7 @@ static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo)
                             int orig = dt->temp->num;
                             if (ssaTemps.count(orig))
                             {
-                                Temp *newTemp = newVersionTemp(orig);
+                                Temp *newTemp = newVersionTemp(orig, blockId);
                                 dt->temp = newTemp;
                                 definedHere.push_back(orig);
                             }
@@ -1131,7 +1134,7 @@ static void renameVariables(QuadFuncDecl *func, ControlFlowInfo *domInfo)
 
 // Remove unnecessary phi functions
 // HW7: You need to write this part!!
-static void cleanupUnusedPhi(QuadFuncDecl *func)
+static void cleanupUnusedPhi(QuadFuncDecl *func, SsaDiagState &diag)
 {
 #ifdef DEBUG
     cout << "Cleaning up unused phi functions for function: " << func->funcname << endl;
@@ -1298,6 +1301,10 @@ static void cleanupUnusedPhi(QuadFuncDecl *func)
                         int dstNum = phi->temp_exp->temp->num;
                         if (!usedTemps.count(dstNum))
                         {
+                            int encodedNum = phi->temp_exp->temp->num;
+                            int origVar = VersionedTemp::origTempNum(encodedNum);
+                            int version = encodedNum % 100;
+                            diag.eliminatedVersionBlocksByVar[origVar][version].insert(block->entry_label->num);
                             ql.erase(ql.begin() + i);
                             changed = true;
                             continue;
@@ -1333,13 +1340,16 @@ quad::QuadProgram *quad2ssa(set<FuncFlowInfo *> *allFuncFlow)
 
         ControlFlowInfo *domInfo = ffi->cfi;
         DataFlowInfo *liveness = ffi->dfi;
+        SsaDiagState diag;
+        diag.funcName = funcdecl->funcname;
 
         // Now Place Phi functions at join points
-        placePhi(funcdecl, domInfo, liveness);
+        placePhi(funcdecl, domInfo, liveness, diag);
         // Rename variables to ensure SSA property
-        renameVariables(funcdecl, domInfo);
+        renameVariables(funcdecl, domInfo, diag);
         // Clean up unnecessary phi nodes
-        cleanupUnusedPhi(funcdecl);
+        cleanupUnusedPhi(funcdecl, diag);
+        printSsaDiagSummary(funcdecl, diag);
 
         funcs->push_back(funcdecl);
         if (prog_last_label_num < funcdecl->last_label_num)
@@ -1364,8 +1374,7 @@ quad::QuadProgram *quad2ssa(set<FuncFlowInfo *> *allFuncFlow)
              {
                  return aIsMain;
              }
-             return a->funcname < b->funcname;
-         });
+             return a->funcname < b->funcname; });
 
     return new QuadProgram(funcs, prog_last_label_num, prog_last_temp_num);
 }
