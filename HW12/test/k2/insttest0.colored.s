@@ -5,22 +5,25 @@
 main:
 main$L100:
 	push {r4-r10, fp, lr}
-	sub sp, sp, #8
-	add fp, sp, #40
+	sub sp, sp, #12
+	add fp, sp, #44
 	movw r0, #4
 	bl malloc
 	ldr r1, =C$max
 	str r1, [r0]
-	ldr r10, [r0]
-	str r10, [fp, #-40]
+	ldr r9, [r0]
+	str r9, [fp, #-44]
 	movw r1, #100
-	movw r2, #200
+	movw r9, #200
+	str r9, [fp, #-40]
 	ldr r9, [fp, #-40]
+	mov r2, r9
+	ldr r9, [fp, #-44]
 	blx r9
 	bl putint
 	movw r0, #1
-	sub sp, fp, #40
-	add sp, sp, #8
+	sub sp, fp, #44
+	add sp, sp, #12
 	pop {r4-r10, fp, lr}
 	bx lr
 
