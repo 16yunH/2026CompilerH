@@ -27,12 +27,6 @@ void DataFlowInfo::computeLiveness() {
     //FILE IN THE CODE HERE TO CALCULATE BOTH LIVE-IN AND LIVE-OUT SETS for all statements in the function,
 }
 
-// Print liveness information
-string DataFlowInfo::printLiveness() {
-    // Minimal implementation - return empty string
-    return "";
-}
-
 set<DataFlowInfo*>* dataFLowProg(QuadProgram* prog) {
     //THIS ONE IS DONE FOR YOU!
     // For each function in the program, compute its data flow information and 

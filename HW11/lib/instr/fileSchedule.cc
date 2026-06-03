@@ -1,7 +1,10 @@
 #include "schedule.hh"
 
+#include <algorithm>
 #include <fstream>
 #include <string>
+#include <unordered_map>
+#include <vector>
 
 namespace instr {
 
@@ -63,13 +66,73 @@ static std::string renderAssemblyText(const AssemInstr &instr) {
     return rendered;
 }
 
+static std::vector<ScheduleFunc*> orderedFunctionsForOutput(
+    const std::vector<ScheduleFunc*> &funcSchedules,
+    const std::string &outputBaseName
+) {
+    std::vector<ScheduleFunc*> ordered = funcSchedules;
+
+    std::ifstream inFile(outputBaseName + ".4-ssa-withflow-xml.quad");
+    if (!inFile.is_open()) {
+        return ordered;
+    }
+
+    std::unordered_map<std::string, size_t> sourceOrder;
+    std::string line;
+    size_t nextOrder = 0;
+    while (std::getline(inFile, line)) {
+        if (line.find("<funcdecl") == std::string::npos) {
+            continue;
+        }
+        size_t namePos = line.find("name=\"");
+        if (namePos == std::string::npos) {
+            continue;
+        }
+        namePos += 6;
+        size_t endPos = line.find('"', namePos);
+        if (endPos == std::string::npos) {
+            continue;
+        }
+        std::string name = line.substr(namePos, endPos - namePos);
+        if (sourceOrder.find(name) == sourceOrder.end()) {
+            sourceOrder[name] = nextOrder++;
+        }
+    }
+
+    if (sourceOrder.empty()) {
+        return ordered;
+    }
+
+    std::stable_sort(
+        ordered.begin(),
+        ordered.end(),
+        [&](ScheduleFunc *left, ScheduleFunc *right) {
+            std::string leftName = (left == nullptr || left->quadFunc == nullptr) ? "" : left->quadFunc->funcname;
+            std::string rightName = (right == nullptr || right->quadFunc == nullptr) ? "" : right->quadFunc->funcname;
+            auto leftIt = sourceOrder.find(leftName);
+            auto rightIt = sourceOrder.find(rightName);
+            bool leftKnown = leftIt != sourceOrder.end();
+            bool rightKnown = rightIt != sourceOrder.end();
+            if (leftKnown != rightKnown) {
+                return leftKnown;
+            }
+            if (!leftKnown) {
+                return false;
+            }
+            return leftIt->second < rightIt->second;
+        });
+
+    return ordered;
+}
+
 void ScheduleProg::writeToFile(const std::string &outputBaseName) const {
     std::ofstream outFile(outputBaseName + ".s");
     if (!outFile.is_open()) {
         return;
     }
 
-    for (auto *funcSchedule : funcSchedules) {
+    auto orderedFuncSchedules = orderedFunctionsForOutput(funcSchedules, outputBaseName);
+    for (auto *funcSchedule : orderedFuncSchedules) {
         if (funcSchedule == nullptr || funcSchedule->quadFunc == nullptr) {
             continue;
         }
