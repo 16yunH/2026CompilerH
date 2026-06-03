@@ -1,0 +1,17 @@
+public int main() {
+    class A a;
+    int k;
+    a = new A();
+    k = 3;
+    while (k>=0) {
+       k = k-1;
+       putint(a.a[k]);
+       putch(32);
+    }
+    putch(10);
+    return 2;
+}
+
+public class A {
+    int[] a = {1,2,3,4};
+}

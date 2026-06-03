@@ -1,0 +1,20 @@
+public int main() {
+    int i;
+    int j;
+    int k;
+    i = getint();
+    k = 10;
+    j = 0;
+    if (i>0) 
+      while (k>0) {
+       j = 3*k+2;
+       putint(j);
+       putch(32);
+       k = k-1;
+      }
+    else 
+      j = 4;
+    putint(j);
+    putch(10);
+    return j;
+}

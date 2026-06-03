@@ -1,0 +1,12 @@
+public int main() {
+    int k;
+    k = getint();
+    while (k>0) {
+       putint(4*k+2);
+       putch(32);
+       k = k-2;
+    }
+    putint(k);
+    putch(10);
+    return 2;
+}

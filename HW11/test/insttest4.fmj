@@ -1,0 +1,24 @@
+public int main() {
+    int[] a;
+    int k;
+    a = new C().m(getint());
+    k = length(a);
+    while (k>=0) {
+       k = k-1;
+       putint(a[k]);
+       putch(32);
+    }
+    putch(10);
+    return 2;
+}
+
+public class C {
+    int[] a = {1,2,3,4};
+    int[] b = {5,6,7,8,9};
+    public int[] m(int i) {
+       if (i>0) 
+         return this.a;
+       else
+         return this.b;
+    }
+}
